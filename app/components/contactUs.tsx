@@ -1,55 +1,29 @@
 
 
-import { Form } from "@remix-run/react";
+import { Form, useActionData } from "@remix-run/react";
 import ReactFlagsSelect from "react-flags-select";
 import { useEffect, useRef, useState } from "react";
 import ivurl from '../../public/assets/ivoyant.png';
 import React from "react";
 import { errorMessage, success } from "~/utils/notifications";
+import { action } from "~/routes/_index";
 const ContactUs = () => {
   const [btnLoading, setBtnLoading] = useState<boolean>(false)
   const [selectedCode, setCountryCodeSelected] = useState("US");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement>,
-    formType: any
-  ) => {
-    try {
-      event.preventDefault();
-      setBtnLoading(true);
-      
-        const formData = new FormData(event.currentTarget);
-        formData.append("action", "Contact");
-        formData.forEach((value, key) => {
-        });
-        const response = await fetch(
-          "https://forms.hubspot.com/uploads/form/v2/39872873/dad06d1b-0ce0-4089-8b4e-bc4ae742e3ce",
-          {
-            method: "POST",
-            body: formData,
-          }
-        );
-        if (response.ok) {
-          success(
-            "Thank you for contacting us! We will get back to you soon.",
-            3
-          );
-        } else {
-          errorMessage("Error occured while submitting, Please retry", 3);
-        }
-      
-      }
-     catch (error) {
-      errorMessage("Error occured, please retry",3);
-    }
-    setBtnLoading(false);
-  };
+ 
  
   const handlePhoneNumberChange = (e: any) => {
     setPhoneNumber(e.target.value);
   };
- 
+  const actionData= useActionData<typeof action>();
+  let emailError= actionData?.errors?.email
+  let nameError= actionData?.errors?.name
+
+  // setBtnLoading()
+
   return (
+    
     <>
   
 
@@ -147,6 +121,9 @@ const ContactUs = () => {
           </span>
         </div>
       </div>
+      {emailError &&(
+      <span className="text-brand-red">{emailError}</span>
+      )}
 
       <div>
         <label className="sr-only">Job Title</label>

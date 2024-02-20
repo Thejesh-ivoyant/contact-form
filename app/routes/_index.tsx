@@ -14,6 +14,20 @@ export const meta: MetaFunction = () => {
 
 export async function action({ request }: ActionFunctionArgs) {
   const body = await request.formData();
+  let email =String(body.get("email"));
+  let name =String(body.get("personname"));
+
+  let errors:{email?:string;name?:string}={};
+  if(!email){
+    errors.email= "email needed";
+  }else if(!email.includes("@")){
+    errors.email="please corect forma email";
+  }
+  if(!name){
+    errors.name="required name";
+  }
+
+ 
   for (const [name, value] of body.entries()) {
     console.log(`${name}: ${value}`);
   }
@@ -42,35 +56,35 @@ export async function action({ request }: ActionFunctionArgs) {
   //   .catch(error => console.error(error));
 
 
-  
 
 
-      // // If posting to HubSpot is successful, send SMS
-      // const accountSid = 'AC66f36f0d0b988dc51e1602bfc79c8aa8';
-      // const authToken = '56a370fa997e469fa36729ca626c00de';
-      // const client = twilio(accountSid, authToken);
+
+      // If posting to HubSpot is successful, send SMS
+      const accountSid = 'AC66f36f0d0b988dc51e1602bfc79c8aa8';
+      const authToken = '56a370fa997e469fa36729ca626c00de';
+      const client = twilio(accountSid, authToken);
       
-      // const sendSMS = async (to: string, from: string, body: string) => {
-      //   try {
-      //     const message = await client.messages.create({
-      //       body,
-      //       from,
-      //       to,
-      //     });
-      //     console.log('SMS sent successfully:', message.sid);
-      //     return true;
-      //   } catch (error) {
-      //     console.error('Error sending SMS:', error);
-      //     return false;
-      //   }
-      // };
+      const sendSMS = async (to: string, from: string, body: string) => {
+        try {
+          const message = await client.messages.create({
+            body,
+            from,
+            to,
+          });
+          console.log('SMS sent successfully:', message.sid);
+          return true;
+        } catch (error) {
+          console.error('Error sending SMS:', error);
+          return false;
+        }
+      };
 
-      // // Replace these values with the actual phone number and message
-      // const to = '+919656272804';
-      // const from = '+13852101336';
-      // const smsBody = 'Code test mail';
+      // Replace these values with the actual phone number and message
+      const to = '+919656272804';
+      const from = '+13852101336';
+      const smsBody = 'Code test mail';
 
-      // await sendSMS(to, from, smsBody);
+      await sendSMS(to, from, smsBody);
     } else {
       console.error("Error occurred while submitting. Please retry.");
     }
@@ -78,7 +92,9 @@ export async function action({ request }: ActionFunctionArgs) {
     console.error("Error occurred, please retry ", error);
   }
   
-  return null;
+  return {
+    errors: Object.keys(errors).length?errors:null,
+  };
 }
 
 export default function Index() {
