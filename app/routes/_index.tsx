@@ -80,7 +80,10 @@ export async function action({ request }: ActionFunctionArgs) {
       };
 
       // Replace these values with the actual phone number and message
-      const to = '+919656272804';
+        const c_code = String(body.get('country_code'));
+        const phone_no = String(body.get('phonenumber'));
+        
+      const to = `+${c_code}${phone_no}`;
       const from = '+13852101336';
       const smsBody = 'Code test mail';
 
