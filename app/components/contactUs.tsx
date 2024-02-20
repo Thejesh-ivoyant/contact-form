@@ -1,3 +1,5 @@
+
+
 import { Form } from "@remix-run/react";
 import line from '~/../public/assets/line.svg'
 import ReactFlagsSelect from "react-flags-select";
@@ -160,454 +162,662 @@ const ContactUs = () => {
   };
   return (
     <>
-      <section
-        id="contact-us"
-        className="w-full h-fit bg-cover bg-center flex md:flex-row flex-col-reverse  contact-container font-montserrat"
+  
+
+<div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+  <div className="mx-auto max-w-lg">
+    <h1 className="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">Get started today</h1>
+
+    <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sunt dolores deleniti
+      inventore quaerat mollitia?
+    </p>
+
+    <Form 
+     onSubmit={(event) => handleSubmit(event, "contact")}
+ method="post"
+    encType="multipart/form-data"
+      autoComplete="off"
+     className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
+      <p className="text-center text-lg font-medium">Sign in to your account</p>
+
+      <div>
+        <label  className="sr-only">Email</label>
+
+        <div className="relative">
+          <input
+            type="text"
+            id="companyname"
+            name="companyname"
+            placeholder="Name*"
+            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+           
+          />
+        
+
+          <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="size-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <label className="sr-only">Password</label>
+
+        <div className="relative">
+          <input
+            type="password"
+            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            placeholder="Enter password"
+          />
+
+          <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="size-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <label className="sr-only">Password</label>
+
+        <div className="relative">
+          <input
+            type="password"
+            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            placeholder="Enter password"
+          />
+
+          <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="size-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <label className="sr-only">Password</label>
+
+        <div className="relative">
+          <input
+            type="password"
+            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            placeholder="Enter password"
+          />
+
+          <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="size-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      
+      <div>
+        <label className="sr-only">Password</label>
+
+        <div className="relative">
+          <input
+            type="password"
+            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+            placeholder="Enter password"
+          />
+
+          <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="size-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
       >
-        <div className="flex flex-col flex-1 w-full bg-haiti xl:p-10 ">
-          <div className="flex flex-col w-fit xl:mx-auto lg:ml-auto xl:pr-0 lg:pr-16 md:pr-10 md:ml-auto md:mx-0 sm:mx-16 mx-10">
-            <h1 className="lg:py-4 py-2">
-              <span className="flex text-white xl:text-5xl text-3xl font-medium">
-                Contact
-              </span>
-            </h1>
-            <img
-              className="flex aspect-square xl:h-[35rem] lg:h-[22rem] md:h-[19rem] justify-self-center mx-auto object-cover"
-              src={toggleState === 1 ? contactImage : hireImage}
-              alt="contactUs"
-            />
-          </div>
-          <div className="mx-auto">
-            <div className="grid md:grid-cols-2 grid-cols-1 xl:max-w-xl lg:max-w-sm ml-auto w-fit lg:gap-4 gap-3 lg:p-4 p-3">
-            <p className="text-HeaderGray w-full lg:text-2xl text-xl text-center font-semibold font-montserrat md:col-span-2">
-              Connect with us
-            </p>
-            <img src={line} className="w-full md:col-span-2"></img>
-              <div className="col-span-1 text-white items-left w-fit md:mx-0 mx-4">
-                <div className="flex text-iv-purple items-left gap-2">
-                  <img
-                    className="w-4 h-4 inline"
-                    src="../assets/enquire.svg"
-                    alt="enquire"
-                  />
-                  <span className="text-[0.7em]">Enquires</span>
-                </div>
-                <a className="text-[0.8em]" href="mailto:sales@ivoyant.com">
-                  sales@ivoyant.com
-                </a>
-              </div>
-              <div className="col-span-1 text-white items-left md:mx-0 mx-4">
-                <div className="flex text-iv-purple items-left gap-2">
-                  <img
-                    className="w-4 h-4 inline"
-                    src="../assets/phone-outlined.svg"
-                    alt="phone"
-                  />
-                  <span className="text-[0.7em]">Phone</span>
-                </div>
-                <a className="text-[0.8em]" href="tel:+91 987654121">
-                  +91 987654121
-                </a>
-              </div>
-              <div className="col-span-1 text-white items-left md:mx-0 mx-4">
-                <div className="flex text-iv-purple items-left gap-2">
-                  <img
-                    className="w-4 h-4 inline"
-                    src="../assets/info.svg"
-                    alt="info"
-                  />
-                  <span className="text-[0.7em]">Information</span>
-                </div>
-                <a className="text-[0.8em]" href="mailto:info@ivoyant.com">
-                  info@ivoyant.com
-                </a>
-              </div>
-              <div className="col-span-1 text-white items-left md:mx-0 mx-4">
-                <div className="flex text-iv-purple items-left gap-2">
-                  <img
-                    className="w-4 h-4 inline"
-                    src="../assets/skype-outlined.svg"
-                    alt="skype"
-                  />
-                  <span className="text-[0.7em]">Connect with us</span>
-                </div>
-                <a className="text-[0.8em]" href="mailto:ivoyantsales@outlook.com">
-                  ivoyantsales@outlook.com
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-1 flex-col bg-white xl:p-10 md:p-0 p-4">
-          <div className="flex flex-row xl:gap-x-10 md:gap-x-4 gap-x-3">
-            <div>
-              <span
-                className={
-                  toggleState === 1
-                    ? "tab"
-                    : "tab text-gray-600"
-                }
-                onClick={() => toggleTab(1)}
-              >
-                Let's Talk
-              </span>
-            </div>
-            <div>
-              <span
-                className={
-                  toggleState === 2
-                    ? "tab"
-                    : "tab text-gray-500"
-                }
-                onClick={() => toggleTab(2)}
-              >
-                Work Enquiry
-              </span>
-            </div>
-          </div>
-          <div
-            className={toggleState === 2 ? "glider xl:ml-[15rem] lg:ml-[11rem] md:ml-[11.5rem] ml-[5.5rem]" : "glider md:ml-5"}
-          ></div>
-          <Form
-            onSubmit={(event) => handleSubmit(event, "contact")}
-            method="post"
-            encType="multipart/form-data"
-            className={
-              toggleState === 1
-                ? "flex flex-col xl:gap-10 md:gap-8 gap-4 active-content xl:p-8 md:px-4 py-2"
-                : "hidden"
-            }
-            autoComplete="off"
-          >
-            <div className="grid grid-cols-2 xl:gap-10 md:gap-6 gap-4">
-              <div className="w-full relative group sm:col-span-1 col-span-2">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Name*"
-                  required
-                  className="w-full xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer"
-                ></input>
-              </div>
-              <div className="w-full relative group sm:col-span-1 col-span-2">
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  placeholder="Email*"
-                  required
-                  className="w-full xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer"
-                ></input>
-              </div>
-              <div className="items-stretch  border-b-[1px] border-form-gray self-stretch flex xl:gap-2.5 gap-1  xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs py-1 sm:col-span-1 col-span-2">
-                <div className="items-stretch border-r-[color:var(--Gray-gray-5,#D9D9D9)] flex basis-[0%] flex-col justify-center xl:pr-3 pr-1 border-r border-solid">
-                  <div className="items-stretch flex  gap-1 ">
-                    <ReactFlagsSelect
-                      selected={selectedCode}
-                      onSelect={(code) => setCountryCodeSelected(code)}
-                      searchable
-                      searchPlaceholder="Search countries"
-                    /> 
-                    <input
-                    type="text"
-                    placeholder=""
-                    value={selectedCode}
-                    required
-                    className="hidden"
-                    name="country_code"
-                  />
-                  </div>
-                </div>
-                <input
-                  type="tel"
-                  placeholder="Phone Number*"
-                  value={phoneNumber}
-                  onChange={handlePhoneNumberChange}
-                  required
-                  className="outline-none  cursor-pointer overflow-hidden"
-                  name="phonenumber"
-                />
-              </div>
-              <div className="w-full relative group sm:col-span-1 col-span-2">
-                <input
-                  type="text"
-                  id="organization"
-                  name="organisation"
-                  placeholder="Organisation"
-                  className="w-full xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer"
-                ></input>
-              </div>
-              <div className="w-full relative grid col-span-2">
-                <label className="py-2 text-xs">Your Message</label>
-                <textarea
-                  minLength={3}
-                  maxLength={250}
-                  id="message"
-                  name="message"
-                  cols={30}
-                  rows={5}
-                  className="p-4 text-sm peer border-[1px] border-black outline-none cursor-pointer"
-                ></textarea>
-              </div>
-            </div>
-            <Space
-              direction="horizontal"
-              className="grid-cols-1 flex justify-between"
-            >
-              <div className="flex">
-                <span
-                  className="cursor-pointer"
-                  onClick={() => {
-                    setOpen(!openc1);
-                  }}
-                >
-                  <CalendarOutlined className="bg-[#D9C9FB] rounded-full w-7 h-7 p-2 text-black" />
-                </span>
-                <DatePicker
-                size="middle"
-                  placement="topRight"
-                  format="YYYY-MM-DD  HH:mm"
-                  className="text-xs"
-                  disabledDate={disabledDate}
-                  disabledTime={(current) => disabledDateTime(current)}
-                  placeholder="Schedule a Meet"
-                  showTime={{ defaultValue: dayjs("00:00:00", "HH:mm:ss") }}
-                  suffixIcon={null}
-                  open={openc1}
-                  onOk={() => setOpen(false)}
-                  onChange={onChange} 
-                />
-                <input
-                  type="text"
-                  placeholder=""
-                  value={selectedDate}
-                  className="hidden"
-                  name="date"
-                />
-              </div>
-              <div className="flex flex-col gap-1">
-                <div className="flex flex-col text-sm relative">
-                  <label htmlFor="attachment" className="font-montserrat" style={{ cursor: "pointer" }}>
-                    <FileAddOutlined className="bg-[#D9C9FB] rounded-full p-2 text-[#] mr-2" />
-                    Attach File
-                  </label>
-                  <input
-                    style={{ display: "none" }}
-                    type="file"
-                    id="attachment"
-                    name="attachment"
-                    onChange={handleFileChange}
-                  />
-                </div>
-                {selectedFileName && (
-                  <div className="absolute text-xs text-gray-700 flex items-center max-w-[5rem] translate-y-8">
-                    <span title={`${selectedFileName}`} className="text-ellipsis whitespace-nowrap max-w-[4rem] overflow-hidden">{`${selectedFileName}`}</span>
-                    <button title={`Remove ${selectedFileName}`} onClick={handleClearFile} className="ml-2">
-                      <DeleteOutlined className="text-red-500" />
-                    </button>
-                </div>
-                )}
-              </div>
-            </Space>
-            <button
-              type="submit"
-              name="_action"
-              value="contact"
-              className="btn-purp-grad w-fit text-HeaderGray font-normal"
-              disabled={btnLoading}
-            >
-              Send my message
-            </button>
-          </Form>
-          <Form
-           onSubmit={(event) => handleSubmit(event, "hireus")}
-            method="post"
-            encType="multipart/form-data"
-            className={
-              toggleState === 2
-                ? "flex flex-col lg:gap-10 gap-6 active-content xl:p-8  sm:p-4 py-2"
-                : "hidden"
-            }
-            autoComplete="off"
-          >
-            <div className="grid grid-cols-2 xl:gap-10 gap-6">
-              <div className="w-full relative group sm:col-span-1 col-span-2">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Name*"
-                  required
-                  className="w-full xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer"
-                ></input>
-              </div>
-              <div className="w-full relative group sm:col-span-1 col-span-2">
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  placeholder="Email*"
-                  required
-                  className="w-full xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer"
-                ></input>
-              </div>
-              <div className="items-stretch  border-b-[1px] border-form-gray self-stretch flex xl:gap-2.5 gap-1  xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs py-1 sm:col-span-1 col-span-2">
-                <div className="items-stretch border-r-[color:var(--Gray-gray-5,#D9D9D9)] flex basis-[0%] flex-col justify-center xl:pr-3 pr-1 border-r border-solid">
-                  <div className="items-stretch flex  gap-1 ">
-                  <ReactFlagsSelect
-                        selected={selectedCode}
-                        onSelect={(code) => setCountryCodeSelected(code)}
-                        searchable
-                        searchPlaceholder="Search countries"
-                      />  <input
-                      type="text"
-                      placeholder=""
-                      value={selectedCode}
-                      required
-                      className="hidden"
-                      name="country_code"
-                    />
-                  </div>
-                </div>
-                <input
-                  type="tel"
-                  placeholder="Phone Number*"
-                  value={phoneNumber}
-                  onChange={handlePhoneNumberChange}
-                  required
-                  className="outline-none  cursor-pointer overflow-hidden"
-                  name="phone_number"
-                />
-              </div>
-              <div className="w-full relative group sm:col-span-1 col-span-2">
-                <select
-                  id="username"
-                  defaultValue="" 
-                  name="area_of_expertise"
-                  className="w-full xl:h-10 h-8 text-xs xl:text-sm peer border-b-[1px] border-form-gray outline-none cursor-pointer"
-                >
-                  <option value="" disabled  hidden>
-                    Area of Expertise
-                  </option>
-                  <option>Front End coding</option>
-                  <option>Devops </option>
-                </select>
-              </div>
-              <div className="w-full relative group sm:col-span-1 col-span-2">
-                <select
-                  id="username"
-                  name="hiring_duration"
-                  defaultValue="" 
-                  className="w-full xl:h-10 h-8 xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer"
-                >
-                  <option value="" disabled hidden>
-                    Hiring Duration
-                  </option>
-                  <option>10</option>
-                  <option>8</option>
-                </select>
-              </div>
-              <div className="w-full relative group sm:col-span-1 col-span-2">
-                <select
-                  id="username"
-                  name="choose_skill_set"
-                  defaultValue="" 
-                  className="w-full xl:h-10 h-8  xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer capitalize"
-                >
-                  <option value="" disabled  hidden>
-                    Choose skillset
-                  </option>
-                  <option>python</option>
-                  <option>java</option>
-                </select>
-              </div>
-              <div className="w-full relative grid col-span-2">
-                <label className="py-2 text-xs">Your Message</label>
-                <textarea
-                  minLength={3}
-                  maxLength={250}
-                  id="message"
-                  name="message_hire"
-                  cols={30}
-                  rows={5}
-                  className="p-4 text-sm peer border-[1px] border-black outline-none cursor-pointer"
-                ></textarea>
-              </div>
-            </div>
-            <Space
-              direction="horizontal"
-              size={12}
-              className="grid-cols-1 flex justify-between"
-            >
-              <div className="flex">
-                <span
-                  className="cursor-pointer"
-                  onClick={() => {
-                    setOpen(!openc1);
-                  }}
-                >
-                  <CalendarOutlined className="bg-[#D9C9FB] rounded-full p-2 w-7 h-7 text-black" />
-                </span>
-                <DatePicker
-                  size="middle"
-                  placement="topRight"
-                  format="YYYY-MM-DD  HH:mm"
-                  className="text-xs"
-                  disabledDate={disabledDate}
-                  disabledTime={(current) => disabledDateTime(current)}
-                  placeholder="Schedule a Meet"
-                  showTime={{ defaultValue: dayjs("00:00:00", "HH:mm:ss") }}
-                  suffixIcon={null}
-                  open={openc1}
-                  onOk={() => setOpen(false)}
-                  onChange={onChange} 
-                />
-                <input
-  type="text"
-  placeholder=""
-  value={selectedDate}
-  className="hidden"
-  name="date_hire"
-/>
-              </div>
-              <div className="flex flex-col gap-1 relative">
-                <div className="flex flex-col xl:text-sm text-xs">
-                  <label htmlFor="hire_attachment" className="font-montserrat" style={{ cursor: "pointer" }}>
-                    <FileAddOutlined className="bg-[#D9C9FB] rounded-full p-2 text-black mr-2" />
-                    Attach File
-                  </label>
-                  <input
-                    name="hire_attachment"
-                    style={{ display: "none" }}
-                    type="file"
-                    id="hire_attachment"
-                    onChange={handlehireFileChange}
-                  />
-                </div>
-                {hireselectedFileName && (
-                  <div className="absolute text-xs text-gray-700 flex items-center max-w-[5rem] translate-y-8">
-                  <span title={`${hireselectedFileName}`} className="text-ellipsis whitespace-nowrap  overflow-hidden">{`${hireselectedFileName}`}</span>
-                  <button title={`Remove ${hireselectedFileName}`} onClick={handlehireClearFile} className="ml-2">
-                    <DeleteOutlined className="text-red-500" />
-                  </button>
-              </div>
-                )}
-              </div>
-            </Space>
-            <button
-              type="submit"
-              name="_action"
-              value="hireus"
-              className="btn-purp-grad w-fit text-HeaderGray font-normal"
-              disabled={btnLoading}
-            >
-              Send my message
-            </button>
-          </Form>
-        </div>
-      </section>
+        Sign in
+      </button>
+
+      <p className="text-center text-sm text-gray-500">
+        No account?
+        <a className="underline" href="#">Sign up</a>
+      </p>
+    </Form>
+  </div>
+</div>
     </>
+//     <>
+//       <section
+//         id="contact-us"
+//         classNameName="w-full h-fit bg-cover bg-center flex md:flex-row flex-col-reverse  contact-container font-montserrat"
+//       >
+//         <div classNameName="flex flex-col flex-1 w-full bg-haiti xl:p-10 ">
+//           <div classNameName="flex flex-col w-fit xl:mx-auto lg:ml-auto xl:pr-0 lg:pr-16 md:pr-10 md:ml-auto md:mx-0 sm:mx-16 mx-10">
+//             <h1 classNameName="lg:py-4 py-2">
+//               <span classNameName="flex text-white xl:text-5xl text-3xl font-medium">
+//                 Contact
+//               </span>
+//             </h1>
+//             <img
+//               classNameName="flex aspect-square xl:h-[35rem] lg:h-[22rem] md:h-[19rem] justify-self-center mx-auto object-cover"
+//               src={toggleState === 1 ? contactImage : hireImage}
+//               alt="contactUs"
+//             />
+//           </div>
+//           <div classNameName="mx-auto">
+//             <div classNameName="grid md:grid-cols-2 grid-cols-1 xl:max-w-xl lg:max-w-sm ml-auto w-fit lg:gap-4 gap-3 lg:p-4 p-3">
+//             <p classNameName="text-HeaderGray w-full lg:text-2xl text-xl text-center font-semibold font-montserrat md:col-span-2">
+//               Connect with us
+//             </p>
+//             <img src={line} classNameName="w-full md:col-span-2"></img>
+//               <div classNameName="col-span-1 text-white items-left w-fit md:mx-0 mx-4">
+//                 <div classNameName="flex text-iv-purple items-left gap-2">
+//                   <img
+//                     classNameName="w-4 h-4 inline"
+//                     src="../assets/enquire.svg"
+//                     alt="enquire"
+//                   />
+//                   <span classNameName="text-[0.7em]">Enquires</span>
+//                 </div>
+//                 <a classNameName="text-[0.8em]" href="mailto:sales@ivoyant.com">
+//                   sales@ivoyant.com
+//                 </a>
+//               </div>
+//               <div classNameName="col-span-1 text-white items-left md:mx-0 mx-4">
+//                 <div classNameName="flex text-iv-purple items-left gap-2">
+//                   <img
+//                     classNameName="w-4 h-4 inline"
+//                     src="../assets/phone-outlined.svg"
+//                     alt="phone"
+//                   />
+//                   <span classNameName="text-[0.7em]">Phone</span>
+//                 </div>
+//                 <a classNameName="text-[0.8em]" href="tel:+91 987654121">
+//                   +91 987654121
+//                 </a>
+//               </div>
+//               <div classNameName="col-span-1 text-white items-left md:mx-0 mx-4">
+//                 <div classNameName="flex text-iv-purple items-left gap-2">
+//                   <img
+//                     classNameName="w-4 h-4 inline"
+//                     src="../assets/info.svg"
+//                     alt="info"
+//                   />
+//                   <span classNameName="text-[0.7em]">Information</span>
+//                 </div>
+//                 <a classNameName="text-[0.8em]" href="mailto:info@ivoyant.com">
+//                   info@ivoyant.com
+//                 </a>
+//               </div>
+//               <div classNameName="col-span-1 text-white items-left md:mx-0 mx-4">
+//                 <div classNameName="flex text-iv-purple items-left gap-2">
+//                   <img
+//                     classNameName="w-4 h-4 inline"
+//                     src="../assets/skype-outlined.svg"
+//                     alt="skype"
+//                   />
+//                   <span classNameName="text-[0.7em]">Connect with us</span>
+//                 </div>
+//                 <a classNameName="text-[0.8em]" href="mailto:ivoyantsales@outlook.com">
+//                   ivoyantsales@outlook.com
+//                 </a>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//         <div classNameName="flex flex-1 flex-col bg-white xl:p-10 md:p-0 p-4">
+//           <div classNameName="flex flex-row xl:gap-x-10 md:gap-x-4 gap-x-3">
+//             <div>
+//               <span
+//                 classNameName={
+//                   toggleState === 1
+//                     ? "tab"
+//                     : "tab text-gray-600"
+//                 }
+//                 onClick={() => toggleTab(1)}
+//               >
+//                 Let's Talk
+//               </span>
+//             </div>
+//             <div>
+//               <span
+//                 classNameName={
+//                   toggleState === 2
+//                     ? "tab"
+//                     : "tab text-gray-500"
+//                 }
+//                 onClick={() => toggleTab(2)}
+//               >
+//                 Work Enquiry
+//               </span>
+//             </div>
+//           </div>
+//           <div
+//             classNameName={toggleState === 2 ? "glider xl:ml-[15rem] lg:ml-[11rem] md:ml-[11.5rem] ml-[5.5rem]" : "glider md:ml-5"}
+//           ></div>
+//           <Form
+//             onSubmit={(event) => handleSubmit(event, "contact")}
+//             method="post"
+//             encType="multipart/form-data"
+//             classNameName={
+//               toggleState === 1
+//                 ? "flex flex-col xl:gap-10 md:gap-8 gap-4 active-content xl:p-8 md:px-4 py-2"
+//                 : "hidden"
+//             }
+//             autoComplete="off"
+//           >
+//             <div classNameName="grid grid-cols-2 xl:gap-10 md:gap-6 gap-4">
+//               <div classNameName="w-full relative group sm:col-span-1 col-span-2">
+//                 <input
+//                   type="text"
+//                   id="name"
+//                   name="name"
+//                   placeholder="Name*"
+//                   required
+//                   classNameName="w-full xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer"
+//                 ></input>
+//               </div>
+//               <div classNameName="w-full relative group sm:col-span-1 col-span-2">
+//                 <input
+//                   type="text"
+//                   id="email"
+//                   name="email"
+//                   placeholder="Email*"
+//                   required
+//                   classNameName="w-full xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer"
+//                 ></input>
+//               </div>
+//               <div classNameName="items-stretch  border-b-[1px] border-form-gray self-stretch flex xl:gap-2.5 gap-1  xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs py-1 sm:col-span-1 col-span-2">
+//                 <div classNameName="items-stretch border-r-[color:var(--Gray-gray-5,#D9D9D9)] flex basis-[0%] flex-col justify-center xl:pr-3 pr-1 border-r border-solid">
+//                   <div classNameName="items-stretch flex  gap-1 ">
+//                     <ReactFlagsSelect
+//                       selected={selectedCode}
+//                       onSelect={(code) => setCountryCodeSelected(code)}
+//                       searchable
+//                       searchPlaceholder="Search countries"
+//                     /> 
+//                     <input
+//                     type="text"
+//                     placeholder=""
+//                     value={selectedCode}
+//                     required
+//                     classNameName="hidden"
+//                     name="country_code"
+//                   />
+//                   </div>
+//                 </div>
+//                 <input
+//                   type="tel"
+//                   placeholder="Phone Number*"
+//                   value={phoneNumber}
+//                   onChange={handlePhoneNumberChange}
+//                   required
+//                   classNameName="outline-none  cursor-pointer overflow-hidden"
+//                   name="phonenumber"
+//                 />
+//               </div>
+//               <div classNameName="w-full relative group sm:col-span-1 col-span-2">
+//                 <input
+//                   type="text"
+//                   id="organization"
+//                   name="organisation"
+//                   placeholder="Organisation"
+//                   classNameName="w-full xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer"
+//                 ></input>
+//               </div>
+//               <div classNameName="w-full relative grid col-span-2">
+//                 <label classNameName="py-2 text-xs">Your Message</label>
+//                 <textarea
+//                   minLength={3}
+//                   maxLength={250}
+//                   id="message"
+//                   name="message"
+//                   cols={30}
+//                   rows={5}
+//                   classNameName="p-4 text-sm peer border-[1px] border-black outline-none cursor-pointer"
+//                 ></textarea>
+//               </div>
+//             </div>
+//             <Space
+//               direction="horizontal"
+//               classNameName="grid-cols-1 flex justify-between"
+//             >
+//               <div classNameName="flex">
+//                 <span
+//                   classNameName="cursor-pointer"
+//                   onClick={() => {
+//                     setOpen(!openc1);
+//                   }}
+//                 >
+//                   <CalendarOutlined classNameName="bg-[#D9C9FB] rounded-full w-7 h-7 p-2 text-black" />
+//                 </span>
+//                 <DatePicker
+//                 size="middle"
+//                   placement="topRight"
+//                   format="YYYY-MM-DD  HH:mm"
+//                   classNameName="text-xs"
+//                   disabledDate={disabledDate}
+//                   disabledTime={(current) => disabledDateTime(current)}
+//                   placeholder="Schedule a Meet"
+//                   showTime={{ defaultValue: dayjs("00:00:00", "HH:mm:ss") }}
+//                   suffixIcon={null}
+//                   open={openc1}
+//                   onOk={() => setOpen(false)}
+//                   onChange={onChange} 
+//                 />
+//                 <input
+//                   type="text"
+//                   placeholder=""
+//                   value={selectedDate}
+//                   classNameName="hidden"
+//                   name="date"
+//                 />
+//               </div>
+//               <div classNameName="flex flex-col gap-1">
+//                 <div classNameName="flex flex-col text-sm relative">
+//                   <label htmlFor="attachment" classNameName="font-montserrat" style={{ cursor: "pointer" }}>
+//                     <FileAddOutlined classNameName="bg-[#D9C9FB] rounded-full p-2 text-[#] mr-2" />
+//                     Attach File
+//                   </label>
+//                   <input
+//                     style={{ display: "none" }}
+//                     type="file"
+//                     id="attachment"
+//                     name="attachment"
+//                     onChange={handleFileChange}
+//                   />
+//                 </div>
+//                 {selectedFileName && (
+//                   <div classNameName="absolute text-xs text-gray-700 flex items-center max-w-[5rem] translate-y-8">
+//                     <span title={`${selectedFileName}`} classNameName="text-ellipsis whitespace-nowrap max-w-[4rem] overflow-hidden">{`${selectedFileName}`}</span>
+//                     <button title={`Remove ${selectedFileName}`} onClick={handleClearFile} classNameName="ml-2">
+//                       <DeleteOutlined classNameName="text-red-500" />
+//                     </button>
+//                 </div>
+//                 )}
+//               </div>
+//             </Space>
+//             <button
+//               type="submit"
+//               name="_action"
+//               value="contact"
+//               classNameName="btn-purp-grad w-fit text-HeaderGray font-normal"
+//               disabled={btnLoading}
+//             >
+//               Send my message
+//             </button>
+//           </Form>
+//           <Form
+//            onSubmit={(event) => handleSubmit(event, "hireus")}
+//             method="post"
+//             encType="multipart/form-data"
+//             classNameName={
+//               toggleState === 2
+//                 ? "flex flex-col lg:gap-10 gap-6 active-content xl:p-8  sm:p-4 py-2"
+//                 : "hidden"
+//             }
+//             autoComplete="off"
+//           >
+//             <div classNameName="grid grid-cols-2 xl:gap-10 gap-6">
+//               <div classNameName="w-full relative group sm:col-span-1 col-span-2">
+//                 <input
+//                   type="text"
+//                   id="name"
+//                   name="name"
+//                   placeholder="Name*"
+//                   required
+//                   classNameName="w-full xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer"
+//                 ></input>
+//               </div>
+//               <div classNameName="w-full relative group sm:col-span-1 col-span-2">
+//                 <input
+//                   type="text"
+//                   id="email"
+//                   name="email"
+//                   placeholder="Email*"
+//                   required
+//                   classNameName="w-full xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer"
+//                 ></input>
+//               </div>
+//               <div classNameName="items-stretch  border-b-[1px] border-form-gray self-stretch flex xl:gap-2.5 gap-1  xl:h-10 h-8 xl:px-4 px-2 xl:text-sm text-xs py-1 sm:col-span-1 col-span-2">
+//                 <div classNameName="items-stretch border-r-[color:var(--Gray-gray-5,#D9D9D9)] flex basis-[0%] flex-col justify-center xl:pr-3 pr-1 border-r border-solid">
+//                   <div classNameName="items-stretch flex  gap-1 ">
+//                   <ReactFlagsSelect
+//                         selected={selectedCode}
+//                         onSelect={(code) => setCountryCodeSelected(code)}
+//                         searchable
+//                         searchPlaceholder="Search countries"
+//                       />  <input
+//                       type="text"
+//                       placeholder=""
+//                       value={selectedCode}
+//                       required
+//                       classNameName="hidden"
+//                       name="country_code"
+//                     />
+//                   </div>
+//                 </div>
+//                 <input
+//                   type="tel"
+//                   placeholder="Phone Number*"
+//                   value={phoneNumber}
+//                   onChange={handlePhoneNumberChange}
+//                   required
+//                   classNameName="outline-none  cursor-pointer overflow-hidden"
+//                   name="phone_number"
+//                 />
+//               </div>
+//               <div classNameName="w-full relative group sm:col-span-1 col-span-2">
+//                 <select
+//                   id="username"
+//                   defaultValue="" 
+//                   name="area_of_expertise"
+//                   classNameName="w-full xl:h-10 h-8 text-xs xl:text-sm peer border-b-[1px] border-form-gray outline-none cursor-pointer"
+//                 >
+//                   <option value="" disabled  hidden>
+//                     Area of Expertise
+//                   </option>
+//                   <option>Front End coding</option>
+//                   <option>Devops </option>
+//                 </select>
+//               </div>
+//               <div classNameName="w-full relative group sm:col-span-1 col-span-2">
+//                 <select
+//                   id="username"
+//                   name="hiring_duration"
+//                   defaultValue="" 
+//                   classNameName="w-full xl:h-10 h-8 xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer"
+//                 >
+//                   <option value="" disabled hidden>
+//                     Hiring Duration
+//                   </option>
+//                   <option>10</option>
+//                   <option>8</option>
+//                 </select>
+//               </div>
+//               <div classNameName="w-full relative group sm:col-span-1 col-span-2">
+//                 <select
+//                   id="username"
+//                   name="choose_skill_set"
+//                   defaultValue="" 
+//                   classNameName="w-full xl:h-10 h-8  xl:text-sm text-xs peer border-b-[1px] border-form-gray outline-none cursor-pointer capitalize"
+//                 >
+//                   <option value="" disabled  hidden>
+//                     Choose skillset
+//                   </option>
+//                   <option>python</option>
+//                   <option>java</option>
+//                 </select>
+//               </div>
+//               <div classNameName="w-full relative grid col-span-2">
+//                 <label classNameName="py-2 text-xs">Your Message</label>
+//                 <textarea
+//                   minLength={3}
+//                   maxLength={250}
+//                   id="message"
+//                   name="message_hire"
+//                   cols={30}
+//                   rows={5}
+//                   classNameName="p-4 text-sm peer border-[1px] border-black outline-none cursor-pointer"
+//                 ></textarea>
+//               </div>
+//             </div>
+//             <Space
+//               direction="horizontal"
+//               size={12}
+//               classNameName="grid-cols-1 flex justify-between"
+//             >
+//               <div classNameName="flex">
+//                 <span
+//                   classNameName="cursor-pointer"
+//                   onClick={() => {
+//                     setOpen(!openc1);
+//                   }}
+//                 >
+//                   <CalendarOutlined classNameName="bg-[#D9C9FB] rounded-full p-2 w-7 h-7 text-black" />
+//                 </span>
+//                 <DatePicker
+//                   size="middle"
+//                   placement="topRight"
+//                   format="YYYY-MM-DD  HH:mm"
+//                   classNameName="text-xs"
+//                   disabledDate={disabledDate}
+//                   disabledTime={(current) => disabledDateTime(current)}
+//                   placeholder="Schedule a Meet"
+//                   showTime={{ defaultValue: dayjs("00:00:00", "HH:mm:ss") }}
+//                   suffixIcon={null}
+//                   open={openc1}
+//                   onOk={() => setOpen(false)}
+//                   onChange={onChange} 
+//                 />
+//                 <input
+//   type="text"
+//   placeholder=""
+//   value={selectedDate}
+//   classNameName="hidden"
+//   name="date_hire"
+// />
+//               </div>
+//               <div classNameName="flex flex-col gap-1 relative">
+//                 <div classNameName="flex flex-col xl:text-sm text-xs">
+//                   <label htmlFor="hire_attachment" classNameName="font-montserrat" style={{ cursor: "pointer" }}>
+//                     <FileAddOutlined classNameName="bg-[#D9C9FB] rounded-full p-2 text-black mr-2" />
+//                     Attach File
+//                   </label>
+//                   <input
+//                     name="hire_attachment"
+//                     style={{ display: "none" }}
+//                     type="file"
+//                     id="hire_attachment"
+//                     onChange={handlehireFileChange}
+//                   />
+//                 </div>
+//                 {hireselectedFileName && (
+//                   <div classNameName="absolute text-xs text-gray-700 flex items-center max-w-[5rem] translate-y-8">
+//                   <span title={`${hireselectedFileName}`} classNameName="text-ellipsis whitespace-nowrap  overflow-hidden">{`${hireselectedFileName}`}</span>
+//                   <button title={`Remove ${hireselectedFileName}`} onClick={handlehireClearFile} classNameName="ml-2">
+//                     <DeleteOutlined classNameName="text-red-500" />
+//                   </button>
+//               </div>
+//                 )}
+//               </div>
+//             </Space>
+//             <button
+//               type="submit"
+//               name="_action"
+//               value="hireus"
+//               classNameName="btn-purp-grad w-fit text-HeaderGray font-normal"
+//               disabled={btnLoading}
+//             >
+//               Send my message
+//             </button>
+//           </Form>
+//         </div>
+//       </section>
+//     </>
   );
 };
 export default ContactUs;
