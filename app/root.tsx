@@ -1,5 +1,7 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
+import stylesheet from "~/tailwind.css";
+import globalstyle from "~/styles/main.css";
+
 import {
   Links,
   LiveReload,
@@ -10,9 +12,19 @@ import {
 } from "@remix-run/react";
 
 export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+  { rel: "stylesheet", href: stylesheet },
+  { rel: "stylesheet", href: globalstyle },
 ];
 
+// export async function loader() {
+//   // const navGraphql = await fetchGraphQL(navQuery)
+//   // return defer({
+//   //   navGraphql : navGraphql
+//   // },
+//   // {
+//   //   "Cache-Control": "public, s-maxage=300",
+//   // })
+// }
 export default function App() {
   return (
     <html lang="en">
