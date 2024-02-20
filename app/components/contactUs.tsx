@@ -3,7 +3,7 @@
 import { Form } from "@remix-run/react";
 import ReactFlagsSelect from "react-flags-select";
 import { useEffect, useRef, useState } from "react";
-import ivurl from '../../public/assets/ivoyant.svg';
+import ivurl from '../../public/assets/ivoyant.png';
 import React from "react";
 import { errorMessage, success } from "~/utils/notifications";
 const ContactUs = () => {
@@ -63,8 +63,8 @@ const ContactUs = () => {
                   alt="iVoyant Logo"
                   className="flex aspect-video h-16 object-contain"
                 />
-                <h1 className="flex text-center text-2xl font-bold text-indigo-600 sm:text-3xl">Ivoyant</h1>
-  
+                {/* <h1 className="flex text-center text-2xl font-bold text-indigo-600 sm:text-3xl">Ivoyant</h1>
+   */}
             </div>
     
     <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
@@ -72,7 +72,6 @@ const ContactUs = () => {
     </p>
 
     <Form 
-     onSubmit={(event) => handleSubmit(event, "contact")}
  method="post"
     encType="multipart/form-data"
       autoComplete="off"

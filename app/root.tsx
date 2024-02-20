@@ -1,4 +1,4 @@
-import type { LinksFunction } from "@remix-run/node";
+import type { ActionFunctionArgs, LinksFunction } from "@remix-run/node";
 import stylesheet from "~/tailwind.css";
 import globalstyle from "~/styles/main.css";
 
@@ -15,6 +15,7 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
   { rel: "stylesheet", href: globalstyle },
 ];
+
 
 // export async function loader() {
 //   // const navGraphql = await fetchGraphQL(navQuery)

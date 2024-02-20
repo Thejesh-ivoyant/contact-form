@@ -1,6 +1,12 @@
 const { ProvidePlugin } = require('webpack');
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
+  browserNodeBuiltinsPolyfill: {
+    modules: {
+      fs: true,
+      path: true,
+    }
+  },
   ignoredRouteFiles: ["**/.*"],
   tailwind: true,
   // ... other configurations
