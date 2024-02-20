@@ -3,8 +3,8 @@ import ContactUs from "~/components/contactUs";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Ivoyant | Crafting Customer" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Ivoyant | Crafting Customer Driven Digital Experiences" },
+    { name: "Contact Us", content: " Ivoyant Contact" },
   ];
 };
 

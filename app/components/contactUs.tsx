@@ -1,21 +1,15 @@
 
 
 import { Form } from "@remix-run/react";
-import line from '../../public/assets/line.svg'
 import ReactFlagsSelect from "react-flags-select";
 import { useEffect, useRef, useState } from "react";
-import { strapiUrl } from "~/utils/urls";
 import ivurl from '../../public/assets/ivoyant.svg';
 import React from "react";
 import { errorMessage, success } from "~/utils/notifications";
-
-
 const ContactUs = () => {
   const [btnLoading, setBtnLoading] = useState<boolean>(false)
   const [selectedCode, setCountryCodeSelected] = useState("US");
-
   const [phoneNumber, setPhoneNumber] = useState("");
-
   const handleSubmit = async (
     event: React.FormEvent<HTMLFormElement>,
     formType: any
