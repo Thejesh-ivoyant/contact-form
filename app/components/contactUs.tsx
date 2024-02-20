@@ -7,7 +7,19 @@ import ivurl from '../../public/assets/ivoyant.png';
 import React from "react";
 import { errorMessage, success } from "~/utils/notifications";
 import { action } from "~/routes/_index";
+import countryTelephoneData from 'country-telephone-data';
+
 const ContactUs = () => {
+  const [countryCode, setCountryCode] = useState('');
+  const [countryName, setCountryName] = useState('');
+
+  const handleCountryCodeChange = (e:any) => {
+    const selectedCountryCode = e.target.value;
+    const selectedCountry = countryTelephoneData.allCountries.find((country: { dialCode: any; }) => country.dialCode === selectedCountryCode);
+    setCountryCode(selectedCountryCode);
+    setCountryName(selectedCountry ? selectedCountry.name : '');
+  };
+
   const [btnLoading, setBtnLoading] = useState<boolean>(false)
   const [selectedCode, setCountryCodeSelected] = useState("US");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -205,21 +217,22 @@ const ContactUs = () => {
           
         <div className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm items-stretch self-stretch flex xl:gap-2.5 gap-1  xl:px-4 px-2 xl:text-sm text-xs py-1 sm:col-span-1 col-span-2">
                 <div className="items-stretch border-r-[color:var(--Gray-gray-5,#D9D9D9)] flex basis-[0%] flex-col justify-center xl:pr-3 pr-1 border-r border-solid">
-                    <div className="items-stretch flex  gap-1 ">
-                      <ReactFlagsSelect
-                        selected={selectedCode}
-                        onSelect={(code) => setCountryCodeSelected(code)}
-                        searchable
-                        searchPlaceholder="Search countries"
-                      /> 
-                      <input
+                    <div className="country-code items-stretch flex  gap-1 ">
+                    <select name="country_code" id="countryCode" value={countryCode} onChange={handleCountryCodeChange}>
+        {countryTelephoneData.allCountries.map((country:any) => (
+          <option key={country.iso2} value={country.dialCode}>
+            {`${country.name} (+${country.dialCode})`}
+          </option>
+        ))}
+      </select>
+                      {/* <input
                       type="text"
                       placeholder=""
                       value={selectedCode}
                       required
                       className="hidden"
                       name="country_code"
-                    />
+                    /> */}
                     </div>
                   </div>
                   <input

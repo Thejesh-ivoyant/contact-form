@@ -61,7 +61,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
       // If posting to HubSpot is successful, send SMS
       const accountSid = 'AC66f36f0d0b988dc51e1602bfc79c8aa8';
-      const authToken = '56a370fa997e469fa36729ca626c00de';
+      const authToken = 'bb6df702ab5724ff472799df20ddf2ae';
       const client = twilio(accountSid, authToken);
       
       const sendSMS = async (to: string, from: string, body: string) => {
