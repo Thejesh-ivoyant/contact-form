@@ -5,6 +5,18 @@ module.exports = {
     modules: {
       fs: true,
       path: true,
+      querystring: true,
+      stream: true,
+      buffer: true,
+      crypto: true,
+      net: true,
+      tls: true,
+      assert: true,
+      events: true,
+      https: true,
+      os: true,
+      util: true,
+      url: true
     }
   },
   ignoredRouteFiles: ["**/.*"],

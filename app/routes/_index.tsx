@@ -2,8 +2,7 @@ import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Form, useFetcher } from "@remix-run/react";
 import ContactUs from "~/components/contactUs";
 import * as sgMail from '@sendgrid/mail';
-import { useState } from "react";
-import { errorMessage, success } from "~/utils/notifications";
+import { useState, useEffect } from "react";
 import twilio from "twilio";
 
 export const meta: MetaFunction = () => {
@@ -19,9 +18,6 @@ export async function action({ request }: ActionFunctionArgs) {
     console.log(`${name}: ${value}`);
   }
   try {
-
-    // setBtnLoading(true);
-   
     const response = await fetch(
       "https://forms.hubspot.com/uploads/form/v2/39872873/dad06d1b-0ce0-4089-8b4e-bc4ae742e3ce",
       {
@@ -31,18 +27,7 @@ export async function action({ request }: ActionFunctionArgs) {
     );
     
     if (response.ok) {
-  
-
-      success("Thank you for contacting us! We will get back to you soon.", 3);
-    } else {
-      errorMessage("Error occurred while submitting. Please retry.", 3);
-    }
-  } catch (error) {
-    errorMessage("Error occurred, please retry ", 3);
-  }
-  // setBtnLoading(false);
-
-
+///
   // const email = body.get('email');
 
   // sgMail.setApiKey('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');
@@ -55,9 +40,46 @@ export async function action({ request }: ActionFunctionArgs) {
   // sgMail.send(msg)
   //   .then(() => console.warn('Email sent successfully'))
   //   .catch(error => console.error(error));
+
+
+  
+
+
+      // // If posting to HubSpot is successful, send SMS
+      // const accountSid = 'AC66f36f0d0b988dc51e1602bfc79c8aa8';
+      // const authToken = '56a370fa997e469fa36729ca626c00de';
+      // const client = twilio(accountSid, authToken);
+      
+      // const sendSMS = async (to: string, from: string, body: string) => {
+      //   try {
+      //     const message = await client.messages.create({
+      //       body,
+      //       from,
+      //       to,
+      //     });
+      //     console.log('SMS sent successfully:', message.sid);
+      //     return true;
+      //   } catch (error) {
+      //     console.error('Error sending SMS:', error);
+      //     return false;
+      //   }
+      // };
+
+      // // Replace these values with the actual phone number and message
+      // const to = '+919656272804';
+      // const from = '+13852101336';
+      // const smsBody = 'Code test mail';
+
+      // await sendSMS(to, from, smsBody);
+    } else {
+      console.error("Error occurred while submitting. Please retry.");
+    }
+  } catch (error) {
+    console.error("Error occurred, please retry ", error);
+  }
+  
   return null;
 }
-
 
 export default function Index() {
   const fetcher = useFetcher()
@@ -69,5 +91,3 @@ export default function Index() {
     </>
   );
 }
-
-// +13852101336
