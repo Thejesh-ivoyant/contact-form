@@ -1,0 +1,20 @@
+.ReactFlagsSelect-module_fullWidthOptions__1XeR6{
+    width: 16rem !important;
+  }
+  .ReactFlagsSelect-module_selectValue__152eS .ReactFlagsSelect-module_label__27pw9{  
+    display: none !important;
+  }
+  .ReactFlagsSelect-module_selectBtn__19wW7 {
+    height: 2rem !important;
+  }
+  .ReactFlagsSelect-module_flagsSelect__2pfa2{
+    padding-bottom: 0rem!important;
+  }
+  .ReactFlagsSelect-module_flagsSelect__2pfa2 .ReactFlagsSelect-module_selectBtn__19wW7 {
+    border: none; 
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+  }
+  .submit-btn:disabled {
+    cursor: not-allowed;
+}

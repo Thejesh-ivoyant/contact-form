@@ -1,5 +1,5 @@
 import { useNavigation } from "@remix-run/react";
-import LoadingImg from "~/../public/assets/ivoyant-white.png";
+import LoadingImg from "~/../../public/assets/ivoyant-white.png";
 import { useEffect } from "react";
 const LoadingTest = () => {
   const navigation = useNavigation()
