@@ -1,13 +1,19 @@
 
 
-import { Form, useActionData } from "@remix-run/react";
+import { Form, useActionData, useFetcher, useNavigation } from "@remix-run/react";
 import ReactFlagsSelect from "react-flags-select";
 import { useEffect, useRef, useState } from "react";
 import ivurl from '../../public/assets/ivoyant.png';
+
 import React from "react";
 import { errorMessage, success } from "~/utils/notifications";
 import { action } from "~/routes/_index";
 import countryTelephoneData from 'country-telephone-data';
+import { CompanyIcon } from "public/assets";
+import NameIcon from "public/assets/name";
+import TitleIcon from "public/assets/title";
+import EmailIcon from "public/assets/email";
+import PhoneIcon from "public/assets/phone";
 
 const ContactUs = () => {
   const [countryCode, setCountryCode] = useState('');
@@ -25,14 +31,28 @@ const ContactUs = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
  
  
+ 
   const handlePhoneNumberChange = (e: any) => {
     setPhoneNumber(e.target.value);
   };
+  
   const actionData= useActionData<typeof action>();
-  let emailError= actionData?.errors?.email
-  let nameError= actionData?.errors?.name
+ 
 
-  // setBtnLoading()
+  const emailError= actionData?.errors?.email
+  const nameError= actionData?.errors?.name
+  const loading = actionData?.errors?.loading 
+ 
+ const fetcher= useFetcher();
+const isSubmiting= fetcher.state==="submitting";
+useEffect(() => {
+  // Update button loading state based on navigation state
+  console.warn("loading is in fetcher  ", isSubmiting)
+  setBtnLoading(fetcher.state === "submitting");
+}, [isSubmiting]);
+
+
+ 
 
   return (
     
@@ -57,7 +77,7 @@ const ContactUs = () => {
      Prospective Client / Partner Details
     </p>
 
-    <Form 
+    <fetcher.Form 
  method="post"
     encType="multipart/form-data"
       autoComplete="off"
@@ -79,20 +99,8 @@ const ContactUs = () => {
         
 
           <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="size-4 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-              />
-            </svg>
+          <CompanyIcon />
+
           </span>
         </div>
       </div>
@@ -110,31 +118,13 @@ const ContactUs = () => {
           />
 
           <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="size-4 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
+         <NameIcon/>
+
           </span>
         </div>
       </div>
       {emailError &&(
-      <span className="text-brand-red">{emailError}</span>
+      <span className="text-brand-red text-[0.6rem]  ">{emailError}</span>
       )}
 
       <div>
@@ -150,26 +140,8 @@ const ContactUs = () => {
           />
 
           <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="size-4 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
+          <TitleIcon/>
+
           </span>
         </div>
       </div>
@@ -187,26 +159,7 @@ const ContactUs = () => {
           />
 
           <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="size-4 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
+          <EmailIcon/>
           </span>
         </div>
       </div>
@@ -219,22 +172,46 @@ const ContactUs = () => {
                 <div className="items-stretch border-r-[color:var(--Gray-gray-5,#D9D9D9)] flex basis-[0%] flex-col justify-center xl:pr-3 pr-1 border-r border-solid">
                     <div className="country-code items-stretch flex  gap-1 ">
                     <select name="country_code" id="countryCode" value={countryCode} onChange={handleCountryCodeChange}>
-        {countryTelephoneData.allCountries.map((country:any) => (
-          <option key={country.iso2} value={country.dialCode}>
-            {`${country.name} (+${country.dialCode})`}
-          </option>
-        ))}
-      </select>
+                      {countryTelephoneData.allCountries.map((country:any) => (
+                        <option key={country.iso2} value={country.dialCode}>
+                          {`${country.name} (+${country.dialCode})`}
+                        </option>
+                          ))}
+                        </select>
+
+                        {/* <select className="category-dropdown-mobile"
+              style={{
+                width: "100%",
+                borderRadius: "2px",
+                border: "0.5px solid #1B0740",
+              }}
+              onChange={(e) => {
+                setSelectedCategory(e.target.value);
+              }}
+              value={selectedCategory}
+            >
+              <option value="">
+                All Categories
+              </option>
+              {loaderData.categoriesList.map((category: any) => (
+                <option key={category.value} value={category.value}>
+                  {category.label}
+                </option>
+              ))}
+            </select> */}
                       {/* <input
                       type="text"
                       placeholder=""
-                      value={selectedCode}
+                      value={selectedCode}              className="size-4 text-gray-400"
+
                       required
                       className="hidden"
                       name="country_code"
                     /> */}
+
                     </div>
                   </div>
+
                   <input
                     type="tel"
                     placeholder="Phone Number*"
@@ -246,42 +223,23 @@ const ContactUs = () => {
                   />
         </div>
           <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="size-4 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
+       <PhoneIcon/>
           </span>
         </div>
       </div>
 
       <button
-        type="submit"
-        name="_action"
-        value="contact"
-        disabled={btnLoading}
-        className="submit-btn block w-full mt-2 rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
-      >
-       Submit
-      </button>
+  type="submit"
+  name="_action"
+  value="contact"
 
+  disabled={btnLoading}
+  className="submit-btn block w-full mt-2 rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
+>
+  {btnLoading ? 'Loading...' : 'Submit'}
+</button>
    
-    </Form>
+    </fetcher.Form>
   </div>
 </div>
     </>
