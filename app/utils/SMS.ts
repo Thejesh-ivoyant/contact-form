@@ -2,17 +2,20 @@ import twilio from "twilio";
 
 export const SMS = async (c_code: string, phone_no:string) => {
  // If posting to HubSpot is successful, send SMS
-      const accountSid = 'AC66f36f0d0b988dc51e1602bfc79c8aa8';
-      const authToken = 'bb6df702ab5724ff472799df20ddf2ae';
+      const accountSid = `${process.env.SMS_SID}`;
+      const authToken = `${process.env.SMS_TOKEN_KEY}`;
+     
       const client = twilio(accountSid, authToken);
 
       const sendSMS = async (to: string, from: string, body: string) => {
+
         try {
           const message = await client.messages.create({
             body,
             from,
             to,
           });
+
           console.log('SMS sent successfully:', message.sid);
           return true;
         } catch (error) {
