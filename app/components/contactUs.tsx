@@ -83,9 +83,12 @@ const ContactUs = () => {
         const companyNameError = errorData?.errors?.companyname;
         const isSuccessValue= errorData?.errors?.isSuccess;
         const titleError= errorData?.errors?.title;
-  if(isSuccessValue!==undefined){
+        console.warn("status",isSuccessValue)
+  if(isSuccessValue==="Success"){
     success("Thank you for sharing your details!",4);
-  }
+  }else{
+
+  
         // Set errors to corresponding state variables
         if (emailError !== undefined) {
           setEmailError(emailError);
@@ -106,9 +109,14 @@ const ContactUs = () => {
         if (companyNameError !== undefined) {
           setCompanyError(companyNameError);
         }
-  
+        if(isSuccessValue==="Failed")
+        {
+          errorMessage("Error occured, Please resubmit", 4);
+
+        }
+      }
         // Display error message
-        errorMessage("Error occured, please check the errors and resubmit", 4);
+        
       }
     }
   }, [fetcher.state, fetcher.data]);

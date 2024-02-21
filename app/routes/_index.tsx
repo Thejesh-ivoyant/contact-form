@@ -99,14 +99,26 @@ const companyname = String(body.get("company"));
       // If submission is successful, send notifications
       await SendGrid(email);
       await SMS(countryCode, phone);
+     
+      errors.isSuccess = "Success";
+ 
     } else {
       console.error("Error occurred while submitting. Please retry.");
+      
+      
+     errors.isSuccess = "Failed";
     }
   } catch (error) {
     console.error("Error occurred, please retry ", error);
+   errors.isSuccess = "Failed";
   }
 
-  return errors.isSuccess = "Sucess" // No errors
+  console.log(",,,,,,,,,,,,,,", errors);
+  return {
+    errors,
+  };
+  
+   // No errors
 }
 
 function isValidEmail(email: any) {

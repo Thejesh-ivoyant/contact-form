@@ -311,7 +311,7 @@ console.warn("mails sending initialeted")
       .then(([response]) => {
         console.warn('Status code:', response.statusCode);
         console.warn('Email sent successfully');
-        // Print the status code
+        
       })
       .catch(error => console.error(error));
 
