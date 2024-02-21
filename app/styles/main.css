@@ -4,3 +4,9 @@
   .submit-btn:disabled {
     cursor: not-allowed;
 }
+.ant-select-dropdown{
+  width: 5.5rem !important;
+}
+.ant-select-selector{
+  width: 5.5rem !important;
+}

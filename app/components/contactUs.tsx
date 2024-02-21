@@ -59,18 +59,15 @@ const ContactUs = () => {
   const actionData= useActionData<typeof action>();
  
 
-  // const emailError= actionData?.errors?.email
-  // const nameError= actionData?.errors?.name
+  const emailError= actionData?.errors?.email
+  const nameError= actionData?.errors?.name
   // const loading = actionData?.errors?.loading 
-  
-  // useEffect(()=>{
-   
-  //   if(loading==false)
-  //   {
-  //     success("Thanks for showing interest in us", 3);
-  //   }
 
-  // },[loading])
+  console.log("initial errors ",actionData)
+  console.log("initial errors ",JSON.stringify(actionData))
+  useEffect(()=>{
+    console.log("usefect  errors ",nameError);
+  },[nameError])
  
   useEffect(()=>{
     console.log(
@@ -148,9 +145,9 @@ const ContactUs = () => {
               </span>
             </div>
           </div>
-          {/* {emailError &&(
-          <span className="text-brand-red text-[0.6rem]  ">{emailError}</span>
-          )} */}
+          {emailError &&(
+          <span className="text-brand-red text-[0.6rem]">{emailError}</span>
+          )}
     
           <div>
             <label className="sr-only">Job Title</label>
@@ -208,7 +205,7 @@ const ContactUs = () => {
 
                         <Select
                         
-                          className="w-full rounded-none text-black w-[6rem]"
+                          className="rounded-none text-black drop-custom"
                           // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
                           onChange={handleCountryCodeChange}
                         
