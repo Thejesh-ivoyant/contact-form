@@ -33,11 +33,10 @@ export async function action({ request }: ActionFunctionArgs) {
   
   console.log('waiting:');
 
-  await new Promise<void>((resolve) => {
-    setTimeout(resolve,3000);
+  // await new Promise<void>((resolve) => {
+  //   setTimeout(resolve,3000);
     
-  })
-
+  // })
 
   let errors: { email?: string; name?: string;loading?:boolean } = {};
   if (!email) {
@@ -68,7 +67,7 @@ export async function action({ request }: ActionFunctionArgs) {
      const c_code = String(body.get('country_code'));
        const phone_no = String(body.get('phonenumber'));
 
-    //  await SMS(c_code,phone_no);
+     await SMS(c_code,phone_no);
     } else {
       console.error("Error occurred while submitting. Please retry.");
     }
@@ -115,8 +114,14 @@ export default function Index() {
   const emailError= actionData?.errors?.email
   const nameError= actionData?.errors?.name
   const loading = actionData?.errors?.loading 
+  useEffect(()=>{
+   
+    if(loading==false)
+    {
+      success("Thanks for showing interest in us", 3);
+    }
 
-  
+  },[loading])
  
   useEffect(()=>{
     console.log(

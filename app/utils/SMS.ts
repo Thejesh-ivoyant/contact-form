@@ -21,13 +21,9 @@ export const SMS = async (c_code: string, phone_no:string) => {
         }
       };
 
-      // Replace these values with the actual phone number and message
-    //   const c_code = String(body.get('country_code'));
-    //   const phone_no = String(body.get('phonenumber'));
-
       const to = `+${c_code}${phone_no}`;
       const from = '+13852101336';
-      const smsBody = 'Code test mail';
+      const smsBody = 'Thanks for sharing your details,  For any further info please contact: info@ivoyant.com';
 
       await sendSMS(to, from, smsBody);
   };
