@@ -30,10 +30,11 @@ interface ErrorData {
 
 const ContactUs = () => {
  
-  const Countries = countryTelephoneData.allCountries?.map((item:any) => ({
+  let Countries = countryTelephoneData.allCountries?.map((item:any) => ({
     value: item.dialCode,
-    label: `+(${item.dialCode})`,
+    label:`+(${item.dialCode})`,
   }));
+
   const [countryCode, setCountryCode] = useState('91');
   const [countryName, setCountryName] = useState('');
   const [emailerror, setEmailError] = useState('');
@@ -58,15 +59,6 @@ const ContactUs = () => {
   };
   const fetcher = useFetcher();
   let $formref= useRef<HTMLFormElement>(null)
-  // useEffect(() => {
-  //   // Update UI immediately when emailError or nameError changes
-  //   if (emailerror !== undefined || nameerror !== undefined) {
-  //     // Perform any necessary actions to reflect the errors in the UI
-  //     console.log("Email error:", emailerror);
-  //     console.log("Name error:", nameerror);
-  //     // You can update the UI here
-  //   }
-  // }, [emailerror, nameerror]);
 
   useEffect(() => {
     if (fetcher.state === "idle") {
@@ -254,17 +246,17 @@ const ContactUs = () => {
             <div className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm items-stretch self-stretch flex xl:gap-2.5 gap-1  xl:px-4 px-2 xl:text-sm text-xs py-1 sm:col-span-1 col-span-2">
                     <div className="items-stretch border-r-[color:var(--Gray-gray-5,#D9D9D9)] flex basis-[0%] flex-col justify-center xl:pr-3 pr-1 border-r border-solid">
                         <div className="country-code items-stretch flex  gap-1 ">
-                        {/* <select name="country_code" id="countryCode" value={countryCode} onChange={(e) => {
+                        <select name="country_code" id="countryCode" className="country-drop border-gray-200 text-gray-600" value={countryCode} onChange={(e) => {
                 handleCountryCodeChange(e.target.value);
               }}>
                       {countryTelephoneData.allCountries.map((country:any) => (
                         <option key={country.iso2} value={country.dialCode}>
-                          {`${country.name} (+${country.dialCode})`}
+                          {`(+${country.dialCode})    ${country.name}`}
                         </option>
                           ))}
-                        </select> */}
+                        </select>
 
-                        <Select
+                        {/* <Select
                         
                           className="rounded-none text-black drop-custom"
                           // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
@@ -272,7 +264,7 @@ const ContactUs = () => {
                         
                           value={countryCode}
                           options={Countries}
-                         />
+                         /> */}
 
                           <input
                           type="text"
