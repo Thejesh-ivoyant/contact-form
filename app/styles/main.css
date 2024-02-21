@@ -10,3 +10,6 @@
 .ant-select-selector{
   width: 5.5rem !important;
 }
+.error-msg{
+  color: brown;
+}

@@ -17,15 +17,30 @@ import PhoneIcon from "public/assets/phone";
 
 import { Select } from "antd";
 import { action } from "~/routes/_index";
+interface ErrorData {
+  errors: {
+    email?: string;
+    name?: string;
+    phone?: string;
+    companyname?: string;
+    isSuccess?: string;
+    title?: string;
+  };
+}
 
 const ContactUs = () => {
+ 
   const Countries = countryTelephoneData.allCountries?.map((item:any) => ({
     value: item.dialCode,
     label: `+(${item.dialCode})`,
   }));
   const [countryCode, setCountryCode] = useState('91');
   const [countryName, setCountryName] = useState('');
-
+  const [emailerror, setEmailError] = useState('');
+  const [nameerror, setNameError] = useState('');
+  const [titleerror, setTitleError] = useState('');
+  const [phoneerror, setPhoneError] = useState('');
+  const [companyerror, setCompanyError] = useState('');
   
   const [phoneNumber, setPhoneNumber] = useState("");
  
@@ -43,32 +58,72 @@ const ContactUs = () => {
   };
   const fetcher = useFetcher();
   let $formref= useRef<HTMLFormElement>(null)
-   
-  useEffect(()=>{
-   if(fetcher.state==="idle"){
-    $formref.current?.reset()
-    setCountryCode("+1")
-    setPhoneNumber("")
-   }
-  
-  },[fetcher.state])
+  // useEffect(() => {
+  //   // Update UI immediately when emailError or nameError changes
+  //   if (emailerror !== undefined || nameerror !== undefined) {
+  //     // Perform any necessary actions to reflect the errors in the UI
+  //     console.log("Email error:", emailerror);
+  //     console.log("Name error:", nameerror);
+  //     // You can update the UI here
+  //   }
+  // }, [emailerror, nameerror]);
 
+  useEffect(() => {
+    if (fetcher.state === "idle") {
+      // Reset form and set default values
+      $formref.current?.reset();
+      setCountryCode("+1");
+      setPhoneNumber("");
+
+      if (fetcher.data==null) {
+ }
+      else{
+     
+        // If data exists, there are errors
+      
+        // Parse JSON data and type cast it to ErrorData
+        const errorData = fetcher.data as ErrorData;
+  
+        // Extract individual errors
+        const emailError = errorData?.errors?.email;
+        const nameError = errorData?.errors?.name;
+        const phoneError = errorData?.errors?.phone;
+        const companyNameError = errorData?.errors?.companyname;
+        const isSuccessValue= errorData?.errors?.isSuccess;
+        const titleError= errorData?.errors?.title;
+  if(isSuccessValue!==undefined){
+    success("Thank you for sharing your details!",4);
+  }
+        // Set errors to corresponding state variables
+        if (emailError !== undefined) {
+          setEmailError(emailError);
+          
+        }
+        // Set errors to corresponding state variables
+        if (titleError !== undefined) {
+    setTitleError(titleError);
+          
+        }
+        if (nameError !== undefined) {
+          setNameError(nameError);
+          
+        }
+        if (phoneError !== undefined) {
+          setPhoneError(phoneError);
+        }
+        if (companyNameError !== undefined) {
+          setCompanyError(companyNameError);
+        }
+  
+        // Display error message
+        errorMessage("Error occured, please check the errors and resubmit", 4);
+      }
+    }
+  }, [fetcher.state, fetcher.data]);
 
   const isCreatingNewPost = fetcher.state === "submitting";
-  
-  const actionData= useActionData<typeof action>();
- 
 
-  const emailError= actionData?.errors?.email
-  const nameError= actionData?.errors?.name
-  // const loading = actionData?.errors?.loading 
 
-  console.log("initial errors ",actionData)
-  console.log("initial errors ",JSON.stringify(actionData))
-  useEffect(()=>{
-    console.log("usefect  errors ",nameError);
-  },[nameError])
- 
   useEffect(()=>{
     console.log(
     "fetcher state (is submidfat)"+ isCreatingNewPost
@@ -126,7 +181,9 @@ const ContactUs = () => {
               </span>
             </div>
           </div>
-    
+          {companyerror &&(
+          <span className="text-brand-red text-[0.6rem] error-msg">{companyerror}</span>
+          )}
           <div>
             <label className="sr-only">Name</label>
     
@@ -145,8 +202,8 @@ const ContactUs = () => {
               </span>
             </div>
           </div>
-          {emailError &&(
-          <span className="text-brand-red text-[0.6rem]">{emailError}</span>
+          {nameerror &&(
+          <span className="error-msg text-brand-red text-[0.6rem]">{nameerror}</span>
           )}
     
           <div>
@@ -167,7 +224,9 @@ const ContactUs = () => {
               </span>
             </div>
           </div>
-    
+          {titleerror &&(
+          <span className="text-brand-red text-[0.6rem] error-msg">{titleerror}</span>
+          )}
           <div>
             <label className="sr-only">Email</label>
     
@@ -185,7 +244,9 @@ const ContactUs = () => {
               </span>
             </div>
           </div>
-    
+          {emailerror &&(
+          <span className="text-brand-red text-[0.6rem] error-msg">{emailerror}</span>
+          )}
           <div>
             <label className="sr-only">Phone Number</label>
             <div className="relative">
@@ -250,7 +311,9 @@ const ContactUs = () => {
               </span>
             </div>
           </div>
-    
+          {phoneerror &&(
+          <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
+          )}
           <button
       type="submit"
       name="_action"
