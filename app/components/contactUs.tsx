@@ -1,7 +1,7 @@
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Form, useActionData, useFetcher } from "@remix-run/react";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import ivurl from '../../public/assets/ivoyant.png';
 
@@ -42,22 +42,35 @@ const ContactUs = () => {
     console.warn("comyry cod4",selectedCountryCode);
   };
   const fetcher = useFetcher();
+  let $formref= useRef<HTMLFormElement>(null)
+   
+  useEffect(()=>{
+   if(fetcher.state==="idle"){
+    $formref.current?.reset()
+    setCountryCode("+1")
+    setPhoneNumber("")
+   }
+  
+  },[fetcher.state])
+
+
   const isCreatingNewPost = fetcher.state === "submitting";
   
   const actionData= useActionData<typeof action>();
  
 
-  const emailError= actionData?.errors?.email
-  const nameError= actionData?.errors?.name
-  const loading = actionData?.errors?.loading 
-  useEffect(()=>{
+  // const emailError= actionData?.errors?.email
+  // const nameError= actionData?.errors?.name
+  // const loading = actionData?.errors?.loading 
+  
+  // useEffect(()=>{
    
-    if(loading==false)
-    {
-      success("Thanks for showing interest in us", 3);
-    }
+  //   if(loading==false)
+  //   {
+  //     success("Thanks for showing interest in us", 3);
+  //   }
 
-  },[loading])
+  // },[loading])
  
   useEffect(()=>{
     console.log(
@@ -88,7 +101,7 @@ const ContactUs = () => {
          Prospective Client / Partner Details
         </p>
     
-        <fetcher.Form 
+        <fetcher.Form  ref={$formref}
      method="post"
         encType="multipart/form-data"
           autoComplete="off"
@@ -99,6 +112,7 @@ const ContactUs = () => {
             <label  className="sr-only">Company Name</label>
     
             <div className="relative">
+              {/* <input type="reset"/> */}
               <input
                 type="text"
                 id="company"
@@ -134,9 +148,9 @@ const ContactUs = () => {
               </span>
             </div>
           </div>
-          {emailError &&(
+          {/* {emailError &&(
           <span className="text-brand-red text-[0.6rem]  ">{emailError}</span>
-          )}
+          )} */}
     
           <div>
             <label className="sr-only">Job Title</label>
@@ -225,7 +239,7 @@ const ContactUs = () => {
                       </div>
     
                       <input
-                        type="tel"
+                        type="text"
                         placeholder="Phone Number*"
                         value={phoneNumber}
                         onChange={handlePhoneNumberChange}

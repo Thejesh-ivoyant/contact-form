@@ -63,11 +63,11 @@ export async function action({ request }: ActionFunctionArgs) {
 
     if (response.ok) {
 
-      await SendGrid(email);
+      // await SendGrid(email);
       const c_code = String(body.get('country_code'));
       const phone_no = String(body.get('phonenumber'));
 
-       await SMS(c_code,phone_no);
+      //  await SMS(c_code,phone_no);
     } else {
       console.error("Error occurred while submitting. Please retry.");
     }
@@ -76,10 +76,10 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   errors.loading = false;
-
-  return {
-    errors: Object.keys(errors).length ? errors : null,
-  };
+return null;
+  // return {
+  //   errors: Object.keys(errors).length ? errors : null,
+  // };
 }
 
 export default function Index() {
