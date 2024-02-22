@@ -30,12 +30,13 @@ interface ErrorData {
 
 const ContactUs = () => {
  
-  let Countries = countryTelephoneData.allCountries?.map((item:any) => ({
-    value: item.dialCode,
-    label:`+(${item.dialCode})`,
-  }));
+  // let Countries = countryTelephoneData.allCountries?.map((item:any) => ({
+  //   value: item.dialCode,
+  //   label:`+(${item.dialCode})`,
+  // }));
 
-  const [countryCode, setCountryCode] = useState('91');
+
+  const [countryCode, setCountryCode] = useState('1');
   const [countryName, setCountryName] = useState('');
   const [emailerror, setEmailError] = useState('');
   const [nameerror, setNameError] = useState('');
@@ -88,7 +89,6 @@ const ContactUs = () => {
     success("Thank you for sharing your details!",4);
   }else{
 
-  
         // Set errors to corresponding state variables
         if (emailError !== undefined) {
           setEmailError(emailError);
@@ -115,8 +115,7 @@ const ContactUs = () => {
 
         }
       }
-        // Display error message
-        
+       
       }
     }
   }, [fetcher.state, fetcher.data]);
@@ -250,8 +249,7 @@ const ContactUs = () => {
           <div>
             <label className="sr-only">Phone Number</label>
             <div className="relative">
-              
-            <div className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm items-stretch self-stretch flex xl:gap-2.5 gap-1  xl:px-4 px-2 xl:text-sm text-xs py-1 sm:col-span-1 col-span-2">
+            <div className="w-full rounded-lg border-gray-200  pe-12 text-sm shadow-sm items-stretch self-stretch flex xl:gap-2.5 gap-1  xl:px-4 px-2 xl:text-sm text-xs  sm:col-span-1 col-span-2">
                     <div className="items-stretch border-r-[color:var(--Gray-gray-5,#D9D9D9)] flex basis-[0%] flex-col justify-center xl:pr-3 pr-1 border-r border-solid">
                         <div className="country-code items-stretch flex  gap-1 ">
                         <select name="country_code" id="countryCode" className="country-drop border-gray-200 text-gray-600" value={countryCode} onChange={(e) => {
@@ -263,46 +261,22 @@ const ContactUs = () => {
                         </option>
                           ))}
                         </select>
-
-                        {/* <Select
-                        
-                          className="rounded-none text-black drop-custom"
-                          // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
-                          onChange={handleCountryCodeChange}
-                        
-                          value={countryCode}
-                          options={Countries}
-                         /> */}
-
                           <input
                           type="text"
-  
                           value={countryCode}         
                           required
                           className="hidden"
                           name="country_code"
                         />
-                        
-                          {/* <input
-                          type="text"
-                          placeholder=""
-                          value={selectedCode}              className="size-4 text-gray-400"
-    
-                          required
-                          className="hidden"
-                          name="country_code"
-                        /> */}
-    
                         </div>
                       </div>
-    
                       <input
                         type="text"
                         placeholder="Phone Number*"
                         value={phoneNumber}
                         onChange={handlePhoneNumberChange}
                         required
-                        className="outline-none  cursor-pointer overflow-hidden "
+                        className="w-full rounded-lg  p-4 pe-12 text-sm "
                         name="phonenumber"
                       />
             </div>
@@ -314,6 +288,22 @@ const ContactUs = () => {
           {phoneerror &&(
           <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
           )}
+<div>
+            <label className="sr-only">Message</label>
+            <div className="relative">
+              <input
+                type="textarea"
+                id="message"
+                name="message"
+                className="text-start w-full h-[8rem] rounded-lg border-gray-400 p-4 pe-12 text-sm shadow-lg"
+                placeholder="Message"
+              />
+    
+             
+            </div>
+          </div>
+
+
           <button
       type="submit"
       name="_action"
