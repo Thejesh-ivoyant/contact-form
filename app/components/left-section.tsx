@@ -7,7 +7,7 @@ function LeftSection() {
       <Header title="Get in touch with us" />
       <TextBlock text="We are an IT services and solutions provider for all your Fintech needs" />
       <SubText text="Visit for more" />
-      <TextBlock text="www.ivoyant.com" />
+      <TextBlockLink text="www.ivoyant.com" />
       <BottomImageWithAlt src="https://cdn.builder.io/api/v1/image/assets/TEMP/0f0cd2b0fa7ed8b81ab533956f64f347bf9d453ad9e4b96b3e6f16860fac2130?apiKey=9e16588387084fb2a9a51a1b99489136&" alt="Visualization of services offered" />
     </section>
   );
@@ -34,6 +34,11 @@ function Header({ title }:{title:any}) {
 function TextBlock({ text }:{text:any}) {
   return (
     <p className="mt-4 leading-7 w-[434px] max-md:max-w-full">{text}</p>
+  );
+}
+function TextBlockLink({ text }:{text:any}) {
+  return (
+    <a href="https://www.ivoyant.com/" className="mt-4 leading-7 w-[434px] max-md:max-w-full">{text}</a>
   );
 }
 
