@@ -1,6 +1,5 @@
 import { MetaFunction } from "@remix-run/react";
-import LeftScreen from "~/components/left-screen";
-
+import LeftSection from "~/components/left-section";
 import Success from "~/components/success";
 
 export const meta: MetaFunction = () => {
@@ -16,7 +15,7 @@ export default function Index() {
 
   return (
 <div className="main-container flex flex-row">
-    <LeftScreen/>
+    <LeftSection/>
     <Success />
     </div>
   );

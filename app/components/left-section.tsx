@@ -1,6 +1,6 @@
 import React from "react";
 
-function ContactSection() {
+function LeftSection() {
   return (
     <section className="flex flex-col items-center pt-12 text-base font-medium text-center text-white bg-green-900 w-[45%] ">
       <ImageWithAlt src="https://cdn.builder.io/api/v1/image/assets/TEMP/2381f6ccd12a72a205e53cb22840e56c08bb4f057e490d47b5eab4f338bae324?apiKey=9e16588387084fb2a9a51a1b99489136&" alt="Company logo" />
@@ -21,7 +21,7 @@ function ImageWithAlt({ src, alt }:{src:any,alt:any}) {
 
 function BottomImageWithAlt({ src, alt }:{src:any,alt:any}) {
   return (
-    <img loading="lazy" src={src} alt={alt} className="mt-2.5 max-w-full  w-[376px]" />
+    <img loading="lazy" src={src} alt={alt} className="mt-2.5  w-full" />
   );
 }
 
@@ -43,4 +43,4 @@ function SubText({ text }:{text:any}) {
   );
 }
 
-export default ContactSection;
+export default LeftSection;

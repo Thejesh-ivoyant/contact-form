@@ -72,7 +72,20 @@ const ContactUs = () => {
     setPhoneNumber(e.target.value);
   };
 
- 
+  const handleInputChange = (e:any) => {
+    // Validate input fields as they change
+    switch (e.target.name) {
+      case "email":
+        // Validate email
+        if (!e.target.checkValidity()) {
+          setEmailError("Please enter a valid email address");
+        } else {
+          setEmailError("");
+        }
+        break;
+      // Add validation for other fields similarly...
+    }
+  };
 
   const handleCountryCodeChange = (value:string) => {
     const selectedCountryCode = value;
@@ -190,7 +203,7 @@ const ContactUs = () => {
                 name="company"
                 placeholder="Company*"
                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-               
+               onChange={handleInputChange}
               />
             
     

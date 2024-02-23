@@ -1,23 +1,62 @@
-import { Link, useLoaderData } from "@remix-run/react";
-import bgurl from '../../public/assets/office-interior1.png';
-const Success = () => {
-  const loaderData = useLoaderData() as any;
-  const gradientStyle = {
-    background: `linear-gradient(180deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 66.95%, rgba(0, 0, 0, 0.00) 152.46%), url(${bgurl}) lightgray 50% /cover no-repeat`,
-  };
+import React from "react";
+import videourl from "../../public/assets/success.mp4";
+
+const MainTitle = ({ title }:{title:any}) => (
+  <h1 className="self-center text-3xl font-bold tracking-wide leading-10 text-indigo-900">
+    {title}
+  </h1>
+);
+
+const Subtitle = ({ children }:{children:any}) => (
+  <p className="mt-4 text-lg font-medium text-zinc-900">{children}</p>
+);
+
+const ActionLink = ({ children }:{children:any}) => (
+  <p className="mt-16 text-base font-medium leading-7 text-blue-800">
+    {children}
+  </p>
+);
+
+const Image = ({ src, alt }:{src:any,alt:any}) => (
+  <img loading="lazy" src={src} alt={alt} className="self-stretch mt-28 w-full aspect-[4] fill-indigo-50" />
+);
+const TopImage = ({ src, alt }:{src:any,alt:any}) => (
+  <img loading="lazy" src={src} alt={alt} className="mt-28 w-[20%] aspect-[4] fill-indigo-50" />
+);
+
+function Success() {
   return (
-    <section className="h-screen hero-container-section" style={gradientStyle}>
-      <div className="hero-wrapper" >
-        <h1 className="hero-title ">Thank you for sharing your details </h1>
-        <svg  width="100%" height="25" viewBox="0 0 888 25" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="12.5" width="1" height="444" transform="rotate(-90 0 12.5)" fill="url(#paint0_linear_1695_48769)"/><rect x="888" y="11.5" width="1" height="444" transform="rotate(90 888 11.5)" fill="url(#paint1_linear_1695_48769)"/><defs><linearGradient id="paint0_linear_1695_48769" x1="1.5" y1="453.191" x2="1.5" y2="4.55961" gradientUnits="userSpaceOnUse"><stop stopColor="#AEBEFF"/><stop offset="1" stopColor="#A7B8FE" stopOpacity="0"/></linearGradient><linearGradient id="paint1_linear_1695_48769" x1="889.5" y1="452.191" x2="889.5" y2="3.55961" gradientUnits="userSpaceOnUse"><stop stopColor="#AEBEFF"/><stop offset="1" stopColor="#A7B8FE" stopOpacity="0"/></linearGradient></defs></svg>
-        <div className="hero-description">
-          <span>
-          Ivoyant! Crafting customer driven digital experiences
-          </span>
-        </div>
-        
-         </div>
+    <section className="flex flex-col items-center pr-0.5 text-center max-w-[839px]">
+      <TopImage 
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/0f0f96a19ebdd8fcf19b86fa553f29e449d503d9fc5ee5265f1b416d59fcba43?apiKey=9e16588387084fb2a9a51a1b99489136&" 
+        alt="Thank you illustration"
+      />
+       
+
+       <video
+          preload="true"
+          muted
+          loop
+          playsInline
+          src={videourl}
+          autoPlay
+          className=" object-contain  w-[8rem] mt-[2.5rem]"
+        />
+
+      <article className="flex flex-col px-16 mt-[4rem] max-w-full w-full">
+        <MainTitle title="Thank you for sharing your details" />
+        <Subtitle>our team will reach out to you soon!</Subtitle>
+      </article>
+      <ActionLink>
+        To know how we are revolutionising the FinTech Industry{" "}
+        <a href="#" className="text-blue-800">Click here</a>.
+      </ActionLink>
+      <Image 
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/a0373624fac0571538fed738a2431e00b0eb26f8c5b7ba1d667a70e231aabdf4?apiKey=9e16588387084fb2a9a51a1b99489136&" 
+        alt="Fintech revolution illustration"
+      />
     </section>
   );
-};
+}
+
 export default Success;

@@ -8,7 +8,8 @@ import { Select } from "antd";
 import ContactUs from "~/components/contactUs";
 import { ActionFunctionArgs } from "@remix-run/node";
 import Success from "~/components/success";
-import LeftScreen from "~/components/left-screen";
+import LeftScreen from "~/components/left-section";
+import LeftSection from "~/components/left-section";
 
 export const meta: MetaFunction = () => {
   return [
@@ -141,7 +142,7 @@ export default function Index() {
 
   return (
     <div className="main-container flex flex-row">
-    <LeftScreen/>
+    <LeftSection/>
     <ContactUs />
     </div>
   );
