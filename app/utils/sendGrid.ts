@@ -314,5 +314,4 @@ console.warn("mails sending initialeted")
         
       })
       .catch(error => console.error(error));
-
   };

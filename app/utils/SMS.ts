@@ -27,6 +27,5 @@ export const SMS = async (c_code: string, phone_no:string) => {
       const to = `${c_code}${phone_no}`;
       const from = '+13852101336';
       const smsBody = 'Thanks for sharing your details,  For any further info please contact: info@ivoyant.com';
-
       await sendSMS(to, from, smsBody);
   };

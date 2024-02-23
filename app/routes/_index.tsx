@@ -8,6 +8,7 @@ import { Select } from "antd";
 import ContactUs from "~/components/contactUs";
 import { ActionFunctionArgs } from "@remix-run/node";
 import Success from "~/components/success";
+import LeftScreen from "~/components/left-screen";
 
 export const meta: MetaFunction = () => {
   return [
@@ -139,8 +140,9 @@ function isValidPhoneNumber(phone: any) {
 export default function Index() {
 
   return (
-    <>
+    <div className="main-container flex flex-row">
+    <LeftScreen/>
     <ContactUs />
-    </>
+    </div>
   );
 }
