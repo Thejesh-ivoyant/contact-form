@@ -1,5 +1,5 @@
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
-import { Form, useActionData, useFetcher } from "@remix-run/react";
+import { Form, redirect, useActionData, useFetcher } from "@remix-run/react";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -34,7 +34,29 @@ const ContactUs = () => {
   //   value: item.dialCode,
   //   label:`+(${item.dialCode})`,
   // }));
-
+  const Countries: { value: string, label: string }[] = [
+    { value: "+1", label: "+1" }, /* Canada *//* United States */
+    { value: "+54", label: "+54" }, /* Argentina */
+    { value: "+501", label: "+501" }, /* Belize */
+    { value: "+591", label: "+591" }, /* Bolivia */
+    { value: "+55", label: "+55" }, /* Brazil */
+    { value: "+56", label: "+56" },/* Chile */
+    { value: "+57", label: "+57" }, /* Colombia */
+    { value: "+506", label: "+506" }, /* Costa Rica */
+    { value: "+593", label: "+593" }, /* Ecuador */
+    { value: "+503", label: "+503" }, /* El Salvador */
+    { value: "+502", label: "+502" }, /* Guatemala */
+    { value: "+504", label: "+504" }, /* Honduras */
+    { value: "+52", label: "+52" }, /* Mexico */
+    { value: "+505", label: "+505" }, /* Nicaragua */
+    { value: "+507", label: "+507" }, /* Panama */
+    { value: "+595", label: "+595" }, /* Paraguay */
+    { value: "+51", label: "+51" }, /* Peru */
+    { value: "+598", label: "+598" }, /* Uruguay */
+    { value: "+58", label: "+58" },/* Venezuela */
+    { value: "+91", label: "+91"} /*India*/
+  ]
+  
 
   const [countryCode, setCountryCode] = useState('1');
   const [countryName, setCountryName] = useState('');
@@ -87,6 +109,7 @@ const ContactUs = () => {
         console.warn("status",isSuccessValue)
   if(isSuccessValue==="Success"){
     success("Thank you for sharing your details!",4);
+    throw redirect('/hujb')
   }else{
 
         // Set errors to corresponding state variables
@@ -252,7 +275,15 @@ const ContactUs = () => {
             <div className="w-full rounded-lg border-gray-200  pe-12 text-sm shadow-sm items-stretch self-stretch flex xl:gap-2.5 gap-1  xl:px-4 px-2 xl:text-sm text-xs  sm:col-span-1 col-span-2">
                     <div className="items-stretch border-r-[color:var(--Gray-gray-5,#D9D9D9)] flex basis-[0%] flex-col justify-center xl:pr-3 pr-1 border-r border-solid">
                         <div className="country-code items-stretch flex  gap-1 ">
+                        <Select
+                          className="w-full rounded-none text-black w-[6rem]"
+                          // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
+                          onChange={handleCountryCodeChange}
                         
+                          value={countryCode}
+                          options={Countries}
+                         />
+
                           <input
                           type="text"
                           value={countryCode}         
