@@ -2,6 +2,7 @@ import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Form, redirect, useActionData, useFetcher, useNavigate } from "@remix-run/react";
 
 import { useState, useEffect, useRef } from "react";
+import * as sdk from "microsoft-cognitiveservices-speech-sdk";
 
 import ivurl from '../../public/assets/ivoyant.png';
 
@@ -60,6 +61,8 @@ const ContactUs = () => {
 
   const [countryCode, setCountryCode] = useState('1');
   const [countryName, setCountryName] = useState('');
+  const [companyname, setCompanyName] = useState('')
+  const [email, setEmail] =useState('')
   const [emailerror, setEmailError] = useState('');
   const [nameerror, setNameError] = useState('');
   const [titleerror, setTitleError] = useState('');
@@ -165,6 +168,71 @@ const ContactUs = () => {
   )
   },[isCreatingNewPost])
 
+
+//speech
+
+const [speechRecognitionActive, setSpeechRecognitionActive] = useState(false);
+const [transcribedText, setTranscribedText] = useState("");
+
+const startSpeechRecognition = async () => {
+  const speechConfig = sdk.SpeechConfig.fromSubscription("5a33cab29b9d4088a3d1919302706978", "eastus");
+  const audioConfig = sdk.AudioConfig.fromDefaultMicrophoneInput();
+
+  const recognizer = new sdk.SpeechRecognizer(speechConfig, audioConfig);
+  
+  recognizer.recognizing = (_, event) => {
+    if (event.result.text) {
+      setTranscribedText(event.result.text);
+    }
+  };
+
+  recognizer.startContinuousRecognitionAsync();
+  setSpeechRecognitionActive(true);
+};
+
+const stopSpeechRecognition = async () => {
+  // Stop speech recognition
+  setSpeechRecognitionActive(false);
+};
+
+// Use useEffect to start/stop speech recognition based on speechRecognitionActive state
+useEffect(() => {
+  if (speechRecognitionActive) {
+    startSpeechRecognition();
+  } else {
+    stopSpeechRecognition();
+  }
+
+  // Clean up the recognizer when component unmounts
+  return () => {
+    stopSpeechRecognition();
+  };
+}, [speechRecognitionActive]);
+
+// Use transcribedText state to populate form fields
+useEffect(() => {
+  console.log("Transcribed text:", transcribedText);
+  
+  // Define regular expressions or other methods to extract information from the transcribed text
+  const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
+  const phoneRegex = /\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/;
+
+  // Extract email and phone number from the transcribed text using regular expressions
+  const extractedEmail = transcribedText.match(emailRegex);
+  const extractedPhoneNumber = transcribedText.match(phoneRegex);
+
+  // Populate form fields with extracted information
+  if (extractedEmail) {
+    console.warn("emaill founf .........",extractedEmail[0]);
+    setEmail(extractedEmail[0]); // Assuming setEmail is a state setter function for email field
+  }
+  if (extractedPhoneNumber) {
+    setPhoneNumber(extractedPhoneNumber[0]); // Assuming setPhoneNumber is a state setter function for phone number field
+}
+}, [transcribedText]);
+
+
+  
   return (
     <>
     <div className="flex mx-auto w-[55%] px-4 py-10 sm:px-6 lg:px-8">
@@ -182,8 +250,9 @@ const ContactUs = () => {
                 </div>
         
         <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
-         Prospective Client / Partner Details
+         Prospective Client / Partner Details {transcribedText}
         </p>
+        <button onClick={() => setSpeechRecognitionActive(true)}>Start Speech Recognition {speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
     
         <fetcher.Form  ref={$formref}
      method="post"
@@ -201,6 +270,7 @@ const ContactUs = () => {
                 type="text"
                 id="company"
                 name="company"
+                value={companyname}
                 placeholder="Company*"
                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                onChange={handleInputChange}
@@ -267,6 +337,7 @@ const ContactUs = () => {
                 type="email"
                 id="email"
                 name="email"
+                value={email}
                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                 placeholder="Email"
               />
