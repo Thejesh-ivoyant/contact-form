@@ -78,21 +78,24 @@ const ContactUs = () => {
   const handleEmailChange = (e: any) => {
     setEmail(e.target.value);
   };
-
-  const handleInputChange = (e:any) => {
-    // Validate input fields as they change
-    switch (e.target.name) {
-      case "email":
-        // Validate email
-        if (!e.target.checkValidity()) {
-          setEmailError("Please enter a valid email address");
-        } else {
-          setEmailError("");
-        }
-        break;
-      // Add validation for other fields similarly...
-    }
+  const handleCompanyNameChange = (e: any) => {
+    setCompanyName(e.target.value);
   };
+
+  // const handleInputChange = (e:any) => {
+  //   // Validate input fields as they change
+  //   switch (e.target.name) {
+  //     case "email":
+  //       // Validate email
+  //       if (!e.target.checkValidity()) {
+  //         setEmailError("Please enter a valid email address");
+  //       } else {
+  //         setEmailError("");
+  //       }
+  //       break;
+  //     // Add validation for other fields similarly...
+  //   }
+  // };
 
   const handleCountryCodeChange = (value:string) => {
     const selectedCountryCode = value;
@@ -110,6 +113,7 @@ const ContactUs = () => {
       setCountryCode("+1");
       setPhoneNumber("");
       setEmail("");
+      setCompanyName("");
 
       if (fetcher.data==null) {
  }
@@ -302,7 +306,7 @@ useEffect(() => {
                 value={companyname}
                 placeholder="Company*"
                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-               onChange={handleInputChange}
+               onChange={handleCompanyNameChange}
               />
             
     
