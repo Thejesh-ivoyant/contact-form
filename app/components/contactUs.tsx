@@ -1,5 +1,5 @@
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
-import { Form, redirect, useActionData, useFetcher } from "@remix-run/react";
+import { Form, redirect, useActionData, useFetcher, useNavigate } from "@remix-run/react";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -82,7 +82,7 @@ const ContactUs = () => {
   };
   const fetcher = useFetcher();
   let $formref= useRef<HTMLFormElement>(null)
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (fetcher.state === "idle") {
       // Reset form and set default values
@@ -109,7 +109,7 @@ const ContactUs = () => {
         console.warn("status",isSuccessValue)
   if(isSuccessValue==="Success"){
     success("Thank you for sharing your details!",4);
-    throw redirect('/hujb')
+    navigate('/success')
   }else{
 
         // Set errors to corresponding state variables

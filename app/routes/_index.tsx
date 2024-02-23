@@ -7,6 +7,7 @@ import countryTelephoneData from 'country-telephone-data';
 import { Select } from "antd";
 import ContactUs from "~/components/contactUs";
 import { ActionFunctionArgs } from "@remix-run/node";
+import Success from "~/components/success";
 
 export const meta: MetaFunction = () => {
   return [
@@ -138,6 +139,8 @@ function isValidPhoneNumber(phone: any) {
 export default function Index() {
 
   return (
+    <>
     <ContactUs />
+    </>
   );
 }

@@ -20,6 +20,51 @@
   display: block;
 }
 
+
+
+.hero-wrapper {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  max-width: 42rem; /* Replace '2xl' with the actual value from your Tailwind config */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem; /* Adjust the gap as needed */
+}
+.hero-description {
+  font-weight: 400;
+  line-height: 1.5rem; /* 24px / 16px */
+  letter-spacing: 0.28px;
+  font-size: 0.875rem;
+  font-family: Poppins;
+}
+.hero-container-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #ffffff;
+}
+.hero-title {
+  font-weight: 600;
+  font-family: Montserrat;
+  font-size: 2.2rem /* 36px */;
+  line-height: 2.4rem;
+  color: white;
+  text-align: center;
+}
+.hero-subtitle {
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.44px;
+  text-align: center;
+}
 /* Styles for screens smaller than 576px (extra small devices, phones) */
 @media only screen and (max-width: 575.98px) {
   .message-box{
