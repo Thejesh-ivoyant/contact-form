@@ -18,6 +18,7 @@ import PhoneIcon from "public/assets/phone";
 
 import { Select } from "antd";
 import { action } from "~/routes/_index";
+import { NLP } from "~/utils/nlp";
 interface ErrorData {
   errors: {
     email?: string;
@@ -61,8 +62,8 @@ const ContactUs = () => {
 
   const [countryCode, setCountryCode] = useState('1');
   const [countryName, setCountryName] = useState('');
-  const [companyname, setCompanyName] = useState('')
-  const [email, setEmail] =useState('')
+  const [companyname, setCompanyName] = useState('');
+  const [email, setEmail] =useState("");
   const [emailerror, setEmailError] = useState('');
   const [nameerror, setNameError] = useState('');
   const [titleerror, setTitleError] = useState('');
@@ -73,6 +74,9 @@ const ContactUs = () => {
  
   const handlePhoneNumberChange = (e: any) => {
     setPhoneNumber(e.target.value);
+  };
+  const handleEmailChange = (e: any) => {
+    setEmail(e.target.value);
   };
 
   const handleInputChange = (e:any) => {
@@ -105,6 +109,7 @@ const ContactUs = () => {
       $formref.current?.reset();
       setCountryCode("+1");
       setPhoneNumber("");
+      setEmail("");
 
       if (fetcher.data==null) {
  }
@@ -213,23 +218,45 @@ useEffect(() => {
 useEffect(() => {
   console.log("Transcribed text:", transcribedText);
   
-  // Define regular expressions or other methods to extract information from the transcribed text
-  const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
-  const phoneRegex = /\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/;
+  const fetchData = async () => {
+    try {
+      // Perform NLP operation on the email
+      // const name=await NLP(transcribedText);
+      // console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
 
-  // Extract email and phone number from the transcribed text using regular expressions
-  const extractedEmail = transcribedText.match(emailRegex);
-  const extractedPhoneNumber = transcribedText.match(phoneRegex);
 
-  // Populate form fields with extracted information
-  if (extractedEmail) {
-    console.warn("emaill founf .........",extractedEmail[0]);
-    setEmail(extractedEmail[0]); // Assuming setEmail is a state setter function for email field
-  }
-  if (extractedPhoneNumber) {
-    setPhoneNumber(extractedPhoneNumber[0]); // Assuming setPhoneNumber is a state setter function for phone number field
-}
+      // Define regular expressions to extract email and phone number
+      const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
+      const phoneRegex = /\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/;
+      
+      // Extract email and phone number from the transcribed text using regular expressions
+      const extractedEmail = transcribedText.match(emailRegex);
+      const extractedPhoneNumber = transcribedText.match(phoneRegex);
+      
+      // Populate form fields with extracted information
+      if (extractedEmail) {
+        console.warn("Email found:", extractedEmail[0]);
+        setEmail(extractedEmail[0]); // Assuming setEmail is a state setter function for email field
+      }
+      
+      const regex = /[-. ]/g;
+      
+      // Remove hyphens, dots, or extra whitespace from the extracted phone number
+      const cleanPhoneNumber = extractedPhoneNumber ? extractedPhoneNumber[0].replace(regex, '') : '';
+      
+      // Set the cleaned phone number in the state
+      if (cleanPhoneNumber) {
+        setPhoneNumber(cleanPhoneNumber);
+      }
+    } catch (error) {
+      console.error("Error occurred while fetching data:", error);
+    }
+  };
+
+  // Call the fetchData function immediately
+  fetchData();
 }, [transcribedText]);
+
 
 
   
@@ -252,7 +279,9 @@ useEffect(() => {
         <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
          Prospective Client / Partner Details {transcribedText}
         </p>
-        <button onClick={() => setSpeechRecognitionActive(true)}>Start Speech Recognition {speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
+        <button onClick={() => setSpeechRecognitionActive(true)}>{speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
+        <br/>
+        <button onClick={() => stopSpeechRecognition()}>Stop Listening</button>
     
         <fetcher.Form  ref={$formref}
      method="post"
@@ -338,6 +367,7 @@ useEffect(() => {
                 id="email"
                 name="email"
                 value={email}
+                onChange={handleEmailChange}
                 className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
                 placeholder="Email"
               />
