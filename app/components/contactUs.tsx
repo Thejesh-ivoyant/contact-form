@@ -134,7 +134,7 @@ const ContactUs = () => {
   return (
     
     <>
-    <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-screen-xl px-4 py-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-lg">
         
                 {" "}
@@ -252,15 +252,7 @@ const ContactUs = () => {
             <div className="w-full rounded-lg border-gray-200  pe-12 text-sm shadow-sm items-stretch self-stretch flex xl:gap-2.5 gap-1  xl:px-4 px-2 xl:text-sm text-xs  sm:col-span-1 col-span-2">
                     <div className="items-stretch border-r-[color:var(--Gray-gray-5,#D9D9D9)] flex basis-[0%] flex-col justify-center xl:pr-3 pr-1 border-r border-solid">
                         <div className="country-code items-stretch flex  gap-1 ">
-                        <select name="country_code" id="countryCode" className="country-drop border-gray-200 text-gray-600" value={countryCode} onChange={(e) => {
-                handleCountryCodeChange(e.target.value);
-              }}>
-                      {countryTelephoneData.allCountries.map((country:any) => (
-                        <option key={country.iso2} value={country.dialCode}>
-                          {`(+${country.dialCode})    ${country.name}`}
-                        </option>
-                          ))}
-                        </select>
+                        
                           <input
                           type="text"
                           value={countryCode}         
@@ -288,7 +280,7 @@ const ContactUs = () => {
           {phoneerror &&(
           <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
           )}
-<div>
+<div className="message-box">
             <label className="sr-only">Message</label>
             <div className="relative">
               <input
