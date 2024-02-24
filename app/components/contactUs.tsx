@@ -281,7 +281,7 @@ useEffect(() => {
                 </div>
         
         <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
-         Prospective Client / Partner Details {transcribedText}
+         Prospective Client / Partner Details
         </p>
         <button onClick={() => setSpeechRecognitionActive(true)}>{speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
         <br/>
