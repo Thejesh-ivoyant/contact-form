@@ -1,5 +1,7 @@
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Form, redirect, useActionData, useFetcher, useNavigate } from "@remix-run/react";
+import { Checkbox, Col, Row } from 'antd';
+import type { GetProp } from 'antd';
 
 import { useState, useEffect, useRef } from "react";
 import * as sdk from "microsoft-cognitiveservices-speech-sdk";
@@ -80,6 +82,9 @@ const ContactUs = () => {
   };
   const handleCompanyNameChange = (e: any) => {
     setCompanyName(e.target.value);
+  };
+  const onChange: GetProp<typeof Checkbox.Group, 'onChange'> = (checkedValues) => {
+    console.log('checked = ', checkedValues);
   };
 
   // const handleInputChange = (e:any) => {
@@ -266,7 +271,7 @@ useEffect(() => {
   
   return (
     <>
-    <div className="flex mx-auto w-[55%] px-4 py-10 sm:px-6 lg:px-8">
+    <div className="flex mx-auto w-[55%] max-w-[35.1825rem]  py-10 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-lg">
         
                 {" "}
@@ -280,10 +285,8 @@ useEffect(() => {
        */}
                 </div>
         
-        <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
-         Prospective Client / Partner Details
-        </p>
-        <button onClick={() => setSpeechRecognitionActive(true)}>{speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
+        
+        <button  onClick={() => setSpeechRecognitionActive(true)}>{speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
         <br/>
         <button onClick={() => stopSpeechRecognition()}>Stop Listening</button>
     
@@ -341,27 +344,7 @@ useEffect(() => {
           <span className="error-msg text-brand-red text-[0.6rem]">{nameerror}</span>
           )}
     
-          <div>
-            <label className="sr-only">Job Title</label>
-    
-            <div className="relative">
-              <input
-                type="text"
-                id="jobtitle"
-                name="jobtitle"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-                placeholder="Job Title"
-              />
-    
-              <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-              <TitleIcon/>
-    
-              </span>
-            </div>
-          </div>
-          {titleerror &&(
-          <span className="text-brand-red text-[0.6rem] error-msg">{titleerror}</span>
-          )}
+          
           <div>
             <label className="sr-only">Email</label>
     
@@ -426,7 +409,60 @@ useEffect(() => {
           {phoneerror &&(
           <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
           )}
-<div className="message-box">
+
+
+<div>
+            <label className="sr-only">Job Title</label>
+    
+            <div className="relative">
+              <input
+                type="text"
+                id="jobtitle"
+                name="jobtitle"
+                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                placeholder="Job Title"
+              />
+    
+              <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+              <TitleIcon/>
+    
+              </span>
+            </div>
+          </div>
+          {titleerror &&(
+          <span className="text-brand-red text-[0.6rem] error-msg">{titleerror}</span>
+          )}
+
+
+          <div>
+            <label className="sr-only">Area of Intrest</label>
+            <div className="">
+            <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
+    <Row>
+      <Col span={8}>
+        <Checkbox value="A">Api Integartion</Checkbox>
+      </Col>
+      <Col span={8}>
+        <Checkbox value="B">B</Checkbox>
+      </Col>
+      <Col span={8}>
+        <Checkbox value="C">C</Checkbox>
+      </Col>
+      <Col span={8}>
+        <Checkbox value="D">D</Checkbox>
+      </Col>
+      <Col span={8}>
+        <Checkbox value="E">E</Checkbox>
+      </Col>
+    </Row>
+  </Checkbox.Group>
+            </div>
+    
+           
+          </div>
+          
+
+<div className="message-box hidden">
             <label className="sr-only">Message</label>
             <div className="relative">
               <input

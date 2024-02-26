@@ -1,4 +1,4 @@
-import { Form, MetaFunction, useActionData, useFetcher } from "@remix-run/react";
+import { Form, MetaFunction, Outlet, useActionData, useFetcher } from "@remix-run/react";
 import React, { useState } from "react";
 import { errorMessage, success } from "~/utils/notifications";
 import { SendGrid } from "~/utils/sendGrid";
@@ -143,7 +143,7 @@ export default function Index() {
   return (
     <div className="main-container flex flex-row">
     <LeftSection/>
-    <ContactUs />
+<ContactUs/>
     </div>
   );
 }
