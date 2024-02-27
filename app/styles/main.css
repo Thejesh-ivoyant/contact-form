@@ -29,6 +29,7 @@ height: 1rem;
 
 .ant-select-selector{
   width: 5.5rem !important;
+  background-color: transparent !important;
 }
 .text-box-container{
   width: 100%;
@@ -76,6 +77,7 @@ text-transform: capitalize;
 }
 .ant-select-outlined:not(.ant-select-customize-input) .ant-select-selector {
   border: 0px !important;
+  background-color: transparent !important;
 }
 .ant-col-12{
   display: flex;
@@ -140,10 +142,21 @@ line-height: 1.25rem; /* 142.857% */
 .ant-checkbox-input:focus + .ant-checkbox-inner {
   border-color: green;
 }
-
+.ant-che.ant-checkbox-input:hover{
+  border-color: green!important;
+  background-color: green!important;
+}
+.ant-checkbox-inner:hover{
+  border-color: green!important;
+  background-color: green!important;
+}
+.ant-checkbox:hover .ant-wave-target:hover  .ant-checkbox-checked:hover{
+  border-color: green!important;
+  background-color: green!important;
+}
 /* Customize the focus color of the checkbox */
 .ant-checkbox-input:focus + .ant-checkbox-inner {
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 2px rgba(220, 5, 188, 0.1);
 }
 .form-container{
   background: #FFF;

@@ -1,4 +1,4 @@
-import { Form, MetaFunction, Outlet, useActionData, useFetcher } from "@remix-run/react";
+import { Form, MetaFunction, Outlet, useActionData, useFetcher, useNavigate } from "@remix-run/react";
 import React, { useState } from "react";
 import { errorMessage, success } from "~/utils/notifications";
 import { SendGrid } from "~/utils/sendGrid";
@@ -137,13 +137,37 @@ function isValidPhoneNumber(phone: any) {
   // Implement phone number validation logic
   return /^[0-9]+$/.test(phone); // For simplicity, this just checks if the phone number contains only digits
 }
+interface ErrorData {
+  errors: {
+    email?: string;
+    name?: string;
+    phone?: string;
+    companyname?: string;
+    isSuccess?: string;
+    title?: string;
+  };
+}
 
 export default function Index() {
+  const actiondata = useActionData();
+  const navigate = useNavigate();
+  
+  const errorData = actiondata as ErrorData;
+  console.warn("actiondata",actiondata);
+  console.warn("errordata",errorData);
+  
+  const isSuccessValue= errorData?.errors?.isSuccess;
+  console.warn("success data",isSuccessValue);
+  
+  if(isSuccessValue==="Success"){
+
+    success("Thtetsttst!",4);
+    navigate('/success')}
 
   return (
     <div className="main-container flex flex-row">
-    <LeftSection/>
-<ContactUs/>
+      <LeftSection/>
+      <ContactUs/>
     </div>
   );
 }
