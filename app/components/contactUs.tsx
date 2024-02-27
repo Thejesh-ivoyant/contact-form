@@ -1,7 +1,7 @@
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Form, redirect, useActionData, useFetcher, useNavigate } from "@remix-run/react";
 import { Checkbox, Col, Row } from 'antd';
-import type { GetProp } from 'antd';
+import type { CheckboxProps, GetProp } from 'antd';
 
 import { useState, useEffect, useRef } from "react";
 import * as sdk from "microsoft-cognitiveservices-speech-sdk";
@@ -21,6 +21,8 @@ import PhoneIcon from "public/assets/phone";
 import { Select } from "antd";
 import { action } from "~/routes/_index";
 import { NLP } from "~/utils/nlp";
+import { CheckboxValueType } from "antd/es/checkbox/Group";
+import { CheckboxChangeEvent } from "antd/es/checkbox";
 interface ErrorData {
   errors: {
     email?: string;
@@ -31,6 +33,12 @@ interface ErrorData {
     title?: string;
   };
 }
+
+type CheckboxValueType = GetProp<typeof Checkbox.Group, 'value'>[number];
+
+const CheckboxGroup = Checkbox.Group;
+
+const plainOptions = ['API Integration', 'Cloud Migration', 'DevOps','Quality Engineering','Web And Mobile Development','Data','AI & ML','Cybersecurity','Blockchain','User Experience'];
 
 const ContactUs = () => {
  
@@ -83,10 +91,30 @@ const ContactUs = () => {
   const handleCompanyNameChange = (e: any) => {
     setCompanyName(e.target.value);
   };
-  const onChange: GetProp<typeof Checkbox.Group, 'onChange'> = (checkedValues) => {
-    console.log('checked = ', checkedValues);
-  };
+  const [checkedList, setCheckedList] = useState<CheckboxValueType[]>([]);
 
+  const checkAll = plainOptions.length === checkedList.length;
+  const indeterminate = checkedList.length > 0 && checkedList.length < plainOptions.length;
+  const onCheckAllChange: CheckboxProps['onChange'] = (e) => {
+    setCheckedList(e.target.checked ? plainOptions : []);
+  };
+  const onChange = (list: CheckboxValueType[]) => {
+    setCheckedList(list);
+  };
+  // const onChange: GetProp<typeof Checkbox.Group, 'onChange'> = (checkedValues) => {
+  //   if (checkedValues.includes('all')) {
+  //     const allValues = ['A', 'B', 'C', 'D', 'E'];
+  //     setCheckedList(allValues);
+  //   } else {
+  //     setCheckedList(checkedValues as CheckboxValueType[]);
+  //   }
+  // };
+
+  useEffect(() => {
+    console.log('checked = ', checkedList);
+  }, [checkedList]);
+
+  
   // const handleInputChange = (e:any) => {
   //   // Validate input fields as they change
   //   switch (e.target.name) {
@@ -268,11 +296,13 @@ useEffect(() => {
 
 
 
-  
+
+
+
+
   return (
     <>
-    <div className="flex mx-auto w-[55%] max-w-[35.1825rem]  py-10 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-lg">
+    <div className="flex flex-col mx-auto w-full max-w-[35.1825rem]  py-10 ">
         
                 {" "}
                 <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit">
@@ -285,11 +315,11 @@ useEffect(() => {
        */}
                 </div>
         
-        
+{/*         
         <button  onClick={() => setSpeechRecognitionActive(true)}>{speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
         <br/>
         <button onClick={() => stopSpeechRecognition()}>Stop Listening</button>
-    
+     */}
         <fetcher.Form  ref={$formref}
      method="post"
         encType="multipart/form-data"
@@ -298,7 +328,7 @@ useEffect(() => {
           <p className="text-center text-lg font-medium"> Contact Us</p>
     
           <div>
-            <label  className="sr-only">Company Name</label>
+           
     
             <div className="relative">
               {/* <input type="reset"/> */}
@@ -308,36 +338,29 @@ useEffect(() => {
                 name="company"
                 value={companyname}
                 placeholder="Company*"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                className="text-box"
                onChange={handleCompanyNameChange}
               />
             
     
-              <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-              <CompanyIcon />
-    
-              </span>
+             
             </div>
           </div>
           {companyerror &&(
           <span className="text-brand-red text-[0.6rem] error-msg">{companyerror}</span>
           )}
           <div>
-            <label className="sr-only">Name</label>
-    
+            
             <div className="relative">
               <input
                 type="text"
                 id="personname"
                 name="personname"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                className="text-box"
                 placeholder="Full Name*"
               />
     
-              <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-             <NameIcon/>
-    
-              </span>
+            
             </div>
           </div>
           {nameerror &&(
@@ -346,7 +369,6 @@ useEffect(() => {
     
           
           <div>
-            <label className="sr-only">Email</label>
     
             <div className="relative">
               <input
@@ -355,26 +377,23 @@ useEffect(() => {
                 name="email"
                 value={email}
                 onChange={handleEmailChange}
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                className="text-box"
                 placeholder="Email"
               />
     
-              <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-              <EmailIcon/>
-              </span>
+            
             </div>
           </div>
           {emailerror &&(
           <span className="text-brand-red text-[0.6rem] error-msg">{emailerror}</span>
           )}
           <div>
-            <label className="sr-only">Phone Number</label>
             <div className="relative">
             <div className="w-full rounded-lg border-gray-200  pe-12 text-sm shadow-sm items-stretch self-stretch flex xl:gap-2.5 gap-1  xl:px-4 px-2 xl:text-sm text-xs  sm:col-span-1 col-span-2">
                     <div className="items-stretch border-r-[color:var(--Gray-gray-5,#D9D9D9)] flex basis-[0%] flex-col justify-center xl:pr-3 pr-1 border-r border-solid">
                         <div className="country-code items-stretch flex  gap-1 ">
                         <Select
-                          className="w-full rounded-none text-black w-[6rem]"
+                          className="w-full rounded-none text-black w-[6rem] outline-none border-none"
                           // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
                           onChange={handleCountryCodeChange}
                         
@@ -397,13 +416,11 @@ useEffect(() => {
                         value={phoneNumber}
                         onChange={handlePhoneNumberChange}
                         required
-                        className="w-full rounded-lg  p-4 pe-12 text-sm "
+                        className="text-box"
                         name="phonenumber"
                       />
             </div>
-              <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-           <PhoneIcon/>
-              </span>
+             
             </div>
           </div>
           {phoneerror &&(
@@ -412,21 +429,17 @@ useEffect(() => {
 
 
 <div>
-            <label className="sr-only">Job Title</label>
     
             <div className="relative">
               <input
                 type="text"
                 id="jobtitle"
                 name="jobtitle"
-                className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                className="text-box"
                 placeholder="Job Title"
               />
     
-              <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-              <TitleIcon/>
-    
-              </span>
+             
             </div>
           </div>
           {titleerror &&(
@@ -435,47 +448,37 @@ useEffect(() => {
 
 
           <div>
-            <label className="sr-only">Area of Intrest</label>
-            <div className="">
-            <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
-    <Row>
-      <Col span={8}>
-        <Checkbox value="A">Api Integartion</Checkbox>
-      </Col>
-      <Col span={8}>
-        <Checkbox value="B">B</Checkbox>
-      </Col>
-      <Col span={8}>
-        <Checkbox value="C">C</Checkbox>
-      </Col>
-      <Col span={8}>
-        <Checkbox value="D">D</Checkbox>
-      </Col>
-      <Col span={8}>
-        <Checkbox value="E">E</Checkbox>
-      </Col>
+<div className="flex flex-row justify-start items-center gap-4">
+<div className="flex  my-auto leading-[143%] text-gray-700 text-opacity-70">
+      Area of Interest*
+    </div>
+    <div className="line"/>
+    <div className="flex">
+            <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
+            {checkAll ? 'Deselect All' : 'Select All'}
+      </Checkbox>
+      </div>
+</div>
+         
+      
+            <div className="mt-2">
+            
+            <Checkbox.Group style={{ width: '100%' }} value={checkedList} onChange={onChange}>
+            <Row gutter={[4, 4]}> 
+      {plainOptions.map((option, index) => (
+        <Col key={index} span={12}> 
+          <Checkbox value={option}>{option}</Checkbox>
+        </Col>
+      ))}
     </Row>
-  </Checkbox.Group>
+    </Checkbox.Group>
             </div>
     
            
           </div>
           
 
-<div className="message-box hidden">
-            <label className="sr-only">Message</label>
-            <div className="relative">
-              <input
-                type="textarea"
-                id="message"
-                name="message"
-                className="text-start w-full h-[8rem] rounded-lg border-gray-400 p-4 pe-12 text-sm shadow-lg"
-                placeholder="Message"
-              />
-    
-             
-            </div>
-          </div>
+
 
 
           <button
@@ -484,13 +487,13 @@ useEffect(() => {
       value="contact"
     
       disabled={isCreatingNewPost}
-      className="submit-btn block w-full mt-2 rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
+      className="submit-btn"
     >
       {isCreatingNewPost ? 'Loading...' : 'Submit'}
     </button>
        
         </fetcher.Form>
-      </div>
+   
     </div>
         </>
   );
