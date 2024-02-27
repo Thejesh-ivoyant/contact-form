@@ -86,7 +86,7 @@ const ContactUs = () => {
     setPhoneNumber(e.target.value);
   };
 
-  
+
   const handleEmailChange = (e: any) => {
     setEmail(e.target.value);
       // Reset email error
@@ -466,7 +466,7 @@ useEffect(() => {
             <div className="mt-2">
             
             <Checkbox.Group style={{ width: '100%' }} value={checkedList} onChange={onChange}>
-            <Row gutter={[8, 8]}> 
+            <Row gutter={[16, 16]}> 
       {plainOptions.map((option, index) => (
         <Col key={index} span={12}> 
           <Checkbox value={option} className="checkbox-text">{option}</Checkbox>
