@@ -85,9 +85,21 @@ const ContactUs = () => {
   const handlePhoneNumberChange = (e: any) => {
     setPhoneNumber(e.target.value);
   };
+
+  
   const handleEmailChange = (e: any) => {
     setEmail(e.target.value);
+      // Reset email error
+  setEmailError("");
+
+  // Validate email
+  if (!email.trim()) {
+    setEmailError("Email is required");
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    setEmailError("Invalid email address");
+  }
   };
+
   const handleCompanyNameChange = (e: any) => {
     setCompanyName(e.target.value);
   };
