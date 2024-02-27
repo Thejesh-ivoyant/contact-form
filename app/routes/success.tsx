@@ -16,6 +16,7 @@ export default function Index() {
   return (
 <div className="main-container flex flex-row">
     <LeftSection/>
+    
     <Success />
     </div>
   );

@@ -98,6 +98,15 @@ const ContactUs = () => {
   const onCheckAllChange: CheckboxProps['onChange'] = (e) => {
     setCheckedList(e.target.checked ? plainOptions : []);
   };
+  const onCheckAll = () => {
+    if(!checkAll){
+      setCheckedList(plainOptions);
+    }
+    else{
+      setCheckedList([]);
+    }
+   
+  };
   const onChange = (list: CheckboxValueType[]) => {
     setCheckedList(list);
   };
@@ -112,6 +121,7 @@ const ContactUs = () => {
 
   useEffect(() => {
     console.log('checked = ', checkedList);
+    console.log("checked hub spot",checkedList.toString());
   }, [checkedList]);
 
   
@@ -305,15 +315,7 @@ useEffect(() => {
     <div className="flex flex-col mx-auto w-full max-w-[35.1825rem]  py-10 ">
         
                 {" "}
-                <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit">
-                    <img
-                      src={ivurl}
-                      alt="iVoyant Logo"
-                      className="flex aspect-video h-16 object-contain"
-                    />
-                    {/* <h1 className="flex text-center text-2xl font-bold text-indigo-600 sm:text-3xl">Ivoyant</h1>
-       */}
-                </div>
+             
         
 {/*         
         <button  onClick={() => setSpeechRecognitionActive(true)}>{speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
@@ -324,9 +326,15 @@ useEffect(() => {
      method="post"
         encType="multipart/form-data"
           autoComplete="off"
-         className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-xl sm:p-6 lg:p-8">
-          <p className="text-center text-lg font-medium"> Contact Us</p>
-    
+         className="mb-0 mt-6 space-y-4 form-container p-4 ">
+   <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit">
+                    <img
+                      src={ivurl}
+                      alt="iVoyant Logo"
+                      className="flex aspect-video h-16 object-contain"
+                    />
+      
+                </div>    
           <div>
            
     
@@ -389,11 +397,10 @@ useEffect(() => {
           )}
           <div>
             <div className="relative">
-            <div className="w-full rounded-lg border-gray-200  pe-12 text-sm shadow-sm items-stretch self-stretch flex xl:gap-2.5 gap-1  xl:px-4 px-2 xl:text-sm text-xs  sm:col-span-1 col-span-2">
-                    <div className="items-stretch border-r-[color:var(--Gray-gray-5,#D9D9D9)] flex basis-[0%] flex-col justify-center xl:pr-3 pr-1 border-r border-solid">
-                        <div className="country-code items-stretch flex  gap-1 ">
+            <div className="w-full text-box  ">
+                        <div className="country-code items-center justify-center my-auto">
                         <Select
-                          className="w-full rounded-none text-black w-[6rem] outline-none border-none"
+                          className="w-full rounded-none text-black w-[6rem] "
                           // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
                           onChange={handleCountryCodeChange}
                         
@@ -408,7 +415,7 @@ useEffect(() => {
                           className="hidden"
                           name="country_code"
                         />
-                        </div>
+                      
                       </div>
                       <input
                         type="text"
@@ -416,7 +423,7 @@ useEffect(() => {
                         value={phoneNumber}
                         onChange={handlePhoneNumberChange}
                         required
-                        className="text-box"
+                        className="text-box-phone"
                         name="phonenumber"
                       />
             </div>
@@ -454,9 +461,13 @@ useEffect(() => {
     </div>
     <div className="line"/>
     <div className="flex">
-            <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
+            {/* <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
             {checkAll ? 'Deselect All' : 'Select All'}
-      </Checkbox>
+      </Checkbox> */}
+      <button onClick={onCheckAll} className="select-all-btn">
+      {checkAll ? 'Deselect All' : 'Select All'}
+      </button>
+
       </div>
 </div>
          
@@ -464,14 +475,20 @@ useEffect(() => {
             <div className="mt-2">
             
             <Checkbox.Group style={{ width: '100%' }} value={checkedList} onChange={onChange}>
-            <Row gutter={[4, 4]}> 
+            <Row gutter={[8, 8]}> 
       {plainOptions.map((option, index) => (
         <Col key={index} span={12}> 
-          <Checkbox value={option}>{option}</Checkbox>
+          <Checkbox value={option} className="checkbox-text">{option}</Checkbox>
         </Col>
       ))}
     </Row>
     </Checkbox.Group>
+    <input
+                          type="text"
+                          value={checkedList.toString()}         
+                          className="hidden"
+                          name="area_of_interests"
+                        />
             </div>
     
            

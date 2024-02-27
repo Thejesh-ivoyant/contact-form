@@ -47,8 +47,8 @@ function Success() {
         <Subtitle>our team will reach out to you soon!</Subtitle>
       </article>
       <ActionLink>
-        To know how we are revolutionising the FinTech Industry{" "}
-        <a href="#" className="text-blue-800">Click here</a>.
+        <span className="redirect-msg">To know how we are revolutionising the FinTech Industry{" "}</span>
+        <a href="https://website-4zzq.vercel.app/industries/fintech" className="text-blue-800">Click here</a>.
       </ActionLink>
 
         </div>
