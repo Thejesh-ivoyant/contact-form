@@ -30,6 +30,11 @@ height: 1rem;
 .ant-select-selector{
   width: 5.5rem !important;
 }
+.text-box-container{
+  width: 100%;
+
+  border-bottom: 0.5px solid rgba(64, 66, 88, 0.50);
+}
 .text-box{
   width: 100%;
   display: flex;
@@ -147,12 +152,38 @@ box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.12);
   border-color: green;
   background-color: green;
 }
+.left-section{
+  width: 45%;
+}
+.form-section{
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
 /* Styles for screens smaller than 576px (extra small devices, phones) */
 @media only screen and (max-width: 575.98px) {
   .message-box{
     display: none;
   }
+  .main-container{
+    flex-direction: column;
+  }
+  .left-section{
+    width: 100%;
+   
+  }
+  .form-section{
+    padding-top: 1.19rem;
+    padding-bottom: 1.19rem;
+    padding-left:1.19rem;
+    padding-right: 1.19rem;
+  }
+  .form-container{
+   margin-top: -13rem;
+  }
+  
 }
 
 /* Styles for screens between 576px and 767px (small devices, landscape phones) */
@@ -160,11 +191,44 @@ box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.12);
   .message-box{
     display: none;
   }
+  .main-container{
+    flex-direction: column;
+  }
+  .left-section{
+    width: 100%;
+    
+  }
+  .form-container{
+    margin-top: -13rem;
+   }
+  .form-section{
+    padding-top: 1.19rem;
+    padding-bottom: 1.19rem;
+    padding-left:1.19rem;
+    padding-right: 1.19rem;
+  }
+  
 }
 
 /* Styles for screens between 768px and 991px (medium devices, tablets) */
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
-
+  .main-container{
+    flex-direction: column;
+  }
+  .left-section{
+    width: 100%;
+   
+  }
+  .form-container{
+    margin-top: -13rem;
+   }
+  .form-section{
+    padding-top: 1.19rem;
+    padding-bottom: 1.19rem;
+    padding-left:1.19rem;
+    padding-right: 1.19rem;
+  }
+  
 }
 
 /* Styles for screens between 992px and 1199px (large devices, desktops) */

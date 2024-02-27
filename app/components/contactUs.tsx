@@ -312,7 +312,7 @@ useEffect(() => {
 
   return (
     <>
-    <div className="flex flex-col mx-auto w-full max-w-[35.1825rem]  py-10 ">
+    <div className="flex flex-col mx-auto w-full max-w-[35.1825rem]  form-section  ">
         
                 {" "}
              
@@ -326,7 +326,7 @@ useEffect(() => {
      method="post"
         encType="multipart/form-data"
           autoComplete="off"
-         className="mb-0 mt-6 space-y-4 form-container p-4 ">
+         className="mb-0  space-y-4 form-container p-4 ">
    <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit">
                     <img
                       src={ivurl}
@@ -397,7 +397,7 @@ useEffect(() => {
           )}
           <div>
             <div className="relative">
-            <div className="w-full text-box  ">
+            <div className="w-full text-box-container  ">
                         <div className="country-code items-center justify-center my-auto">
                         <Select
                           className="w-full rounded-none text-black w-[6rem] "
@@ -411,7 +411,7 @@ useEffect(() => {
                           <input
                           type="text"
                           value={countryCode}         
-                          required
+                  
                           className="hidden"
                           name="country_code"
                         />
@@ -422,7 +422,7 @@ useEffect(() => {
                         placeholder="Phone Number*"
                         value={phoneNumber}
                         onChange={handlePhoneNumberChange}
-                        required
+                       
                         className="text-box-phone"
                         name="phonenumber"
                       />
@@ -464,7 +464,7 @@ useEffect(() => {
             {/* <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
             {checkAll ? 'Deselect All' : 'Select All'}
       </Checkbox> */}
-      <button onClick={onCheckAll} className="select-all-btn">
+      <button type="button" onClick={onCheckAll} className="select-all-btn">
       {checkAll ? 'Deselect All' : 'Select All'}
       </button>
 
