@@ -32,6 +32,8 @@ height: 1rem;
 }
 .text-box-container{
   width: 100%;
+  display: flex;
+  flex-direction: row;
 
   border-bottom: 0.5px solid rgba(64, 66, 88, 0.50);
 }

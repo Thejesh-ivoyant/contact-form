@@ -110,35 +110,14 @@ const ContactUs = () => {
   const onChange = (list: CheckboxValueType[]) => {
     setCheckedList(list);
   };
-  // const onChange: GetProp<typeof Checkbox.Group, 'onChange'> = (checkedValues) => {
-  //   if (checkedValues.includes('all')) {
-  //     const allValues = ['A', 'B', 'C', 'D', 'E'];
-  //     setCheckedList(allValues);
-  //   } else {
-  //     setCheckedList(checkedValues as CheckboxValueType[]);
-  //   }
-  // };
+ 
 
   useEffect(() => {
     console.log('checked = ', checkedList);
     console.log("checked hub spot",checkedList.toString());
   }, [checkedList]);
 
-  
-  // const handleInputChange = (e:any) => {
-  //   // Validate input fields as they change
-  //   switch (e.target.name) {
-  //     case "email":
-  //       // Validate email
-  //       if (!e.target.checkValidity()) {
-  //         setEmailError("Please enter a valid email address");
-  //       } else {
-  //         setEmailError("");
-  //       }
-  //       break;
-  //     // Add validation for other fields similarly...
-  //   }
-  // };
+
 
   const handleCountryCodeChange = (value:string) => {
     const selectedCountryCode = value;
@@ -317,11 +296,11 @@ useEffect(() => {
                 {" "}
              
         
-{/*         
+        
         <button  onClick={() => setSpeechRecognitionActive(true)}>{speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
         <br/>
         <button onClick={() => stopSpeechRecognition()}>Stop Listening</button>
-     */}
+    
         <fetcher.Form  ref={$formref}
      method="post"
         encType="multipart/form-data"
