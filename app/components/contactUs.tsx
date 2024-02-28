@@ -21,7 +21,6 @@ import PhoneIcon from "public/assets/phone";
 import { Select } from "antd";
 import { action } from "~/routes/_index";
 import { NLP } from "~/utils/nlp";
-import { CheckboxValueType } from "antd/es/checkbox/Group";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
 interface ErrorData {
   errors: {
@@ -262,7 +261,7 @@ useEffect(() => {
     try {
       // Perform NLP operation on the email
       const name= await NLP(transcribedText);
-      // console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+      console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",name)
 
 
       // Define regular expressions to extract email and phone number
@@ -310,11 +309,11 @@ useEffect(() => {
                 {" "}
              
         
-        
+{/*         
         <button  onClick={() => setSpeechRecognitionActive(true)}>{speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
         <br/>
         <button onClick={() => stopSpeechRecognition()}>Stop Listening</button>
-    
+     */}
         <fetcher.Form  ref={$formref}
      method="post"
         encType="multipart/form-data"
@@ -448,7 +447,7 @@ useEffect(() => {
 
 
           <div>
-<div className="flex flex-row justify-start items-center gap-4">
+<div className="flex flex-row justify-start items-center gap-2">
 <div className="flex  my-auto leading-[143%] text-gray-700 text-opacity-70">
       Area of Interest*
     </div>
@@ -465,7 +464,7 @@ useEffect(() => {
 </div>
          
       
-            <div className="mt-2">
+            <div className="checkbox mt-2">
             
             <Checkbox.Group style={{ width: '100%' }} value={checkedList} onChange={onChange}>
             <Row gutter={[16, 16]}> 
