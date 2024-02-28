@@ -111,12 +111,48 @@ height: 1rem;
   display: flex;
   border-bottom: 0.5px solid rgba(64, 66, 88, 0.50);
 }
-.text-box:focus::placeholder {
-  color: transparent;
+.text-box::placeholder{
+  color: rgba(64, 66, 88, 0.70);
+font-family: Montserrat;
+font-size: 0.875rem;
+font-style: normal;
+font-weight: 500;
+line-height: 1.25rem; /* 142.857% */
+}
+.text-box-phone::placeholder{
+  color: rgba(64, 66, 88, 0.70);
+font-family: Montserrat;
+font-size: 0.875rem;
+font-style: normal;
+font-weight: 500;
+line-height: 1.25rem; /* 142.857% */
 }
 .text-box-phone:focus::placeholder {
   color: transparent;
 }
+.text-box:focus::placeholder {
+  color: transparent;
+}
+
+.text-box:hover:not(:focus)::placeholder {
+  color: #404258;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem; /* 142.857% */
+}
+
+.text-box-phone:hover:not(:focus)::placeholder {
+  color: #404258;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem; /* 142.857% */
+}
+
+
 .text-box:focus {
   border-bottom: 1px solid #244D28;
   caret-color: #244D28;
