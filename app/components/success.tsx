@@ -1,6 +1,7 @@
 import React from "react";
 import videourl from "../../public/assets/success.mp4";
 import ivurl from '../../public/assets/ivoyant1.png';
+import { Link } from "@remix-run/react";
 
 const MainTitle = ({ title }:{title:any}) => (
   <h1 className="self-center text-3xl font-bold tracking-wide leading-10 text-indigo-900 main-title">
@@ -27,8 +28,8 @@ const TopImage = ({ src, alt }:{src:any,alt:any}) => (
 
 function Success() {
   return (
-    <section className="flex justify-between flex-col items-center overflow-x-auto">
-      <div className="w-full flex flex-col items-center  text-center max-w-[34.68875rem]">
+    <section className="flex justify-between flex-col items-center h-screen">
+      <div className="items-center  text-center max-w-[34.68875rem]  form-container">
       <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit h-fit">
                     <img
                       src={ivurl}
@@ -53,7 +54,7 @@ function Success() {
       </article>
       <ActionLink>
         <span className="redirect-msg">To know how we are revolutionising the FinTech Industry{" "}</span>
-        <a href="https://website-4zzq.vercel.app/industries/fintech" className="link">Click here</a>.
+       <Link to={'/fintech'}><div className="link">Click here</div></Link> 
       </ActionLink>
 
         </div>

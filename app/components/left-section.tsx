@@ -49,3 +49,4 @@ function SubText({ text }:{text:any}) {
 }
 
 export default LeftSection;
+

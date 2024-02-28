@@ -168,7 +168,7 @@ const ContactUs = () => {
         const titleError= errorData?.errors?.title;
         console.warn("status",isSuccessValue)
   if(isSuccessValue==="Success"){
-    success("Thank you for sharing your details!",4);
+    // success("Thank you for sharing your details!",4);
     navigate('/success')
   }else{
 
@@ -318,7 +318,7 @@ useEffect(() => {
      method="post"
         encType="multipart/form-data"
           autoComplete="off"
-         className="mb-0  form-container p-6">
+         className="mb-0  form-container form-shadow p-6">
    <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit">
                     <img
                       src={ivurl}
