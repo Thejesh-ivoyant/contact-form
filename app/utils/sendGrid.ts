@@ -130,10 +130,33 @@ export const SendGrid = (Email: string) => {
         line-height: 26px;
         width: 100%;
       }
-      .message-info, .contact-info {
-        font-family: 'Poppins', sans-serif;
-        margin-top: 7px;
-        width: 100%;
+      .message-info2{
+        color: #333;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.75rem; 
+      }
+      .message-info {
+        color: #333;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.625rem;
+        
+      }
+      .contact-info{
+        color: #333;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.75rem; 
       }
       .footer-message {
         font-family: 'Poppins', sans-serif;
@@ -162,13 +185,11 @@ export const SendGrid = (Email: string) => {
     </div>
   </section>
   <main class="container">
-  <header>
-    <h1 class="message-title">Thank you for reaching out to ivoyant,</h1>
-  </header>
+  
   <section class="message-info">
-    We've received your form submission and are currently reviewing it.
+  Thank you for reaching out to ivoyant,We've received your form submission and are currently reviewing it.
   </section>
-  <section class="message-info">
+  <section class="message-info2">
     Expect a prompt response from our team shortly.
   </section>
   <section class="contact-info">
