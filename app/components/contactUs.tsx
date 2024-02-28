@@ -261,7 +261,7 @@ useEffect(() => {
   const fetchData = async () => {
     try {
       // Perform NLP operation on the email
-      // const name=await NLP(transcribedText);
+      const name= await NLP(transcribedText);
       // console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
 
 

@@ -135,7 +135,10 @@ line-height: 1.25rem; /* 142.857% */
 .ant-checkbox-checked .ant-checkbox-inner::after {
   border-color: white;
 }
-
+.ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover .ant-checkbox-checked:not(.ant-checkbox-disabled) .ant-checkbox-inner {
+  background-color: green !important;
+  border-color: transparent;
+}
 /* Customize the hover color of the checkbox */
 .ant-checkbox-wrapper:hover .ant-checkbox-inner, 
 .ant-checkbox:hover .ant-checkbox-inner, 
@@ -164,8 +167,12 @@ line-height: 1.25rem; /* 142.857% */
 box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.12);
 }
 .ant-checkbox .ant-wave-target{
-  border-color: green;
-  background-color: green;
+  border-color: green!important;
+  background-color: green!important;
+}
+.ant-checkbox .ant-wave-target span{
+  border-color: green!important;
+  background-color: green!important;
 }
 .left-section{
   width: 45%;
