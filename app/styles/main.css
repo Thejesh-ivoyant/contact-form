@@ -123,8 +123,8 @@ line-height: 1.25rem; /* 142.857% */
   border-color: green;
 }
 .ant-checkbox-input .ant-checkbox-input:hover{
-  border: green;
-  background-color: #1A4721;
+  border: green !important;
+  background-color: #1A4721 !important;
 }
 .ant-checkbox-checked:hover .ant-checkbox-inner {
   background-color: green;
@@ -142,7 +142,7 @@ line-height: 1.25rem; /* 142.857% */
 .ant-checkbox-input:focus + .ant-checkbox-inner {
   border-color: green;
 }
-.ant-che.ant-checkbox-input:hover{
+.ant-checkbox-input:hover{
   border-color: green!important;
   background-color: green!important;
 }
