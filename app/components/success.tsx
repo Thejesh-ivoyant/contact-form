@@ -1,18 +1,19 @@
 import React from "react";
 import videourl from "../../public/assets/success.mp4";
+import ivurl from '../../public/assets/ivoyant1.png';
 
 const MainTitle = ({ title }:{title:any}) => (
-  <h1 className="self-center text-3xl font-bold tracking-wide leading-10 text-indigo-900">
+  <h1 className="self-center text-3xl font-bold tracking-wide leading-10 text-indigo-900 main-title">
     {title}
   </h1>
 );
 
 const Subtitle = ({ children }:{children:any}) => (
-  <p className="mt-4 text-lg font-medium text-zinc-900">{children}</p>
+  <p className="mt-4 text-lg font-medium subtitle">{children}</p>
 );
 
 const ActionLink = ({ children }:{children:any}) => (
-  <p className="mt-16 text-base font-medium leading-7 text-blue-800">
+  <p className="mt-[4rem] ">
     {children}
   </p>
 );
@@ -26,12 +27,16 @@ const TopImage = ({ src, alt }:{src:any,alt:any}) => (
 
 function Success() {
   return (
-    <section className="flex justify-between flex-col ">
-      <div className="w-full flex flex-col items-center pr-0.5 text-center max-w-[839px]">
-      <TopImage 
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/0f0f96a19ebdd8fcf19b86fa553f29e449d503d9fc5ee5265f1b416d59fcba43?apiKey=9e16588387084fb2a9a51a1b99489136&" 
-        alt="Thank you illustration"
-      />
+    <section className="flex justify-between flex-col items-center overflow-x-auto">
+      <div className="w-full flex flex-col items-center  text-center max-w-[34.68875rem]">
+      <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit h-fit">
+                    <img
+                      src={ivurl}
+                      alt="iVoyant Logo"
+                      className="flex aspect-video w-[10.38888rem] object-contain"
+                    />
+      
+                </div>  
        <video
           preload="true"
           muted
@@ -39,16 +44,16 @@ function Success() {
           playsInline
           src={videourl}
           autoPlay
-          className=" object-contain  w-[8rem] mt-[2.5rem]"
+          className="aspect-square w-[9.8125rem] "
         />
 
-      <article className="flex flex-col px-16 mt-[3rem] max-w-full w-full">
+      <article className="flex flex-col px-16 max-w-full w-full">
         <MainTitle title="Thank you for sharing your details" />
         <Subtitle>our team will reach out to you soon!</Subtitle>
       </article>
       <ActionLink>
         <span className="redirect-msg">To know how we are revolutionising the FinTech Industry{" "}</span>
-        <a href="https://website-4zzq.vercel.app/industries/fintech" className="text-blue-800">Click here</a>.
+        <a href="https://website-4zzq.vercel.app/industries/fintech" className="link">Click here</a>.
       </ActionLink>
 
         </div>

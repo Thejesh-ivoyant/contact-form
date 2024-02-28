@@ -6,7 +6,7 @@ import type { CheckboxProps, GetProp } from 'antd';
 import { useState, useEffect, useRef } from "react";
 import * as sdk from "microsoft-cognitiveservices-speech-sdk";
 
-import ivurl from '../../public/assets/ivoyant.png';
+import ivurl from '../../public/assets/ivoyant1.png';
 
 import React from "react";
 import { errorMessage, success } from "~/utils/notifications";
@@ -304,7 +304,7 @@ useEffect(() => {
 
   return (
     <>
-    <div className="flex flex-col mx-auto w-full max-w-[35.1825rem]  form-section  ">
+    <div className="flex flex-col mx-auto w-full max-w-[35.8125rem]  form-section  ">
         
                 {" "}
              
@@ -318,12 +318,12 @@ useEffect(() => {
      method="post"
         encType="multipart/form-data"
           autoComplete="off"
-         className="mb-0  space-y-4 form-container p-4 ">
+         className="mb-0  form-container p-6">
    <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit">
                     <img
                       src={ivurl}
                       alt="iVoyant Logo"
-                      className="flex aspect-video h-16 object-contain"
+                      className="flex aspect-video w-[10.38888rem] object-contain"
                     />
       
                 </div>    
@@ -336,9 +336,10 @@ useEffect(() => {
                 type="text"
                 id="company"
                 name="company"
+                
                 value={companyname}
                 placeholder="Company*"
-                className="text-box"
+                className="text-box text-box-container"
                onChange={handleCompanyNameChange}
               />
             
@@ -356,7 +357,7 @@ useEffect(() => {
                 type="text"
                 id="personname"
                 name="personname"
-                className="text-box"
+                className="text-box text-box-container"
                 placeholder="Full Name*"
               />
     
@@ -377,7 +378,7 @@ useEffect(() => {
                 name="email"
                 value={email}
                 onChange={handleEmailChange}
-                className="text-box"
+                className="text-box text-box-container"
                 placeholder="Email"
               />
     
@@ -389,7 +390,7 @@ useEffect(() => {
           )}
           <div>
             <div className="relative">
-            <div className="w-full text-box-container  ">
+            <div className="w-full text-box  ">
                         <div className="country-code items-center justify-center my-auto">
                         <Select
                           className="w-full rounded-none text-black w-[6rem] "
@@ -434,7 +435,7 @@ useEffect(() => {
                 type="text"
                 id="jobtitle"
                 name="jobtitle"
-                className="text-box"
+                className="text-box text-box-container"
                 placeholder="Job Title"
               />
     
@@ -464,7 +465,7 @@ useEffect(() => {
 </div>
          
       
-            <div className="checkbox mt-2">
+            <div className="checkbox mt-[0.75rem]">
             
             <Checkbox.Group style={{ width: '100%' }} value={checkedList} onChange={onChange}>
             <Row gutter={[16, 16]}> 
