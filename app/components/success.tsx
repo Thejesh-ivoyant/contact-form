@@ -4,13 +4,13 @@ import ivurl from '../../public/assets/ivoyant1.png';
 import { Link } from "@remix-run/react";
 
 const MainTitle = ({ title }:{title:any}) => (
-  <h1 className="self-center text-3xl font-bold tracking-wide leading-10 text-indigo-900 main-title">
+  <h1 className="self-center  main-title">
     {title}
   </h1>
 );
 
 const Subtitle = ({ children }:{children:any}) => (
-  <p className="mt-4 text-lg font-medium subtitle">{children}</p>
+  <p className="mt-4  subtitle">{children}</p>
 );
 
 const ActionLink = ({ children }:{children:any}) => (
@@ -20,11 +20,9 @@ const ActionLink = ({ children }:{children:any}) => (
 );
 
 const Image = ({ src, alt }:{src:any,alt:any}) => (
-  <img loading="lazy" src={src} alt={alt} className=" mt-18 w-full aspect-[4] fill-indigo-50" />
+  <img loading="eager" src={src} alt={alt} className=" mt-18 w-full aspect-[4] fill-indigo-50" />
 );
-const TopImage = ({ src, alt }:{src:any,alt:any}) => (
-  <img loading="lazy" src={src} alt={alt} className="mt-[4.5rem] w-[20%] aspect-[4] fill-indigo-50" />
-);
+
 
 function Success() {
   return (

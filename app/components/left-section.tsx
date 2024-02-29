@@ -15,36 +15,36 @@ function LeftSection() {
 
 function ImageWithAlt({ src, alt }:{src:any,alt:any}) {
     return (
-      <img loading="lazy" src={src} alt={alt} className=" max-w-full aspect-[4.17] w-[376px]" />
+      <img loading="eager" src={src} alt={alt} className=" max-w-full aspect-[4.17] w-[376px]" />
     );
   }
 
 function BottomImageWithAlt({ src, alt }:{src:any,alt:any}) {
   return (
-    <img loading="lazy" src={src} alt={alt} className="mt-2.5  w-full" />
+    <img loading="eager" src={src} alt={alt} className="mt-2.5  w-full" />
   );
 }
 
 function Header({ title }:{title:any}) {
   return (
-    <h2 className="mt-[5.81rem] text-3xl max-md:mt-10 max-md:max-w-full header">{title}</h2>
+    <h2 className="mt-[5.81rem]  max-md:mt-10 max-md:max-w-full header">{title}</h2>
   );
 }
 
 function TextBlock({ text }:{text:any}) {
   return (
-    <p className="mt-4 leading-7 w-[434px] max-md:max-w-full text-block">{text}</p>
+    <p className="mt-4  w-[434px] max-md:max-w-full text-block">{text}</p>
   );
 }
 function TextBlockLink({ text }:{text:any}) {
   return (
-    <a href="https://www.ivoyant.com/" className="mt-[0.38rem] leading-7 w-[434px] max-md:max-w-full text-block-link">{text}</a>
+    <a href="https://www.ivoyant.com/" className="mt-[0.38rem]  w-[434px] max-md:max-w-full text-block-link">{text}</a>
   );
 }
 
 function SubText({ text }:{text:any}) {
   return (
-    <small className="mt-14 text-sm text-yellow-100 max-md:mt-10 max-md:max-w-full subtext">{text}</small>
+    <small className="mt-14  max-md:mt-10 max-md:max-w-full subtext">{text}</small>
   );
 }
 

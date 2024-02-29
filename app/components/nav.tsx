@@ -6,7 +6,7 @@ import fb from '~/../public/assets/ivoyant1.png'
 import twitter from '~/../public/assets/ivoyant1.png'
 import linkedin from '~/../public/assets/ivoyant1.png'
 import yt from '~/../public/assets/ivoyant1.png'
-import ivurl from '../../public/assets/ivoyant1.png';
+import ivurl from '../../public/assets/ivurl.svg';
 import defaultsvg from '../../public/assets/ivoyant1.png';
 import { success,errorMessage } from "~/utils/notifications";
 import Sidebar from "./sidebar";
