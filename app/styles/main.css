@@ -1,5 +1,5 @@
 .country-code select{
-    width: 6.75rem
+    width: 4.75rem
 }
 .header{
   color: #FFF;
@@ -90,7 +90,7 @@ height: 1rem;
 
 }
 .ant-select-dropdown{
-  width: 5.5rem !important;
+  width: 100% !important;
 }
 
 

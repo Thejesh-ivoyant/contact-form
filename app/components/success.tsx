@@ -32,7 +32,7 @@ function Success() {
                     <img
                       src={ivurl}
                       alt="iVoyant Logo"
-                      className="flex aspect-video w-[10.38888rem] object-contain"
+                      className="flex  w-[10.38888rem] object-contain"
                     />
       
                 </div>  

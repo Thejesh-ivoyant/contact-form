@@ -6,7 +6,7 @@ import type { CheckboxProps, GetProp } from 'antd';
 import { useState, useEffect, useRef } from "react";
 import * as sdk from "microsoft-cognitiveservices-speech-sdk";
 
-import ivurl from '../../public/assets/ivoyant1.png';
+import ivurl from '../../public/assets/logo.svg';
 
 import React from "react";
 import { errorMessage, success } from "~/utils/notifications";
@@ -138,6 +138,16 @@ const ContactUs = () => {
    
     console.warn("comyry cod4",selectedCountryCode);
   };
+
+  const filterOption = (input: string, option?: { label: string; value: string }) =>
+  (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
+
+  const onSearch = (value: string) => {
+    console.log('search:', value);
+    setCountryCode(value);
+  };
+
+  
   const fetcher = useFetcher();
   let $formref= useRef<HTMLFormElement>(null)
   const navigate = useNavigate();
@@ -323,33 +333,11 @@ useEffect(() => {
                     <img
                       src={ivurl}
                       alt="iVoyant Logo"
-                      className="flex aspect-video w-[10.38888rem] object-contain"
+                      className="flex w-[10.38888rem] object-contain"
                     />
       
                 </div>    
-          <div>
-           
-    
-            <div className="relative">
-              {/* <input type="reset"/> */}
-              <input
-                type="text"
-                id="company"
-                name="company"
-                
-                value={companyname}
-                placeholder="Company*"
-                className="text-box text-box-container"
-               onChange={handleCompanyNameChange}
-              />
-            
-    
-             
-            </div>
-          </div>
-          {companyerror &&(
-          <span className="text-brand-red text-[0.6rem] error-msg">{companyerror}</span>
-          )}
+          
           <div>
             
             <div className="relative">
@@ -396,9 +384,13 @@ useEffect(() => {
                           className="w-full rounded-none text-black w-[6rem] "
                           // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
                           onChange={handleCountryCodeChange}
-                        
                           value={countryCode}
                           options={Countries}
+                          showSearch
+                          placeholder="+1"
+                          optionFilterProp="children"
+                          onSearch={onSearch}
+                          filterOption={filterOption}
                          />
 
                           <input
@@ -426,6 +418,29 @@ useEffect(() => {
           {phoneerror &&(
           <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
           )}
+          <div>
+           
+    
+           <div className="relative">
+             {/* <input type="reset"/> */}
+             <input
+               type="text"
+               id="company"
+               name="company"
+               
+               value={companyname}
+               placeholder="Company*"
+               className="text-box text-box-container"
+              onChange={handleCompanyNameChange}
+             />
+           
+   
+            
+           </div>
+         </div>
+         {companyerror &&(
+         <span className="text-brand-red text-[0.6rem] error-msg">{companyerror}</span>
+         )}
 
 
 <div>
