@@ -4,7 +4,7 @@ const Section2 = () => {
   return (
     <section className="relative flex justify-center flex-col-reverse lg:flex-row max-h-fit w-full overflow-hidden bg-slate">
       <div className="flex flex-1 flex-col lg:min-h-full justify-between">
-        <h2 className="md pt-14 xl:pt-16 px-4 font-montserrat font-semibold text-[#0D0B71] leading-10 text-4xl lg:flex hidden justify-center h-fit max-w-[30.625rem]">
+        <h2 className="md ml-4  pt-14 xl:pt-16 px-4 font-montserrat font-semibold text-[#0D0B71] leading-10 text-4xl lg:flex hidden justify-center h-fit max-w-[30.625rem]">
             {loaderData.section2Title}
           </h2>
           <div

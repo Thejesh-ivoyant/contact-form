@@ -378,6 +378,14 @@ gap: 1rem;
   background: linear-gradient(0deg, #FAFFFD -486.56%, rgba(195, 243, 246, 0.00) 94.86%);
 }
 
+.form-section-success{
+  padding-top: 3.25rem;
+  padding-bottom: 0rem;
+  padding-left: 0px;
+  padding-right: 0px;
+  background: linear-gradient(0deg, #FAFFFD -486.56%, rgba(195, 243, 246, 0.00) 94.86%);
+}
+
 /* Styles for screens smaller than 576px (extra small devices, phones) */
 @media only screen and (max-width: 575.98px) {
   .message-box{
@@ -386,6 +394,11 @@ gap: 1rem;
   .main-container{
     flex-direction: column;
   }
+  
+.ant-row{
+ 
+  grid-template-columns: auto !important;
+}
   .area-top-heading{
     justify-content: space-between;
 
@@ -408,6 +421,12 @@ gap: 1rem;
     padding-left:1.19rem;
     padding-right: 1.19rem;
   }
+  .form-section-success{
+    padding-top: 1.19rem;
+    padding-bottom: 0rem;
+    padding-left:1.19rem;
+    padding-right: 1.19rem;
+  }
   .form-container{
    margin-top: -13rem;
   }
@@ -426,6 +445,11 @@ gap: 1rem;
     justify-content: space-between;
 
   }
+    
+.ant-row{
+ 
+  grid-template-columns: auto !important;
+}
   .line{
     display: none;
   }
@@ -444,6 +468,12 @@ gap: 1rem;
   .form-section{
     padding-top: 1.19rem;
     padding-bottom: 1.19rem;
+    padding-left:1.19rem;
+    padding-right: 1.19rem;
+  }
+  .form-section-success{
+    padding-top: 1.19rem;
+    padding-bottom: 0rem;
     padding-left:1.19rem;
     padding-right: 1.19rem;
   }
@@ -476,6 +506,12 @@ gap: 1rem;
   .form-section{
     padding-top: 1.19rem;
     padding-bottom: 1.19rem;
+    padding-left:1.19rem;
+    padding-right: 1.19rem;
+  }
+  .form-section-success{
+    padding-top: 1.19rem;
+    padding-bottom: 0rem;
     padding-left:1.19rem;
     padding-right: 1.19rem;
   }

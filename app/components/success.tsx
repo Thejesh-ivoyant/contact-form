@@ -26,7 +26,7 @@ const Image = ({ src, alt }:{src:any,alt:any}) => (
 
 function Success() {
   return (
-    <section className="flex justify-between flex-col items-center h-full">
+    <section className="flex justify-between flex-col items-center h-full form-section-success pb-[0px]">
       <div className="items-center  text-center max-w-[34.68875rem]  form-container ">
       <div className="flex flex-row mt-[3.5rem]  justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit h-fit">
                     <img
