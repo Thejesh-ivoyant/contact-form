@@ -351,8 +351,23 @@ line-height: 20px; /* 142.857% */
   box-shadow: 0 0 0 2px rgba(149, 255, 131, 0.1);
 }
 
-
+.s4-title{
+  color: #FFF;
+font-family: Montserrat;
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: 64px; /* 160% */
+}
 /**/
+.s4-desc{
+  color: #222;
+font-family: Poppins;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 34px; /* 170% */
+}
 .form-container{
   background: #FFF;
   width: 100%;

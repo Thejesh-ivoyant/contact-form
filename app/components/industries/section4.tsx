@@ -17,16 +17,15 @@ const Section4 = () => {
   return (
     <section className="relative flex justify-center flex-col lg:flex-row lg:h-[600px] w-full">
       <div
-        className="flex flex-1 flex-col h-full min-h-[16rem] text-white "
+        className="flex flex-1 items-center text-center flex-col h-full min-h-[16rem] text-white "
         style={gradientStyle}
       >
-        <div className="px-4">
-          <h2 className="float-left text-2xl lg:text-3xl font-montserrat w-full font-medium ">
-            {loaderData.section4Title}
+        <div className="px-4 flex flex-col gap-4 px-4">
+          <h2 className="flex float-left text-2xl lg:text-3xl font-montserrat w-full font-medium p-4 s4-title ">
+          FinTech Use cases - AI enabling FinTech
           </h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet
-            veniam hic ducimus sint molestias
+          <p className="flex p-4">
+          FinTech is in the forefront of the digital transformation with AI adoption
           </p>
         </div>
       </div>
@@ -57,7 +56,7 @@ const Section4 = () => {
                   service.id === currState ? "open" : ""
                 } font-poppins px-4`}
               >
-                <p>{service.description}</p>
+                <p className="s4-desc">{service.description}</p>
                 {service.bullets.map((bullet: string, index: number) => (
                   <li key={index}>{bullet}</li>
                 ))}
