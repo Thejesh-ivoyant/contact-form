@@ -90,13 +90,13 @@ height: 1rem;
 
 }
 .ant-select-dropdown{
-  width: 100% !important;
+  width: 5.5rem !important;
 }
 
 
 
 .ant-select-selector{
-  width: 5.5rem !important;
+  width: fit-content !important;
   background-color: transparent !important;
 }
 .text-box-container{
@@ -294,6 +294,30 @@ line-height: 1.25rem; /* 142.857% */
 .ant-checkbox-input:focus + .ant-checkbox-inner {
   border-color: green;
 }
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.flex-container {
+  display: flex;
+  height: 100%;
+}
+
+.left-container {
+
+
+  flex-shrink: 0; /* Ensures this div doesn't shrink */
+  height: 100%;
+}
+
+.right-container {
+  width: 60%;
+ background: linear-gradient(0deg, #FAFFFD -486.56%, rgba(195, 243, 246, 0.00) 94.86%);
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+
 
 .ant-checkbox-input:hover{
   border-color: green!important;

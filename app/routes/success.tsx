@@ -14,9 +14,11 @@ export const meta: MetaFunction = () => {
 export default function Index() {
 
   return (
-<div className="main-container flex flex-row ">
-    <LeftSection/>
-    <Success />
-    </div>
+
+  
+  <div className="flex-container">
+     <div className="left-container left-section"><LeftSection/></div>
+     <div className="right-container"><Success/></div>
+   </div>
   );
 }

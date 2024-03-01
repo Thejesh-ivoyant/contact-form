@@ -37,7 +37,7 @@ type CheckboxValueType = GetProp<typeof Checkbox.Group, 'value'>[number];
 
 const CheckboxGroup = Checkbox.Group;
 
-const plainOptions = ['API Integration', 'Cloud Migration', 'DevOps','Quality Engineering','Web And Mobile Development','Data','AI & ML','Cybersecurity','Blockchain','User Experience'];
+const plainOptions = ['API Integration','AI & ML','Cloud Migration','Cybersecurity','DevOps','Data','User Experience(UX)','Web And Mobile Development'];
 
 const ContactUs = () => {
  
@@ -314,7 +314,7 @@ useEffect(() => {
 
   return (
     <>
-    <div className="flex flex-col mx-auto w-full max-w-[35.8125rem]  form-section  ">
+    <div className="flex flex-col mx-auto w-full max-w-[35.8125rem]  form-section ">
         
                 {" "}
              

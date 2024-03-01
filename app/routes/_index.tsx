@@ -142,9 +142,14 @@ function isValidPhoneNumber(phone: any) {
 export default function Index() {
 
   return (
-    <div className="main-container   flex flex-row">
-    <LeftSection/>
-<ContactUs/>
-    </div>
+//     <div className="main-container h-full flex flex-row">
+//     <LeftSection/>
+// <ContactUs/>
+//     </div>
+    <div className="flex-container">
+    <div className="left-container left-section"><LeftSection/></div>
+    <div className="right-container"><ContactUs/></div>
+  </div>
+  
   );
 }

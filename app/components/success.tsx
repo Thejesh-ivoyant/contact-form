@@ -1,6 +1,6 @@
 import React from "react";
 import videourl from "../../public/assets/success.mp4";
-import ivurl from '../../public/assets/ivoyant1.png';
+import ivurl from '../../public/assets/logo.svg';
 import { Link } from "@remix-run/react";
 
 const MainTitle = ({ title }:{title:any}) => (
@@ -26,9 +26,9 @@ const Image = ({ src, alt }:{src:any,alt:any}) => (
 
 function Success() {
   return (
-    <section className="flex justify-between flex-col items-center h-screen">
-      <div className="items-center  text-center max-w-[34.68875rem]  form-container">
-      <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit h-fit">
+    <section className="flex justify-between flex-col items-center h-full">
+      <div className="items-center  text-center max-w-[34.68875rem]  form-container ">
+      <div className="flex flex-row mt-[3.5rem]  justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit h-fit">
                     <img
                       src={ivurl}
                       alt="iVoyant Logo"
@@ -43,7 +43,7 @@ function Success() {
           playsInline
           src={videourl}
           autoPlay
-          className="aspect-square w-[9.8125rem] "
+          className="aspect-square w-[9.8125rem] mt-[37px] "
         />
 
       <article className="flex flex-col px-16 max-w-full w-full">
