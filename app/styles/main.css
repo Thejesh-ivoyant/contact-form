@@ -370,6 +370,9 @@ gap: 1rem;
 .left-section{
   width: 41.7361%;
 }
+.image-fintech{
+  width: 376px;
+}
 .form-section{
   padding-top: 3.25rem;
   padding-bottom: 3.25rem;
@@ -391,8 +394,19 @@ gap: 1rem;
   .message-box{
     display: none;
   }
+  .subtext{
+    display: none;
+  }
+  .header{
+
+  font-size: 1.5rem;
+
+  }
   .main-container{
     flex-direction: column;
+  }
+  .image-fintech{
+    width: 220.696px;
   }
   
 .ant-row{
@@ -430,12 +444,21 @@ gap: 1rem;
   .form-container{
    margin-top: -13rem;
   }
+  .text-block-link{
+    display: none;
+  }
   
 }
 
 /* Styles for screens between 576px and 767px (small devices, landscape phones) */
 @media only screen and (min-width: 576px) and (max-width: 767.98px) {
   .message-box{
+    display: none;
+  }
+  .subtext{
+    display: none;
+  }
+  .text-block-link{
     display: none;
   }
   .main-container{
@@ -445,7 +468,14 @@ gap: 1rem;
     justify-content: space-between;
 
   }
-    
+  .header{
+
+    font-size: 1.875rem;
+  
+    }
+  .image-fintech{
+    width: 280.696px;
+  }
 .ant-row{
  
   grid-template-columns: auto !important;
@@ -488,6 +518,15 @@ gap: 1rem;
   .area-top-heading{
     justify-content: space-between;
 
+  }
+  
+  .header{
+
+    font-size: 1.9rem;
+  
+    }
+  .image-fintech{
+    width: 300.696px;
   }
   .line{
     display: none;

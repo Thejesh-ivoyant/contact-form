@@ -15,7 +15,7 @@ function LeftSection() {
 
 function ImageWithAlt({ src, alt }:{src:any,alt:any}) {
     return (
-      <img loading="eager" src={src} alt={alt} className=" max-w-full aspect-[4.17] w-[376px]" />
+      <img loading="eager" src={src} alt={alt} className=" max-w-full aspect-[4.17]  image-fintech" />
     );
   }
 
