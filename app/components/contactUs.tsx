@@ -514,7 +514,7 @@ useEffect(() => {
       disabled={isCreatingNewPost}
       className="submit-btn"
     >
-      {isCreatingNewPost ? 'Loading...' : 'Submit'}
+      {isCreatingNewPost ? 'LOADING...' : 'SUBMIT'}
     </button>
        
         </fetcher.Form>
