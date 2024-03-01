@@ -146,7 +146,7 @@ export default function Index() {
 //     <LeftSection/>
 // <ContactUs/>
 //     </div>
-    <div className="flex-container">
+    <div className="flex-container main-container">
     <div className="left-container left-section"><LeftSection/></div>
     <div className="right-container"><ContactUs/></div>
   </div>

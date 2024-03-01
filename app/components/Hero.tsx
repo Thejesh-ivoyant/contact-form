@@ -14,7 +14,7 @@ const Hero = () => {
           {loaderData.heroDescription}
           </span>
         </div>
-        <Link to="/contact-us"><button className="btn  hero-btn cursor-pointer" >Let's Talk</button>
+        <Link to="/"><button className="btn  hero-btn cursor-pointer" >Let's Talk</button>
      </Link>
          </div>
     </section>

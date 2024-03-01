@@ -13,9 +13,13 @@ import { fetchData } from "~/utils/fetchdata";
 import IndustryStyle from '~/styles/Industry.css'
 import { LinksFunction } from "@remix-run/node";
 import Nav from "~/components/nav";
+import Navstyle from "~/components/nav.css";
+
 export const links: LinksFunction = () => [
-  {rel:"stylesheet", href:IndustryStyle}
+  {rel:"stylesheet", href:IndustryStyle},
+  {rel:"stylesheet", href:Navstyle}
 ];
+
 export async function loader({ params }: LoaderFunctionArgs) {
   try {
     

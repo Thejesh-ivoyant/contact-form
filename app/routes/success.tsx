@@ -16,7 +16,7 @@ export default function Index() {
   return (
 
   
-  <div className="flex-container">
+  <div className="flex-container main-container">
      <div className="left-container left-section"><LeftSection/></div>
      <div className="right-container"><Success/></div>
    </div>

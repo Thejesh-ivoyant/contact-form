@@ -74,7 +74,7 @@ const Nav = () => {
           </Link>
           
           <div className="flex flex-row gap-6 " >
-          <Link to="/contact-us">
+          <Link to="/">
             <div>
               <button name="contactus" className="hue-btn" ><span>CONTACT US</span></button>
             </div>
