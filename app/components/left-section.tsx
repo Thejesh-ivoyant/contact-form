@@ -2,7 +2,7 @@ import React from "react";
 
 function LeftSection() {
   return (
-    <section className="flex flex-col items-center pt-[3.75rem] text-base font-medium text-center text-white bg-[#1A4721]  h-full  ">
+    <section className="flex flex-col items-center pt-[3.75rem] text-center text-white bg-[#1A4721]  h-full  ">
       <ImageWithAlt src="https://cdn.builder.io/api/v1/image/assets/TEMP/2381f6ccd12a72a205e53cb22840e56c08bb4f057e490d47b5eab4f338bae324?apiKey=9e16588387084fb2a9a51a1b99489136&" alt="Company logo" />
       <Header title="Get in touch with us" />
       <TextBlock text="We are an IT services and solutions provider for all your Fintech needs" />

@@ -144,7 +144,12 @@ const ContactUs = () => {
 
   const onSearch = (value: string) => {
     console.log('search:', value);
-    setCountryCode(value);
+    if(value){
+      setCountryCode(value);
+    }
+    else{
+      setCountryCode("+1");
+    }
   };
 
   
@@ -463,20 +468,18 @@ useEffect(() => {
 
 
           <div>
-<div className="flex flex-row justify-start items-center gap-2">
-<div className="flex  area-heading">
+<div className="flex flex-row justify-start items-center area-top-heading gap-2">
+    <div className="flex  area-heading">
       Area of Interest*
     </div>
     <div className="line"/>
     <div className="flex">
-            {/* <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
-            {checkAll ? 'Deselect All' : 'Select All'}
-      </Checkbox> */}
+           
       <button type="button" onClick={onCheckAll} className="select-all-btn">
       {checkAll ? 'Deselect All' : 'Select All'}
       </button>
 
-      </div>
+    </div>
 </div>
          
       
