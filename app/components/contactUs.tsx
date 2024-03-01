@@ -379,9 +379,9 @@ useEffect(() => {
           <div>
             <div className="relative">
             <div className="w-full text-box  ">
-                        <div className="country-code items-center justify-center my-auto">
+                        <div className="country-code items-center justify-center my-auto cursor-pointer">
                         <Select
-                          className="w-full country-text"
+                          className="w-full country-text cursor-pointer"
                           // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
                           onChange={handleCountryCodeChange}
                           value={countryCode}
