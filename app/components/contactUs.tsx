@@ -381,7 +381,7 @@ useEffect(() => {
             <div className="w-full text-box  ">
                         <div className="country-code items-center justify-center my-auto">
                         <Select
-                          className="w-full rounded-none text-black w-[6rem] "
+                          className="w-full country-text"
                           // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
                           onChange={handleCountryCodeChange}
                           value={countryCode}
@@ -464,7 +464,7 @@ useEffect(() => {
 
           <div>
 <div className="flex flex-row justify-start items-center gap-2">
-<div className="flex  my-auto leading-[143%] text-gray-700 text-opacity-70">
+<div className="flex  area-heading">
       Area of Interest*
     </div>
     <div className="line"/>

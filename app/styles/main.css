@@ -188,10 +188,10 @@ line-height: 1.625rem; /* 162.5% */
 .checkbox-text{
   color: #1B0740;
 font-family: Montserrat;
-font-size: 0.8125rem;
+font-size: 13px;
 font-style: normal;
 font-weight: 400;
-line-height: 1rem; /* 123.077% */
+line-height: 16px; /* 123.077% */
 text-transform: capitalize;
 }
 .ant-select-outlined:not(.ant-select-customize-input) .ant-select-selector {
@@ -317,7 +317,22 @@ body, html {
  background: linear-gradient(0deg, #FAFFFD -486.56%, rgba(195, 243, 246, 0.00) 94.86%);
   overflow-y: auto; /* Enables vertical scrolling */
 }
-
+.area-heading{
+  color: rgba(64, 66, 88, 0.68);
+font-family: Montserrat;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px; /* 142.857% */
+}
+.country-text{
+  color: rgba(64, 66, 88, 0.68);
+font-family: Montserrat;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px; /* 142.857% */
+}
 
 .ant-checkbox-input:hover{
   border-color: green!important;
@@ -407,6 +422,7 @@ gap: 1rem;
     width: 100%;
     
   }
+
   .form-container{
     margin-top: -13rem;
    }
