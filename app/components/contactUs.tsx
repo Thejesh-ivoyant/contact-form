@@ -70,8 +70,9 @@ const ContactUs = () => {
   
 
   const [countryCode, setCountryCode] = useState('1');
-  const [countryName, setCountryName] = useState('');
   const [companyname, setCompanyName] = useState('');
+  const [personname, setPersonName] = useState('');
+  const [title, setTitle] =useState("");
   const [email, setEmail] =useState("");
   const [emailerror, setEmailError] = useState('');
   const [nameerror, setNameError] = useState('');
@@ -80,9 +81,20 @@ const ContactUs = () => {
   const [companyerror, setCompanyError] = useState('');
   
   const [phoneNumber, setPhoneNumber] = useState("");
- 
+  function isValidPhoneNumber(phone: any) {
+    // Implement phone number validation logic
+    return /^[0-9]+$/.test(phone); // For simplicity, this just checks if the phone number contains only digits
+  }
   const handlePhoneNumberChange = (e: any) => {
+    const phone= e.target.value;
     setPhoneNumber(e.target.value);
+    setPhoneError("");
+    if (!phone) {
+   setPhoneError("Phone number is required");
+    } else if (!isValidPhoneNumber(phone)) {
+     setPhoneError("Invalid phone number format");
+    }
+  
   };
 
 
@@ -101,9 +113,56 @@ const ContactUs = () => {
     }
   };
   
-  const handleCompanyNameChange = (e: any) => {
-    setCompanyName(e.target.value);
+ 
+
+  const handlePersonNameChange = (e: any) => {
+    const personname=e.target.value;
+    setPersonName(e.target.value);
+    setNameError("");
+    if (!personname) {
+
+      setNameError("Full name is required");
+    } else if (personname.length < 3 || personname.length > 35) {
+      
+      setNameError("Full name must be between 3 and 20 characters");
+    } else if (!/^[a-zA-Z\s]*$/.test(personname)) {
+      setNameError("Full name must contain only letters and spaces");
+     
+    }
   };
+
+  const handleCompanyNameChange = (e: any) => {
+    const companyname=e.target.value;
+    setCompanyName(e.target.value);
+    setCompanyError("");
+    if (!companyname) {
+
+      setCompanyError("Company name is required");
+    } else if (companyname.length < 3 || companyname.length > 35) {
+      
+     setCompanyError("Company name must be between 3 and 20 characters");
+    } else if (!/^[a-zA-Z\s]*$/.test(companyname)) {
+     setCompanyError("company name must contain only letters and spaces");
+     
+    }
+  };
+
+  const handleTitleChange = (e: any) => {
+    const title=e.target.value;
+    setTitle(e.target.value);
+    setTitleError("");
+    if (!title) {
+
+      setTitleError("Title name is required");
+    } else if (title.length < 3 || title.length > 35) {
+      
+      setTitleError("Title name must be between 3 and 20 characters");
+    } else if (!/^[a-zA-Z\s]*$/.test(title)) {
+      setTitleError("Title must contain only letters and spaces");
+     
+    }
+  };
+
   const [checkedList, setCheckedList] = useState<CheckboxValueType[]>([]);
 
   const checkAll = plainOptions.length === checkedList.length;
@@ -351,6 +410,8 @@ useEffect(() => {
                 id="personname"
                 name="personname"
                 className="text-box text-box-container"
+                value={personname}
+                onChange={handlePersonNameChange}
                 placeholder="Full Name*"
               />
     
@@ -372,7 +433,7 @@ useEffect(() => {
                 value={email}
                 onChange={handleEmailChange}
                 className="text-box text-box-container"
-                placeholder="Email"
+                placeholder="Email*"
               />
     
             
@@ -457,6 +518,9 @@ useEffect(() => {
                 name="jobtitle"
                 className="text-box text-box-container"
                 placeholder="Job Title"
+                value={title}
+                onChange={handleTitleChange}
+
               />
     
              
@@ -514,7 +578,7 @@ useEffect(() => {
       name="_action"
       value="contact"
     
-      disabled={isCreatingNewPost}
+      disabled={isCreatingNewPost  || !!phoneerror || !!emailerror || !!nameerror || !!titleerror || !!companyerror || email==='' || personname==='' || phoneNumber===''|| companyname===''}
       className="submit-btn"
     >
       {isCreatingNewPost ? 'LOADING...' : 'SUBMIT'}
