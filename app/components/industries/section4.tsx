@@ -17,7 +17,7 @@ const Section4 = () => {
   return (
     <section className="relative flex justify-center flex-col lg:flex-row lg:h-[600px] w-full">
       <div
-        className="flex flex-1 items-center text-center flex-col h-full min-h-[16rem] text-white "
+        className="flex flex-1 items-center  flex-col h-full min-h-[16rem] text-white "
         style={gradientStyle}
       >
         <div className="px-4 flex flex-col gap-4 px-4">
