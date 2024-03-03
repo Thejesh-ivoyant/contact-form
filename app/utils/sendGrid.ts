@@ -77,8 +77,8 @@ const htmlContent =`<!DOCTYPE html>
       </tr>
       <tr>
         <td align="center" style="margin-top: 24px;padding-top:24px;">
-        <img loading="lazy" src="https://res.cloudinary.com/dzwihcqk2/image/upload/v1709495328/internet_ksnndt.png" class="footer-logo" alt="Footer logo" style="display: inline-block; width: 16px; height: auto; margin-right: 16px;">
-        <div class="footer-text" style="display: inline-block; width: 16px; height: auto; margin-right: 16px;font-family: Poppins, sans-serif;">www.ivoyant.com</div>     
+        <img loading="lazy" src="https://res.cloudinary.com/dzwihcqk2/image/upload/v1709495328/internet_ksnndt.png" class="footer-logo" alt="Footer logo" style="display: inline-block; width: 16px; height: auto; margin-right: 12px;">
+        <div class="footer-text" style="display: inline-block; height: auto; margin-right: 16px;font-family: Poppins, sans-serif;">www.ivoyant.com</div>     
         </td>
       </tr>
     </table>
