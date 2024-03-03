@@ -140,9 +140,7 @@ const ContactUs = () => {
         setCompanyError("Company name is required");
     } else if (companyName.length < 3 || companyName.length > 35) {
         setCompanyError("Company name must be between 3 and 35 characters");
-    } else if (!/^[\p{L}\s']+$/u.test(companyName)) {
-        setCompanyError("Company name must contain only letters, spaces, and apostrophes");
-    }
+    } 
 };
 
 

@@ -45,10 +45,7 @@ const companyname = String(body.get("company"));
   } else if (companyname.length < 3 || companyname.length > 35) {
     console.log("companyname>>>>",companyname.length)
     errors.companyname = "Company name must be between 3 and 20 characters";
-  } else if (!/^[a-zA-Z\s]*$/.test(companyname)) {
-    errors.companyname = "company name must contain only letters and spaces";
-    console.log("name>>>>",errors.companyname)
-  }
+  } 
 
   // Validate name
   if (!name) {
