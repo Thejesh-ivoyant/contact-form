@@ -44,16 +44,16 @@ const companyname = String(body.get("company"));
     errors.companyname = "Company name is required";
   } else if (companyname.length < 3 || companyname.length > 35) {
     console.log("companyname>>>>",companyname.length)
-    errors.companyname = "Company name must be between 3 and 20 characters";
+    errors.companyname = "Company name must be between 3 and 35 characters";
   } 
 
   // Validate name
   if (!name) {
 
     errors.name = "Name is required";
-  } else if (name.length < 3 || name.length > 20) {
+  } else if (name.length < 3 || name.length > 30) {
     console.log("name>>>>",name.length)
-    errors.name = "Name must be between 3 and 20 characters";
+    errors.name = "Name must be between 3 and 30 characters";
   } else if (!/^[a-zA-Z\s]*$/.test(name)) {
     errors.name = "Name must contain only letters and spaces";
     console.log("name>>>>",errors.name)

@@ -122,9 +122,9 @@ const ContactUs = () => {
     if (!personname) {
 
       setNameError("Full name is required");
-    } else if (personname.length < 3 || personname.length > 35) {
+    } else if (personname.length < 3 || personname.length > 30) {
       
-      setNameError("Full name must be between 3 and 35 characters");
+      setNameError("Full name must be between 3 and 30 characters");
     } else if (!/^[a-zA-Z\s]*$/.test(personname)) {
       setNameError("Full name must contain only letters and spaces");
      
