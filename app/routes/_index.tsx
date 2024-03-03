@@ -62,15 +62,10 @@ const companyname = String(body.get("company"));
     console.log("name>>>>",errors.name)
   }
 
-  if (!title) {
-    errors.title = "JobTitle is required";
-  } else if (title.length < 2 || title.length > 20) {
- 
-    errors.title = "JobTitle must be between 3 and 20 characters";
-  } else if (!/^[a-zA-Z\s]*$/.test(title)) {
-    errors.title = "JobTitle must contain only letters and spaces";
+  //   if (!/^[a-zA-Z\s]*$/.test(title)) {
+  //   errors.title = "JobTitle must contain only letters and spaces";
     
-  }
+  // }
 
   // Validate phone number
   if (!phone) {

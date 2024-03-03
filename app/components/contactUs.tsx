@@ -124,7 +124,7 @@ const ContactUs = () => {
       setNameError("Full name is required");
     } else if (personname.length < 3 || personname.length > 35) {
       
-      setNameError("Full name must be between 3 and 20 characters");
+      setNameError("Full name must be between 3 and 35 characters");
     } else if (!/^[a-zA-Z\s]*$/.test(personname)) {
       setNameError("Full name must contain only letters and spaces");
      
@@ -132,35 +132,27 @@ const ContactUs = () => {
   };
 
   const handleCompanyNameChange = (e: any) => {
-    const companyname=e.target.value;
-    setCompanyName(e.target.value);
+    const companyName = e.target.value.trim(); // Trim any leading/trailing spaces
+    setCompanyName(companyName);
     setCompanyError("");
-    if (!companyname) {
 
-      setCompanyError("Company name is required");
-    } else if (companyname.length < 3 || companyname.length > 35) {
-      
-     setCompanyError("Company name must be between 3 and 20 characters");
-    } else if (!/^[a-zA-Z\s]*$/.test(companyname)) {
-     setCompanyError("company name must contain only letters and spaces");
-     
+    if (!companyName) {
+        setCompanyError("Company name is required");
+    } else if (companyName.length < 3 || companyName.length > 35) {
+        setCompanyError("Company name must be between 3 and 35 characters");
+    } else if (!/^[\p{L}\s']+$/u.test(companyName)) {
+        setCompanyError("Company name must contain only letters, spaces, and apostrophes");
     }
-  };
+};
+
 
   const handleTitleChange = (e: any) => {
     const title=e.target.value;
     setTitle(e.target.value);
-    setTitleError("");
-    if (!title) {
-
-      setTitleError("Title name is required");
-    } else if (title.length < 3 || title.length > 35) {
-      
-      setTitleError("Title name must be between 3 and 20 characters");
-    } else if (!/^[a-zA-Z\s]*$/.test(title)) {
-      setTitleError("Title must contain only letters and spaces");
-     
-    }
+    // setTitleError("");
+    // if (!/^[a-zA-Z\s]*$/.test(title)) {
+    //   setTitleError("Title must contain only letters and spaces");
+    // }
   };
 
   const [checkedList, setCheckedList] = useState<CheckboxValueType[]>([]);
