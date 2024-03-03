@@ -14,7 +14,7 @@ export const SendGrid = (Email: string) => {
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
       <tr>
         <td bgcolor="#1A4721" style="padding: 40px 0 30px 0; text-align: center;">
-          <img src="https://asset.cloudinary.com/dzwihcqk2/5935cee1a8c026dd33f714f64be58a45" alt="Company logo" width="200" style="display: block; margin: auto;">
+          <img src="https://res.cloudinary.com/dzwihcqk2/image/upload/v1709486324/emailimage_fexbql.png" alt="Company logo" width="200" style="display: block; margin: auto;">
           <p style="color: #ffffff; font-size: 18px; margin-top: 30px;">We are an IT services and solutions provider for all your Fintech needs</p>
         </td>
       </tr>
