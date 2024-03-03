@@ -534,7 +534,7 @@ useEffect(() => {
           <div>
 <div className="flex flex-row justify-start items-center area-top-heading gap-2">
     <div className="flex  area-heading">
-      Area of Interest*
+      Area of Interest
     </div>
     <div className="line"/>
     <div className="flex">
