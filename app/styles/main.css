@@ -18,6 +18,8 @@ font-size: 1rem;
 font-style: normal;
 font-weight: 500;
 line-height: 1.625rem; /* 162.5% */
+padding-left: 0px;
+padding-right: 0px;
 }
 .text-block-link{
   color: #FFF;
@@ -410,6 +412,10 @@ gap: 1rem;
   .message-box{
     display: none;
   }
+  .text-block{
+    padding-left: 42px;
+padding-right: 42px;
+  }
   .subtext{
     display: none;
   }
@@ -470,6 +476,10 @@ gap: 1rem;
 @media only screen and (min-width: 576px) and (max-width: 767.98px) {
   .message-box{
     display: none;
+  }
+  .text-block{
+    padding-left: 32px;
+padding-right: 32px;
   }
   .subtext{
     display: none;
@@ -535,7 +545,10 @@ gap: 1rem;
     justify-content: space-between;
 
   }
-  
+  .text-block{
+    padding-left: 22px;
+padding-right: 22px;
+  }
   .header{
 
     font-size: 1.9rem;
