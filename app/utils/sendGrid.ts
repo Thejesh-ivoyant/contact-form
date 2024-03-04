@@ -44,24 +44,31 @@ const htmlContent =`<!DOCTYPE html>
           <td style="font-size: 16px; color: #333; font-weight: 400; line-height: 28px;">
 
             <h1 style="font-family: Poppins, sans-serif; font-weight: 500; line-height: 26px;font-size:16px; margin-top: 32px;">Hi ${user},</h1>
-            <p style="font-family: Poppins, sans-serif; font-weight: 500; line-height: 26px;font-size:16px;">Thank you for reaching out to ivoyant. We've received your form submission and are currently reviewing it.</p>
-            <p style="font-family: Poppins, sans-serif; font-weight: 400; line-height: 22px; margin-top: 6px;font-size:16px;">Expect a prompt response from our team shortly.</p>
-            <p style="font-family: Poppins, sans-serif; font-weight: 400; line-height: 28px; margin-top: 24px;">For any urgent inquiries, feel free to reach out to us directly at</p>
+            <p style="font-family: Poppins, sans-serif; font-weight: 500; line-height: 26px;font-size:16px;">It was a pleasure to meet you at the FinTech meetup in Las Vegas. At ivoyant, we specialize in integration, digital modernization, security solutions, and application development, specifically designed to address the unique challenges faced by the banking sector.</p>
+            <p style="font-family: Poppins, sans-serif; font-weight: 400; line-height: 22px; margin-top: 6px;font-size:16px;">We believe in the power of collaboration to drive success and are eager to explore how our teams can partner to enhance your digital and IT capabilities.</p>
+            <p style="font-family: Poppins, sans-serif; font-weight: 400; line-height: 28px; margin-top: 24px;">I'll reach out shortly to discuss potential synergies. In the meantime, I invite you to connect with us on LinkedIn and learn more about how we can support your initiatives:</p>
             <table cellpadding="0" cellspacing="0" border="0" width="100%">
               <tr>
                 <td style="display: flex; gap: 7px; color: #552e95; margin-top: 8px;">
-                  <img src="https://res.cloudinary.com/dzwihcqk2/image/upload/v1709493170/email_dpewc6.png" alt="ivoyant email" style="width: 24px; height: 24px; object-fit: contain; margin: auto 0;">
-                  <span style="font-size:16px;">info@ivoyant.com</span>
+                  <img src="https://res.cloudinary.com/dzwihcqk2/image/upload/v1709534677/linkedcolor_zfpyma.webp" alt="ivoyant email" style="width: 24px; height: 24px; object-fit: contain; margin: auto 0;">
+                  <a href="https://www.linkedin.com/in/sonya-b-235372120/"><span style="font-size:16px;color:#184EAE;margin-left:4px;">Sonya.B</span></a>
                 </td>
               </tr>
               <tr>
                 <td style="display: flex; gap: 7px; color: #552e95; margin-top: 8px;">
-                  <img src="https://res.cloudinary.com/dzwihcqk2/image/upload/v1709493170/Call_i6nztd.png" alt="ivoyant phone" style="width: 24px; height: 24px; object-fit: contain; margin: auto 0;">
-                  <span style="font-size:16px;">+1 (770) 274 4336</span>
+                  <img src="https://res.cloudinary.com/dzwihcqk2/image/upload/v1709534677/linkedcolor_zfpyma.webp" alt="ivoyant phone" style="width: 24px; height: 24px; object-fit: contain; margin: auto 0;">
+                  <a href="https://www.linkedin.com/company/27041701/"><span style="font-size:16px;color:#184EAE;margin-left:4px;">ivoyant</span></a>
                 </td>
               </tr>
             </table>
-            <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 24px;">Cheers, ivoyant Team</p>
+            <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 24px;">You can also visit our website for more information: www.ivoyant.com</p>
+            <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 24px;">Looking forward to the opportunity to collaborate and achieve great results together.</p>
+            <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 24px;">Warm regards,</p>
+            
+            <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 8px;">Sonya</p>
+            <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 8px;">Chief Operating Officer, iVoyant</p>
+            <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 8px;">+1-678-812-6624</p>
+
           </td>
         </tr>
       </table>
@@ -75,12 +82,7 @@ const htmlContent =`<!DOCTYPE html>
           <img loading="lazy" src="https://res.cloudinary.com/dzwihcqk2/image/upload/v1709495731/logo1_mxaqgy.png" class="main-image" alt="Ivoyant logo" style="display: block; width: 90px; height: auto;">
         </td>
       </tr>
-      <tr>
-        <td align="center" style="margin-top: 24px;padding-top:24px;">
-        <img loading="lazy" src="https://res.cloudinary.com/dzwihcqk2/image/upload/v1709495328/internet_ksnndt.png" class="footer-logo" alt="Footer logo" style="display: inline-block; width: 16px; height: auto; margin-right: 12px;">
-        <div class="footer-text" style="display: inline-block; height: auto; margin-right: 16px;font-family: Poppins, sans-serif;">www.ivoyant.com</div>     
-        </td>
-      </tr>
+      
     </table>
   </td>
 </tr>
