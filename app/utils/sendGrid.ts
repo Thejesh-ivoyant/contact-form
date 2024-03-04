@@ -1,6 +1,6 @@
 import * as sgMail from '@sendgrid/mail';
 
-export const SendGrid = (Email: string) => {
+export const SendGrid = (Email: string,fullname:string) => {
 
 const user="Thejesh"
 

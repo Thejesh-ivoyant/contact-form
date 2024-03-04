@@ -93,7 +93,7 @@ const companyname = String(body.get("company"));
 
     if (response.ok) {
       // If submission is successful, send notifications
-      await SendGrid(email);
+      await SendGrid(email,name);
       await SMS(countryCode, phone);
      
       errors.isSuccess = "Success";
