@@ -122,25 +122,17 @@ const ContactUs = () => {
     if (!personname) {
 
       setNameError("Full name is required");
-    } else if (personname.length < 3 || personname.length > 30) {
-      
-      setNameError("Full name must be between 3 and 30 characters");
-    } else if (!/^[a-zA-Z\s]*$/.test(personname)) {
-      setNameError("Full name must contain only letters and spaces");
-     
     }
   };
 
   const handleCompanyNameChange = (e: any) => {
-    const companyName = e.target.value.trim(); // Trim any leading/trailing spaces
-    setCompanyName(companyName);
+    const companyName = e.target.value // Trim any leading/trailing spaces
+    setCompanyName(e.target.value);
     setCompanyError("");
 
     if (!companyName) {
         setCompanyError("Company name is required");
-    } else if (companyName.length < 3 || companyName.length > 35) {
-        setCompanyError("Company name must be between 3 and 35 characters");
-    } 
+    }  
 };
 
 
