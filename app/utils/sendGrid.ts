@@ -1,35 +1,47 @@
 import * as sgMail from '@sendgrid/mail';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
+
+
+interface EmailTemplate {
+  template: string;
+  props: Record<string, any>;
+}
+
+interface EmailData {
+  to: string[];
+  subject: string;
+  emailTemplate: EmailTemplate;
+}
 
 export async function SendGrid(email: string, fullName: string) {
-  try {
-      const apiKey = `${process.env.SENDGRID_KEY}`;
-      const templateId = 'd-d241e27ad50e450cb76b85ae5cce6b15';
 
-      const requestBody = {
-          from: { email: 'sonya@ivoyant.com' },
-          personalizations: [
-              {
-                  to: [{ email }],
-                  dynamic_template_data: { user: fullName }
+      // const apiKey = `${process.env.SENDGRID_KEY}`;
+      // const templateId = 'd-d241e27ad50e450cb76b85ae5cce6b15';
+
+          const emailData: EmailData = {
+              to: [email],
+              subject: "Thank you for reaching out iVoyant at FintechMeetup in Las Vegas",
+              emailTemplate: {
+                  template: "meetup.html",
+                  props: {
+                      name: fullName
+                  }
               }
-          ],
-          template_id: templateId
-      };
-
-      const response = await axios.post('https://api.sendgrid.com/v3/mail/send', requestBody, {
-          headers: {
-              Authorization: `Bearer ${apiKey}`,
-              'Content-Type': 'application/json'
+          };
+      
+          try {
+              const response: AxiosResponse = await axios.post('https://communication-service-ivoyant.azurewebsites.net/ivoyant/products/notifier/email', emailData, {
+                  headers: {
+                      'Content-Type': 'application/json'
+                  }
+              });
+              console.log('Email sent successfully:', response.data);
+          } catch (error) {
+              console.error('Error sending email:', error);
           }
-      });
-
-      console.log('Email sent:', response.data);
-  } catch (error) {
-      console.error('Error sending email:', error);
-      throw error;
-  }
+    
+ 
 }
 
 // export const SendGrid = (Email: string,fullname:string) => {
@@ -98,8 +110,8 @@ export async function SendGrid(email: string, fullName: string) {
 //             <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 24px;">Warm regards,</p>
             
 //             <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 8px;">Sonya</p>
-//             <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 8px;">Chief Operating Officer, iVoyant</p>
-//             <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 8px;">+1-678-812-6624</p>
+//             <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 4px;">Chief Operating Officer, iVoyant</p>
+//             <p style="font-family: Poppins, sans-serif; color: #000; font-weight: 500; line-height: 28px; margin-top: 4px;"><a href="tel:+1(678)674-3937">+1 (678) 674-3937</a></p>
 
 //           </td>
 //         </tr>
