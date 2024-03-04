@@ -21,7 +21,7 @@ export async function SendGrid(email: string, fullName: string) {
 
           const emailData: EmailData = {
               to: [email],
-              subject: "Thank you for reaching out iVoyant at FintechMeetup in Las Vegas",
+              subject: "Great connecting with you at Fintech Meetup",
               emailTemplate: {
                   template: "meetup.html",
                   props: {
