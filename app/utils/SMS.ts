@@ -26,8 +26,8 @@ export const SMS = async (c_code: string, phone_no:string, name:string) => {
 
       const to = `${c_code}${phone_no}`;
       const from = '+14049946986';
-      const smsBody = `${fullname}
- 
+      const smsBody = `
+      ${name}
       It was great meeting with you at FinTech meet. We're excited to connect and partner with you. You can reach me directly
        
       Sonya Beredimas
@@ -35,5 +35,6 @@ export const SMS = async (c_code: string, phone_no:string, name:string) => {
       +1 (678) 674 3937
       https://www.linkedin.com/in/sonya-b-235372120
       https://www.ivoyant.com`;
+      
       await sendSMS(to, from, smsBody);
   };
