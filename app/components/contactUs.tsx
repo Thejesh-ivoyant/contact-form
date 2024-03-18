@@ -365,11 +365,11 @@ useEffect(() => {
                 {" "}
              
         
-{/*         
-        <button  onClick={() => setSpeechRecognitionActive(true)}>{speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
+        
+        {/* <button className="bg-blue-400 white" onClick={() => setSpeechRecognitionActive(true)}>{speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
         <br/>
-        <button onClick={() => stopSpeechRecognition()}>Stop Listening</button>
-     */}
+        <button onClick={() => stopSpeechRecognition()}>Stop Listening{transcribedText}</button>
+      */}
         <fetcher.Form  ref={$formref}
      method="post"
         encType="multipart/form-data"
