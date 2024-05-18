@@ -87,7 +87,7 @@ const Index = () => {
   return (
     <>
       <Suspense fallback={<LoadingTest />}>
-        <Await resolve={data.jsonParsed}>
+        <Await resolve={data}>
           <Nav/>
           <Hero />
           <Section2 />
