@@ -89,7 +89,7 @@ height: 1rem;
 }
   .submit-btn:disabled {
     cursor: not-allowed;
-    background: rgba(33, 67, 30, 0.25);
+    background: #cbbfe7;
 
 }
 .ant-select-dropdown{

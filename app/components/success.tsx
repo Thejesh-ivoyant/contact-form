@@ -51,15 +51,15 @@ function Success() {
         <Subtitle>our team will reach out to you soon!</Subtitle>
       </article>
       <ActionLink>
-        <span className="redirect-msg">To know how we are revolutionising the FinTech Industry{" "}</span>
-       <Link to={'/fintech'}><div className="link">Click here</div></Link> 
+        <span className="redirect-msg">To know how we are revolutionising {" "}</span>
+       <Link to={'https://ivoyant-website-ui-dev.azurewebsites.net/services/apiintegration'}><div className="link">Click here</div></Link> 
       </ActionLink>
 
         </div>
         <div className="flex w-full">
         <Image 
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/a0373624fac0571538fed738a2431e00b0eb26f8c5b7ba1d667a70e231aabdf4?apiKey=9e16588387084fb2a9a51a1b99489136&" 
-        alt="Fintech revolution illustration"
+        alt=" revolution illustration"
       />
         </div>
       
