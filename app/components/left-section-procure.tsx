@@ -1,34 +1,32 @@
 import React from "react";
 import herologourl from '../../public/assets/procurecon-logo.png';
-import meetuptag from '../../public/assets/procuretag.png';
+import tenyears from '../../public/assets/tenyears.png';
 
 import sectionbg from '../../public/assets/procure-bg.png';
-function LeftSection() {
+function LeftSectionProcure() {
   return (
-    <section className="flex flex-col items-center pt-[2rem] text-center text-white " >
-      <ImageWithAlt src={herologourl} alt="Company logo" />
+    <section className="flex flex-col items-center pt-[2rem] text-center text-white " style={{
+        backgroundImage: `url(${sectionbg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height:'100%'
+      }} >
+      <ImageWithAlt src={tenyears} alt="Company logo" class_name={"max-w-full  image-fintech"}/>
+      <ImageWithAlt src={herologourl} alt="Company logo" class_name={"max-w-full  image-fintech"}/>
       <Header title="Get in touch with us" />
-      <TextBlock text="We are an IT services and solutions provider for all your needs" />
+      <TextBlock text="We are an IT services and solutions provider for all your digital needs" />
       <SubText text="Visit for more" />
       <TextBlockLink text="www.ivoyant.com" />
-      <BottomImageWithAlt src={meetuptag} alt="Visualization of services offered" />
     </section>
   );
 }
 
-function ImageWithAlt({ src, alt }:{src:any,alt:any}) {
+function ImageWithAlt({ src, alt, class_name }:{src:any,alt:any,class_name:any}) {
     return (
-      // <img loading="eager" src={src} alt={alt} className=" max-w-full aspect-[4.17]  image-fintech" />
-      <img loading="eager" src={src} alt={alt} className=" max-w-full  image-fintech" />
+      <img loading="eager" src={src} alt={alt} className={class_name} />
 
     );
   }
-
-function BottomImageWithAlt({ src, alt }:{src:any,alt:any}) {
-  return (
-    <img loading="eager" src={src} alt={alt} className="mt-2.5  w-full" />
-  );
-}
 
 function Header({ title }:{title:any}) {
   return (
@@ -53,5 +51,5 @@ function SubText({ text }:{text:any}) {
   );
 }
 
-export default LeftSection;
+export default LeftSectionProcure;
 
