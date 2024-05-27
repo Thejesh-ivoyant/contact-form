@@ -37,10 +37,10 @@ type CheckboxValueType = GetProp<typeof Checkbox.Group, 'value'>[number];
 
 const CheckboxGroup = Checkbox.Group;
 
-const plainOptions = ['API Integration','AI & ML','Cloud Migration','Cybersecurity','DevOps','Data','User Experience(UX)','Web And Mobile Development'];
+const plainOptions = ['API Integration', 'AI & ML', 'Cloud Migration', 'Cybersecurity', 'DevOps', 'Data', 'User Experience(UX)', 'Web And Mobile Development'];
 
 const ContactUs = () => {
- 
+
   // let Countries = countryTelephoneData.allCountries?.map((item:any) => ({
   //   value: item.dialCode,
   //   label:`+(${item.dialCode})`,
@@ -65,46 +65,46 @@ const ContactUs = () => {
     { value: "+51", label: "+51" }, /* Peru */
     { value: "+598", label: "+598" }, /* Uruguay */
     { value: "+58", label: "+58" },/* Venezuela */
-    { value: "+91", label: "+91"} /*India*/
+    { value: "+91", label: "+91" } /*India*/
   ]
-  
+
 
   const [countryCode, setCountryCode] = useState('1');
   const [companyname, setCompanyName] = useState('');
   const [personname, setPersonName] = useState('');
-  const [title, setTitle] =useState("");
-  const [email, setEmail] =useState("");
+  const [title, setTitle] = useState("");
+  const [email, setEmail] = useState("");
   const [emailerror, setEmailError] = useState('');
   const [nameerror, setNameError] = useState('');
   const [titleerror, setTitleError] = useState('');
   const [phoneerror, setPhoneError] = useState('');
   const [companyerror, setCompanyError] = useState('');
-  
+
   const [phoneNumber, setPhoneNumber] = useState("");
   function isValidPhoneNumber(phone: any) {
     // Implement phone number validation logic
     return /^[0-9]+$/.test(phone); // For simplicity, this just checks if the phone number contains only digits
   }
   const handlePhoneNumberChange = (e: any) => {
-    const phone= e.target.value;
+    const phone = e.target.value;
     setPhoneNumber(e.target.value);
     setPhoneError("");
     if (!phone) {
-   setPhoneError("Phone number is required");
+      setPhoneError("Phone number is required");
     } else if (!isValidPhoneNumber(phone)) {
-     setPhoneError("Invalid phone number format");
+      setPhoneError("Invalid phone number format");
     }
-  
+
   };
 
 
   const handleEmailChange = (e: any) => {
     const emailValue = e.target.value;
     setEmail(emailValue);
-    
+
     // Reset email error
     setEmailError("");
-  
+
     // Validate email
     if (!emailValue.trim()) {
       setEmailError("Email is required");
@@ -112,11 +112,11 @@ const ContactUs = () => {
       setEmailError("Invalid email address");
     }
   };
-  
- 
+
+
 
   const handlePersonNameChange = (e: any) => {
-    const personname=e.target.value;
+    const personname = e.target.value;
     setPersonName(e.target.value);
     setNameError("");
     if (!personname) {
@@ -131,13 +131,13 @@ const ContactUs = () => {
     setCompanyError("");
 
     if (!companyName) {
-        setCompanyError("Company name is required");
-    }  
-};
+      setCompanyError("Company name is required");
+    }
+  };
 
 
   const handleTitleChange = (e: any) => {
-    const title=e.target.value;
+    const title = e.target.value;
     setTitle(e.target.value);
     // setTitleError("");
     // if (!/^[a-zA-Z\s]*$/.test(title)) {
@@ -153,49 +153,49 @@ const ContactUs = () => {
     setCheckedList(e.target.checked ? plainOptions : []);
   };
   const onCheckAll = () => {
-    if(!checkAll){
+    if (!checkAll) {
       setCheckedList(plainOptions);
     }
-    else{
+    else {
       setCheckedList([]);
     }
-   
+
   };
   const onChange = (list: CheckboxValueType[]) => {
     setCheckedList(list);
   };
- 
+
 
   useEffect(() => {
     console.log('checked = ', checkedList);
-    console.log("checked hub spot",checkedList.toString());
+    console.log("checked hub spot", checkedList.toString());
   }, [checkedList]);
 
 
 
-  const handleCountryCodeChange = (value:string) => {
+  const handleCountryCodeChange = (value: string) => {
     const selectedCountryCode = value;
     setCountryCode(selectedCountryCode);
-   
-    console.warn("comyry cod4",selectedCountryCode);
+
+    console.warn("comyry cod4", selectedCountryCode);
   };
 
   const filterOption = (input: string, option?: { label: string; value: string }) =>
-  (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
+    (option?.label ?? '').toLowerCase().includes(input.toLowerCase());
 
   const onSearch = (value: string) => {
     console.log('search:', value);
-    if(value){
+    if (value) {
       setCountryCode(value);
     }
-    else{
+    else {
       setCountryCode("+1");
     }
   };
 
-  
+
   const fetcher = useFetcher();
-  let $formref= useRef<HTMLFormElement>(null)
+  let $formref = useRef<HTMLFormElement>(null)
   const navigate = useNavigate();
   useEffect(() => {
     if (fetcher.state === "idle") {
@@ -206,55 +206,54 @@ const ContactUs = () => {
       setEmail("");
       setCompanyName("");
 
-      if (fetcher.data==null) {
- }
-      else{
-     
+      if (fetcher.data == null) {
+      }
+      else {
+
         // If data exists, there are errors
-      
+
         // Parse JSON data and type cast it to ErrorData
         const errorData = fetcher.data as ErrorData;
-  
+
         // Extract individual errors
         const emailError = errorData?.errors?.email;
         const nameError = errorData?.errors?.name;
         const phoneError = errorData?.errors?.phone;
         const companyNameError = errorData?.errors?.companyname;
-        const isSuccessValue= errorData?.errors?.isSuccess;
-        const titleError= errorData?.errors?.title;
-        console.warn("status",isSuccessValue)
-  if(isSuccessValue==="Success"){
-    // success("Thank you for sharing your details!",4);
-    navigate('/success')
-  }else{
+        const isSuccessValue = errorData?.errors?.isSuccess;
+        const titleError = errorData?.errors?.title;
+        console.warn("status", isSuccessValue)
+        if (isSuccessValue === "Success") {
+          // success("Thank you for sharing your details!",4);
+          navigate('/success')
+        } else {
 
-        // Set errors to corresponding state variables
-        if (emailError !== undefined) {
-          setEmailError(emailError);
-          
-        }
-        // Set errors to corresponding state variables
-        if (titleError !== undefined) {
-    setTitleError(titleError);
-          
-        }
-        if (nameError !== undefined) {
-          setNameError(nameError);
-          
-        }
-        if (phoneError !== undefined) {
-          setPhoneError(phoneError);
-        }
-        if (companyNameError !== undefined) {
-          setCompanyError(companyNameError);
-        }
-        if(isSuccessValue==="Failed")
-        {
-          errorMessage("Error occured, Please resubmit", 4);
+          // Set errors to corresponding state variables
+          if (emailError !== undefined) {
+            setEmailError(emailError);
 
+          }
+          // Set errors to corresponding state variables
+          if (titleError !== undefined) {
+            setTitleError(titleError);
+
+          }
+          if (nameError !== undefined) {
+            setNameError(nameError);
+
+          }
+          if (phoneError !== undefined) {
+            setPhoneError(phoneError);
+          }
+          if (companyNameError !== undefined) {
+            setCompanyError(companyNameError);
+          }
+          if (isSuccessValue === "Failed") {
+            errorMessage("Error occured, Please resubmit", 4);
+
+          }
         }
-      }
-       
+
       }
     }
   }, [fetcher.state, fetcher.data]);
@@ -262,95 +261,95 @@ const ContactUs = () => {
   const isCreatingNewPost = fetcher.state === "submitting";
 
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(
-    "fetcher state (is submidfat)"+ isCreatingNewPost
-  )
-  },[isCreatingNewPost])
+      "fetcher state (is submidfat)" + isCreatingNewPost
+    )
+  }, [isCreatingNewPost])
 
 
-//speech
+  //speech
 
-const [speechRecognitionActive, setSpeechRecognitionActive] = useState(false);
-const [transcribedText, setTranscribedText] = useState("");
+  const [speechRecognitionActive, setSpeechRecognitionActive] = useState(false);
+  const [transcribedText, setTranscribedText] = useState("");
 
-const startSpeechRecognition = async () => {
-  const speechConfig = sdk.SpeechConfig.fromSubscription("5a33cab29b9d4088a3d1919302706978", "eastus");
-  const audioConfig = sdk.AudioConfig.fromDefaultMicrophoneInput();
+  const startSpeechRecognition = async () => {
+    const speechConfig = sdk.SpeechConfig.fromSubscription("5a33cab29b9d4088a3d1919302706978", "eastus");
+    const audioConfig = sdk.AudioConfig.fromDefaultMicrophoneInput();
 
-  const recognizer = new sdk.SpeechRecognizer(speechConfig, audioConfig);
-  
-  recognizer.recognizing = (_, event) => {
-    if (event.result.text) {
-      setTranscribedText(event.result.text);
-    }
-  };
+    const recognizer = new sdk.SpeechRecognizer(speechConfig, audioConfig);
 
-  recognizer.startContinuousRecognitionAsync();
-  setSpeechRecognitionActive(true);
-};
-
-const stopSpeechRecognition = async () => {
-  // Stop speech recognition
-  setSpeechRecognitionActive(false);
-};
-
-// Use useEffect to start/stop speech recognition based on speechRecognitionActive state
-useEffect(() => {
-  if (speechRecognitionActive) {
-    startSpeechRecognition();
-  } else {
-    stopSpeechRecognition();
-  }
-
-  // Clean up the recognizer when component unmounts
-  return () => {
-    stopSpeechRecognition();
-  };
-}, [speechRecognitionActive]);
-
-// Use transcribedText state to populate form fields
-useEffect(() => {
-  console.log("Transcribed text:", transcribedText);
-  
-  const fetchData = async () => {
-    try {
-      // Perform NLP operation on the email
-      const name= await NLP(transcribedText);
-      console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",name)
-
-
-      // Define regular expressions to extract email and phone number
-      const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
-      const phoneRegex = /\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/;
-      
-      // Extract email and phone number from the transcribed text using regular expressions
-      const extractedEmail = transcribedText.match(emailRegex);
-      const extractedPhoneNumber = transcribedText.match(phoneRegex);
-      
-      // Populate form fields with extracted information
-      if (extractedEmail) {
-        console.warn("Email found:", extractedEmail[0]);
-        setEmail(extractedEmail[0]); // Assuming setEmail is a state setter function for email field
+    recognizer.recognizing = (_, event) => {
+      if (event.result.text) {
+        setTranscribedText(event.result.text);
       }
-      
-      const regex = /[-. ]/g;
-      
-      // Remove hyphens, dots, or extra whitespace from the extracted phone number
-      const cleanPhoneNumber = extractedPhoneNumber ? extractedPhoneNumber[0].replace(regex, '') : '';
-      
-      // Set the cleaned phone number in the state
-      if (cleanPhoneNumber) {
-        setPhoneNumber(cleanPhoneNumber);
-      }
-    } catch (error) {
-      console.error("Error occurred while fetching data:", error);
-    }
+    };
+
+    recognizer.startContinuousRecognitionAsync();
+    setSpeechRecognitionActive(true);
   };
 
-  // Call the fetchData function immediately
-  fetchData();
-}, [transcribedText]);
+  const stopSpeechRecognition = async () => {
+    // Stop speech recognition
+    setSpeechRecognitionActive(false);
+  };
+
+  // Use useEffect to start/stop speech recognition based on speechRecognitionActive state
+  useEffect(() => {
+    if (speechRecognitionActive) {
+      startSpeechRecognition();
+    } else {
+      stopSpeechRecognition();
+    }
+
+    // Clean up the recognizer when component unmounts
+    return () => {
+      stopSpeechRecognition();
+    };
+  }, [speechRecognitionActive]);
+
+  // Use transcribedText state to populate form fields
+  useEffect(() => {
+    console.log("Transcribed text:", transcribedText);
+
+    const fetchData = async () => {
+      try {
+        // Perform NLP operation on the email
+        const name = await NLP(transcribedText);
+        console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", name)
+
+
+        // Define regular expressions to extract email and phone number
+        const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
+        const phoneRegex = /\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/;
+
+        // Extract email and phone number from the transcribed text using regular expressions
+        const extractedEmail = transcribedText.match(emailRegex);
+        const extractedPhoneNumber = transcribedText.match(phoneRegex);
+
+        // Populate form fields with extracted information
+        if (extractedEmail) {
+          console.warn("Email found:", extractedEmail[0]);
+          setEmail(extractedEmail[0]); // Assuming setEmail is a state setter function for email field
+        }
+
+        const regex = /[-. ]/g;
+
+        // Remove hyphens, dots, or extra whitespace from the extracted phone number
+        const cleanPhoneNumber = extractedPhoneNumber ? extractedPhoneNumber[0].replace(regex, '') : '';
+
+        // Set the cleaned phone number in the state
+        if (cleanPhoneNumber) {
+          setPhoneNumber(cleanPhoneNumber);
+        }
+      } catch (error) {
+        console.error("Error occurred while fetching data:", error);
+      }
+    };
+
+    // Call the fetchData function immediately
+    fetchData();
+  }, [transcribedText]);
 
 
 
@@ -360,32 +359,32 @@ useEffect(() => {
 
   return (
     <>
-    <div className="flex flex-col mx-auto w-full max-w-[35.8125rem]  form-section ">
-        
-                {" "}
-             
-        
-        
+      <div className="flex flex-col mx-auto w-full max-w-[35.8125rem]  form-section ">
+
+        {" "}
+
+
+
         {/* <button className="bg-blue-400 white" onClick={() => setSpeechRecognitionActive(true)}>{speechRecognitionActive ? 'Listening...' : 'Start Speech Recognition'}</button>
         <br/>
         <button onClick={() => stopSpeechRecognition()}>Stop Listening{transcribedText}</button>
       */}
-        <fetcher.Form  ref={$formref}
-     method="post"
-        encType="multipart/form-data"
+        <fetcher.Form ref={$formref}
+          method="post"
+          encType="multipart/form-data"
           autoComplete="off"
-         className="mb-0  form-container form-shadow p-6">
-   <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit">
-                    <img
-                      src={ivurl}
-                      alt="iVoyant Logo"
-                      className="flex w-[10.38888rem] object-contain"
-                    />
-      
-                </div>    
-          
+          className="mb-0  form-container form-shadow p-6">
+          <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit">
+            <img
+              src={ivurl}
+              alt="iVoyant Logo"
+              className="flex w-[10.38888rem] object-contain"
+            />
+
+          </div>
+
           <div>
-            
+
             <div className="relative">
               <input
                 type="text"
@@ -396,17 +395,18 @@ useEffect(() => {
                 onChange={handlePersonNameChange}
                 placeholder="Full Name*"
               />
-    
-            
+
+
             </div>
-          </div>
-          {nameerror &&(
-          <span className="error-msg text-brand-red text-[0.6rem]">{nameerror}</span>
+            {nameerror && (
+            <span className="error-msg text-brand-red text-[0.6rem]">{nameerror}</span>
           )}
-    
-          
+          </div>
+         
+
+
           <div>
-    
+
             <div className="relative">
               <input
                 type="email"
@@ -417,82 +417,85 @@ useEffect(() => {
                 className="text-box text-box-container"
                 placeholder="Email*"
               />
-    
-            
+
+
             </div>
-          </div>
-          {emailerror &&(
-          <span className="text-brand-red text-[0.6rem] error-msg">{emailerror}</span>
+            {emailerror && (
+            <span className="text-brand-red text-[0.6rem] error-msg">{emailerror}</span>
           )}
+          </div>
+          
           <div>
             <div className="relative">
-            <div className="w-full text-box  ">
-                        <div className="country-code items-center justify-center my-auto cursor-pointer">
-                        <Select
-                          className="w-full country-text cursor-pointer"
-                          // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
-                          onChange={handleCountryCodeChange}
-                          value={countryCode}
-                          options={Countries}
-                          showSearch
-                          placeholder="+1"
-                          optionFilterProp="children"
-                          onSearch={onSearch}
-                          filterOption={filterOption}
-                         />
+              <div className="w-full text-box  ">
+                <div className="country-code items-center justify-center my-auto cursor-pointer">
+                  <Select
+                    className="w-full country-text cursor-pointer"
+                    // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
+                    onChange={handleCountryCodeChange}
+                    value={countryCode}
+                    options={Countries}
+                    showSearch
+                    placeholder="+1"
+                    optionFilterProp="children"
+                    onSearch={onSearch}
+                    filterOption={filterOption}
+                  />
 
-                          <input
-                          type="text"
-                          value={countryCode}         
-                  
-                          className="hidden"
-                          name="country_code"
-                        />
-                      
-                      </div>
-                      <input
-                        type="text"
-                        placeholder="Phone Number*"
-                        value={phoneNumber}
-                        onChange={handlePhoneNumberChange}
-                       
-                        className="text-box-phone"
-                        name="phonenumber"
-                      />
+                  <input
+                    type="text"
+                    value={countryCode}
+
+                    className="hidden"
+                    name="country_code"
+                  />
+
+                </div>
+                <input
+                  type="text"
+                  placeholder="Phone Number*"
+                  value={phoneNumber}
+                  onChange={handlePhoneNumberChange}
+
+                  className="text-box-phone"
+                  name="phonenumber"
+                />
+              </div>
+
             </div>
-             
-            </div>
-          </div>
-          {phoneerror &&(
-          <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
+            {phoneerror && (
+            <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
           )}
+          </div>
+          
           <div>
-           
-    
-           <div className="relative">
-             {/* <input type="reset"/> */}
-             <input
-               type="text"
-               id="company"
-               name="company"
-               
-               value={companyname}
-               placeholder="Company*"
-               className="text-box text-box-container"
-              onChange={handleCompanyNameChange}
-             />
-           
-   
-            
-           </div>
-         </div>
-         {companyerror &&(
-         <span className="text-brand-red text-[0.6rem] error-msg">{companyerror}</span>
-         )}
 
 
-<div>
-    
+            <div className="relative">
+              {/* <input type="reset"/> */}
+              <input
+                type="text"
+                id="company"
+                name="company"
+
+                value={companyname}
+                placeholder="Company*"
+                className="text-box text-box-container"
+                onChange={handleCompanyNameChange}
+              />
+
+
+
+            </div>
+            {companyerror && (
+            <span className="text-brand-red text-[0.6rem] error-msg">{companyerror}</span>
+          )}
+          </div>
+         
+
+
+          <div>
+
             <div className="relative">
               <input
                 type="text"
@@ -504,72 +507,73 @@ useEffect(() => {
                 onChange={handleTitleChange}
 
               />
-    
-             
+
+
             </div>
-          </div>
-          {titleerror &&(
-          <span className="text-brand-red text-[0.6rem] error-msg">{titleerror}</span>
+            {titleerror && (
+            <span className="text-brand-red text-[0.6rem] error-msg">{titleerror}</span>
           )}
+          </div>
+        
 
 
           <div>
-<div className="flex flex-row justify-start items-center area-top-heading gap-2">
-    <div className="flex  area-heading">
-      Area of Interest
-    </div>
-    <div className="line"/>
-    <div className="flex">
-           
-      <button type="button" onClick={onCheckAll} className="select-all-btn">
-      {checkAll ? 'Deselect All' : 'Select All'}
-      </button>
+            <div className="flex flex-row justify-start items-center area-top-heading gap-2">
+              <div className="flex  area-heading">
+                Area of Interest
+              </div>
+              <div className="line" />
+              <div className="flex">
 
-    </div>
-</div>
-         
-      
-            <div className="checkbox mt-[0.75rem]">
-            
-            <Checkbox.Group style={{ width: '100%' }} value={checkedList} onChange={onChange}>
-            <Row gutter={[16, 16]}> 
-      {plainOptions.map((option, index) => (
-        <Col key={index} span={12}> 
-          <Checkbox value={option} className="checkbox-text">{option}</Checkbox>
-        </Col>
-      ))}
-    </Row>
-    </Checkbox.Group>
-    <input
-                          type="text"
-                          value={checkedList.toString()}         
-                          className="hidden"
-                          name="area_of_interests"
-                        />
+                <button type="button" onClick={onCheckAll} className="select-all-btn">
+                  {checkAll ? 'Deselect All' : 'Select All'}
+                </button>
+
+              </div>
             </div>
-    
-           
+
+
+            <div className="checkbox mt-[0.75rem]">
+
+              <Checkbox.Group style={{ width: '100%' }} value={checkedList} onChange={onChange}>
+                <Row gutter={[16, 16]}>
+                  {plainOptions.map((option, index) => (
+                    <Col key={index} span={12}>
+                      <Checkbox value={option} className="checkbox-text">{option}</Checkbox>
+                    </Col>
+                  ))}
+                </Row>
+              </Checkbox.Group>
+              <input
+                type="text"
+                value={checkedList.toString()}
+                className="hidden"
+                name="area_of_interests"
+              />
+            </div>
+
+
           </div>
-          
+
 
 
 
 
           <button
-      type="submit"
-      name="_action"
-      value="contact"
-    
-      disabled={isCreatingNewPost  || !!phoneerror || !!emailerror || !!nameerror || !!titleerror || !!companyerror || email==='' || personname==='' || phoneNumber===''|| companyname===''}
-      className="submit-btn"
-    >
-      {isCreatingNewPost ? 'LOADING...' : 'SUBMIT'}
-    </button>
-       
+            type="submit"
+            name="_action"
+            value="contact"
+
+            disabled={isCreatingNewPost || !!phoneerror || !!emailerror || !!nameerror || !!titleerror || !!companyerror || email === '' || personname === '' || phoneNumber === '' || companyname === ''}
+            className="submit-btn"
+          >
+            {isCreatingNewPost ? 'LOADING...' : 'SUBMIT'}
+          </button>
+
         </fetcher.Form>
-   
-    </div>
-        </>
+
+      </div>
+    </>
   );
 };
 export default ContactUs;
