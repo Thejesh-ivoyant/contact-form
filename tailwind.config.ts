@@ -33,6 +33,7 @@ export default {
                 poppins: ['Poppins'],
                 montserrat: ['Montserrat'],
                 mplus: ['Mplus 1p', 'sans-serif'],
+                notosans: ['Noto Sans', 'sans-serif']
             }
         },
     },

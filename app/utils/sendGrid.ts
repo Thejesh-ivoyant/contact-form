@@ -1,27 +1,18 @@
 import * as sgMail from '@sendgrid/mail';
 import axios, { AxiosResponse } from 'axios';
-
-
-
 interface EmailTemplate {
   template: string;
   props: Record<string, any>;
 }
-
 interface EmailData {
   to: string[];
   subject: string;
   emailTemplate: EmailTemplate;
 }
-
 export async function SendGrid(email: string, fullName: string) {
-
-      // const apiKey = `${process.env.SENDGRID_KEY}`;
-      // const templateId = 'd-d241e27ad50e450cb76b85ae5cce6b15';
-
           const emailData: EmailData = {
               to: [email],
-              subject: "Great connecting with you at Fintech Meetup",
+              subject: "Great connecting with you at ProcureCon Meetup",
               emailTemplate: {
                   template: "meetup.html",
                   props: {
@@ -41,10 +32,9 @@ export async function SendGrid(email: string, fullName: string) {
               console.error('Error sending email:', error);
           }
     
- 
 }
 
-// export const SendGrid = (Email: string,fullname:string) => {
+
 
 // const user=fullname;
 

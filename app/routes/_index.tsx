@@ -69,7 +69,7 @@ export async function action({ request }: ActionFunctionArgs) {
   // If no errors, proceed with form submission
   try {
     const response = await fetch(
-      "https://forms.hubspot.com/uploads/form/v2/39872873/dad06d1b-0ce0-4089-8b4e-bc4ae742e3ce",
+      "https://forms.hubspot.com/uploads/form/v2/39872873/9728b50d-30f2-4819-a3aa-97762a6153d1",
       {
         method: "POST",
         body: body,
@@ -77,6 +77,7 @@ export async function action({ request }: ActionFunctionArgs) {
     );
 
     if (response.ok) {
+      debugger
       // If submission is successful, send notifications
       await SendGrid(email,name);
       await SMS(countryCode, phone,name);

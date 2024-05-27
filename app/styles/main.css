@@ -15,25 +15,24 @@
 .header-text {
   color: #fff;
   text-align: center;
-  font-family: Oxygen;
+  font-family: 'Noto sans';
   font-size: 3rem;
-  /* font-family: Futura Hv BT; */
   font-weight: 400;
   line-height: 57.54px;
 }
 
 .header {
-  color: #fff;
-  font-family: Oxygen;
-  /* font-family: Futura Bk BT; */
-  font-size: 54px;
-  font-weight: 400;
-  line-height: 64.73px;
+  color: #FFF;
   text-align: center;
+  font-family: Oxygen;
+  font-size: 3.375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 .text-block {
   color: #fff;
-  font-family: Montserrat;
+  font-family: Oxygen;
   /* font-family: Futura Bk BT; */
   font-size: 20px;
   font-weight: 400;
@@ -42,7 +41,7 @@
 }
 .text-block-link {
   color: #fff;
-  font-family: Montserrat;
+  font-family: Oxygen;
   /* font-family: Futura Bk BT; */
   font-size: 35px;
   font-weight: 400;
@@ -53,7 +52,7 @@
 .subtext {
   color: #3cbdff;
   text-align: center;
-  font-family: Montserrat;
+  font-family: Oxygen;
   /* font-family: Futura Bk BT; */
   font-size: 25px;
   font-weight: 400;
@@ -320,6 +319,7 @@ html {
 }
 
 .left-container {
+  background: #343339;
   flex-shrink: 0; /* Ensures this div doesn't shrink */
 }
 
@@ -401,6 +401,7 @@ html {
 .image-procure {
   max-width: 191px;
   max-height: 121px;
+  object-fit: contain;
 }
 .image- {
   max-width: 191px;
