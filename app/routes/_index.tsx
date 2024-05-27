@@ -1,6 +1,5 @@
-
 import { Form, MetaFunction, Outlet, useActionData, useFetcher } from "@remix-run/react";
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { errorMessage, success } from "~/utils/notifications";
 import { SendGrid } from "~/utils/sendGrid";
 import { SMS } from "~/utils/SMS";
@@ -11,6 +10,8 @@ import { ActionFunctionArgs } from "@remix-run/node";
 import Success from "~/components/success";
 import LeftScreen from "~/components/left-section";
 import LeftSection from "~/components/left-section";
+import LeftSectionProcure from "~/components/left-section-procure";
+import LoadingTest from "~/components/loading-test";
 
 export const meta: MetaFunction = () => {
   return [
@@ -26,7 +27,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const phone = String(body.get("phonenumber"));
   const title = String(body.get("jobtitle"));
   const countryCode = String(body.get("country_code"));
-const companyname = String(body.get("company"));
+  const companyname = String(body.get("company"));
 
   const errors: { email?: string; name?: string; phone?: string; companyname?:string;isSuccess?:string;title:string; } = {};
 
@@ -40,21 +41,13 @@ const companyname = String(body.get("company"));
   }
 
   if (!companyname) {
-
     errors.companyname = "Company name is required";
   } 
 
   // Validate name
   if (!name) {
-
     errors.name = "Name is required";
   } 
-  
-
-  //   if (!/^[a-zA-Z\s]*$/.test(title)) {
-  //   errors.title = "JobTitle must contain only letters and spaces";
-    
-  // }
 
   // Validate phone number
   if (!phone) {
@@ -87,35 +80,27 @@ const companyname = String(body.get("company"));
       // If submission is successful, send notifications
       await SendGrid(email,name);
       await SMS(countryCode, phone,name);
-     
       errors.isSuccess = "Success";
- 
     } else {
       console.error("Error occurred while submitting. Please retry.");
-      
-      
-     errors.isSuccess = "Failed";
+      errors.isSuccess = "Failed";
     }
   } catch (error) {
     console.error("Error occurred, please retry ", error);
-   errors.isSuccess = "Failed";
+    errors.isSuccess = "Failed";
   }
 
   console.log(",,,,,,,,,,,,,,", errors);
   return {
     errors,
   };
-  
-   // No errors
 }
 
 function isValidEmail(email: any) {
   // Implement email validation logic
- 
   var a= /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   console.log("email validating>>>>",a)
   return a;
-
 }
 
 function isValidPhoneNumber(phone: any) {
@@ -123,17 +108,21 @@ function isValidPhoneNumber(phone: any) {
   return /^[0-9]+$/.test(phone); // For simplicity, this just checks if the phone number contains only digits
 }
 
-export default function Index() {
 
+export default function Index() {
   return (
-//     <div className="main-container h-full flex flex-row">
-//     <LeftSection/>
-// <ContactUs/>
-//     </div>
     <div className="flex-container main-container">
-    <div className="left-container left-section"><LeftSection/></div>
-    <div className="right-container"><ContactUs/></div>
-  </div>
-  
+      <div className="left-container left-section">
+        <Suspense fallback={<LoadingTest/>}>
+          <LeftSectionProcure/>
+       </Suspense>
+          
+      </div>
+      <div className="right-container">
+        <Suspense fallback={<LoadingTest/>}>
+          <ContactUs />
+        </Suspense>
+      </div>
+    </div>
   );
 }

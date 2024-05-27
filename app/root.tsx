@@ -17,15 +17,7 @@ export const links: LinksFunction = () => [
 ];
 
 
-// export async function loader() {
-//   // const navGraphql = await fetchGraphQL(navQuery)
-//   // return defer({
-//   //   navGraphql : navGraphql
-//   // },
-//   // {
-//   //   "Cache-Control": "public, s-maxage=300",
-//   // })
-// }
+
 export default function App() {
   return (
     <html lang="en">
