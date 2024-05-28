@@ -10,11 +10,11 @@ const MainTitle = ({ title }:{title:any}) => (
 );
 
 const Subtitle = ({ children }:{children:any}) => (
-  <p className="mt-4  subtitle">{children}</p>
+  <p className="  subtitle">{children}</p>
 );
 
 const ActionLink = ({ children }:{children:any}) => (
-  <p className="mt-[4rem] ">
+  <p className="link-class">
     {children}
   </p>
 );
@@ -32,7 +32,7 @@ function Success() {
                     <img
                       src={ivurl}
                       alt="iVoyant Logo"
-                      className="flex  w-[10.38888rem] object-contain"
+                      className="flex   logo-image object-contain"
                     />
       
                 </div>  
@@ -43,10 +43,10 @@ function Success() {
           playsInline
           src={videourl}
           autoPlay
-          className="aspect-square w-[9.8125rem] mt-[37px] "
+          className="aspect-square w-[9.8125rem] video-class "
         />
 
-      <article className="flex flex-col px-16 max-w-full w-full">
+      <article className="flex flex-col main-container-success max-w-full w-full">
         <MainTitle title="Thank you for sharing your details" />
         <Subtitle>our team will reach out to you soon!</Subtitle>
       </article>
