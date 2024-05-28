@@ -373,7 +373,7 @@ const ContactUs = () => {
           method="post"
           encType="multipart/form-data"
           autoComplete="off"
-          className="mb-0  form-container form-shadow p-6">
+          className="mb-0  form-container form-shadow">
           <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit">
             <img
               src={ivurl}
@@ -385,7 +385,7 @@ const ContactUs = () => {
 
           <div>
 
-            <div className="relative">
+            <div className="relative mt-[24px]">
               <input
                 type="text"
                 id="personname"
