@@ -7,7 +7,7 @@ import procuretext from '../../public/assets/ProcureCon_text.png';
 import sectionbg from '../../public/assets/section-bg.png';
 function LeftSectionProcure() {
   return (
-    <section className="flex flex-col items-center pt-[2rem] text-center relative text-white " style={{
+    <section className="flex flex-col items-center pt-[2rem] px-4 text-center relative text-white " style={{
         backgroundImage: `url(${sectionbg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -46,7 +46,7 @@ function HeaderText({ title, classname }:{title:any,classname:any}) {
 
 function TextBlock({ text }:{text:any}) {
   return (
-    <p className="  w-[434px] max-md:max-w-full text-block">{text}</p>
+    <p className="  max-w-[434px] max-md:max-w-full text-block">{text}</p>
   );
 }
 function TextBlockLink({ text }:{text:any}) {
