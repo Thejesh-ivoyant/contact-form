@@ -13,7 +13,7 @@ function LeftSectionProcure() {
         backgroundPosition: 'center',
         height:'100%'
       }} >
-     <ImageWithAlt src={logo} alt="Company logo" class_name={" image-ivoyant-logo ml-[1rem] mt-[1.06rem] absolute left-0 top-0"}/>
+     {/* <ImageWithAlt src={logo} alt="Company logo" class_name={" image-ivoyant-logo ml-[1rem] mt-[1.06rem] absolute left-0 top-0"}/> */}
      
       <ImageWithAlt src={tenyears} alt="10years" class_name={"  mt-[2.81rem] image-procure"}/>
       <HeaderText title="ProcureCon" classname={" header-text font-notosans font-medium "}  />     
