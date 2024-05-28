@@ -90,7 +90,7 @@
   padding-right: 4rem;
 }
 .link {
-  color: #184eae;
+  color: #3CBDFF;
   font-family: Montserrat;
   font-size: 1rem;
   font-style: normal;
@@ -400,7 +400,7 @@ html {
   width: 100%;
   display: flex;
   flex-direction: column;
- 
+  max-width: 34.68875rem;
   z-index: 12;
   padding: 20px;
   padding-bottom: 24px;
@@ -544,6 +544,7 @@ margin-top: 5rem;
     padding-left: 1.19rem;
     padding-right: 1.19rem;
   }
+  
   .form-section-success {
     margin-top: 1rem;
     padding-top: 1.19rem;
@@ -733,7 +734,6 @@ margin-top: 5rem;
   }
  
   .form-section {
-    max-width: 28rem;
     padding-top: 1.19rem;
     padding-bottom: 1.19rem;
     padding-left: 1.19rem;
@@ -758,7 +758,11 @@ margin-top: 5rem;
     line-height: 22px;
   }
   .form-section {
-    max-width: 28.5rem;}
+    max-width: 28.5rem;
+  }
+    .form-container{
+      max-width: 28.5rem;
+    }
 
   .subtitle {
     margin-top: 1rem;
@@ -804,6 +808,9 @@ margin-top: 5rem;
     line-height: 22px;
   }
   .form-section {
+    max-width: 31.5rem;
+  }
+  .form-container{
     max-width: 31.5rem;
   }
   .link-class{
