@@ -352,14 +352,9 @@ const ContactUs = () => {
   }, [transcribedText]);
 
 
-
-
-
-
-
   return (
     <>
-      <div className="flex flex-col mx-auto w-full max-w-[35.8125rem]  form-section ">
+      <div className="flex flex-col mx-auto w-full  form-section ">
 
         {" "}
 
@@ -395,12 +390,12 @@ const ContactUs = () => {
                 onChange={handlePersonNameChange}
                 placeholder="Full Name*"
               />
-
+              {nameerror && (
+                <span className="error-msg text-brand-red text-[0.6rem]">{nameerror}</span>
+              )}
 
             </div>
-            {nameerror && (
-              <span className="error-msg text-brand-red text-[0.6rem]">{nameerror}</span>
-            )}
+
           </div>
 
 
@@ -417,12 +412,13 @@ const ContactUs = () => {
                 className="text-box text-box-container"
                 placeholder="Email*"
               />
+              {emailerror && (
+                <span className="text-brand-red text-[0.6rem] error-msg">{emailerror}</span>
+              )}
 
 
             </div>
-            {emailerror && (
-              <span className="text-brand-red text-[0.6rem] error-msg">{emailerror}</span>
-            )}
+
           </div>
 
           <div>
@@ -460,12 +456,13 @@ const ContactUs = () => {
                   className="text-box-phone"
                   name="phonenumber"
                 />
+                {phoneerror && (
+                  <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
+                )}
               </div>
 
             </div>
-            {phoneerror && (
-              <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
-            )}
+
           </div>
 
           <div>
@@ -485,7 +482,7 @@ const ContactUs = () => {
               />
 
               {companyerror && (
-                <span className="text-brand-red text-[0.6rem] error-msg absolute top-0  left-0">{companyerror}</span>
+                <span className="text-brand-red text-[0.6rem] error-msg  ">{companyerror}</span>
               )}
 
             </div>
@@ -507,12 +504,12 @@ const ContactUs = () => {
                 onChange={handleTitleChange}
 
               />
-
+              {titleerror && (
+                <span className="text-brand-red text-[0.6rem] error-msg">{titleerror}</span>
+              )}
 
             </div>
-            {titleerror && (
-              <span className="text-brand-red text-[0.6rem] error-msg">{titleerror}</span>
-            )}
+
           </div>
 
 

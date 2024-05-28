@@ -13,9 +13,8 @@ function LeftSectionProcure() {
         backgroundPosition: 'center',
         height:'100%'
       }} >
-     {/* <ImageWithAlt src={logo} alt="Company logo" class_name={" image-ivoyant-logo ml-[1rem] mt-[1.06rem] absolute left-0 top-0"}/> */}
      
-      <ImageWithAlt src={tenyears} alt="10years" class_name={"  mt-[2.81rem] image-procure"}/>
+      <ImageWithAlt src={tenyears} alt="10years" class_name={"   image-procure"}/>
       <HeaderText title="ProcureCon" classname={" header-text font-notosans font-medium "}  />     
       <HeaderText title="IT Sourcing" classname={" header-subtext"}  />     
       <Header title="Get in touch with us" />
@@ -51,7 +50,7 @@ function TextBlock({ text }:{text:any}) {
 }
 function TextBlockLink({ text }:{text:any}) {
   return (
-    <a href="https://ivoyant-website-ui-dev.azurewebsites.net/" className=" w-[434px] max-md:max-w-full text-block-link">{text}</a>
+    <a href="https://www.ivoyant.com/" className=" w-[434px] max-md:max-w-full text-block-link">{text}</a>
   );
 }
 

@@ -52,7 +52,7 @@ function Success() {
       </article>
       <ActionLink>
         <span className="redirect-msg">To know how we are revolutionising various industries{" "}</span>
-       <Link to={'https://ivoyant-website-ui-dev.azurewebsites.net/services/apiintegration'}><div className="link">Click here</div></Link> 
+       <Link to={'https://www.ivoyant.com/'}><div className="link">Click here</div></Link> 
       </ActionLink>
 
         </div>
