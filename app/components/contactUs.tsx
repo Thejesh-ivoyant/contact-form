@@ -399,10 +399,10 @@ const ContactUs = () => {
 
             </div>
             {nameerror && (
-            <span className="error-msg text-brand-red text-[0.6rem]">{nameerror}</span>
-          )}
+              <span className="error-msg text-brand-red text-[0.6rem]">{nameerror}</span>
+            )}
           </div>
-         
+
 
 
           <div>
@@ -421,10 +421,10 @@ const ContactUs = () => {
 
             </div>
             {emailerror && (
-            <span className="text-brand-red text-[0.6rem] error-msg">{emailerror}</span>
-          )}
+              <span className="text-brand-red text-[0.6rem] error-msg">{emailerror}</span>
+            )}
           </div>
-          
+
           <div>
             <div className="relative">
               <div className="w-full text-box  ">
@@ -464,10 +464,10 @@ const ContactUs = () => {
 
             </div>
             {phoneerror && (
-            <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
-          )}
+              <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
+            )}
           </div>
-          
+
           <div>
 
 
@@ -484,14 +484,14 @@ const ContactUs = () => {
                 onChange={handleCompanyNameChange}
               />
 
-
+              {companyerror && (
+                <span className="text-brand-red text-[0.6rem] error-msg absolute top-0  left-0">{companyerror}</span>
+              )}
 
             </div>
-            {companyerror && (
-            <span className="text-brand-red text-[0.6rem] error-msg">{companyerror}</span>
-          )}
+
           </div>
-         
+
 
 
           <div>
@@ -511,10 +511,10 @@ const ContactUs = () => {
 
             </div>
             {titleerror && (
-            <span className="text-brand-red text-[0.6rem] error-msg">{titleerror}</span>
-          )}
+              <span className="text-brand-red text-[0.6rem] error-msg">{titleerror}</span>
+            )}
           </div>
-        
+
 
 
           <div>
