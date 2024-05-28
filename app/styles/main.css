@@ -397,7 +397,8 @@ html {
   flex-direction: column;
  
   z-index: 12;
-  padding-bottom: 4rem;
+  padding: 20px;
+  padding-bottom: 24px;
 }
 
 .form-shadow {
@@ -503,7 +504,7 @@ margin-top: 5rem;
   }
   .header {
     font-size: 1.5rem;
-    margin-top: 22px;
+    margin-top: 26px;
     line-height: 22px;
   }
   .main-container {
@@ -614,7 +615,7 @@ margin-top: 5rem;
   }
   .header {
     font-size: 1.875rem;
-    margin-top: 22px;
+    margin-top: 26px;
     line-height: 22px;
   }
   .image-fintech {
@@ -706,7 +707,7 @@ margin-top: 5rem;
   }
   .header {
     font-size: 1.9rem;
-    margin-top: 36px;
+    margin-top: 35px;
     line-height: 22px;
   }
   .image-fintech {
@@ -744,7 +745,7 @@ margin-top: 5rem;
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
   .header {
     font-size: 2.2rem;
-    margin-top: 26px;
+    margin-top: 30px;
     line-height: 22px;
   }
   .subtitle {
@@ -786,7 +787,7 @@ margin-top: 5rem;
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
   .header {
     font-size: 2.4rem;
-    margin-top: 28px;
+    margin-top: 35px;
     line-height: 22px;
   }
   .link-class{
