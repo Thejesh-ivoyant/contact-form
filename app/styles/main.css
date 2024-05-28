@@ -8,7 +8,7 @@
   text-align: center;
 
   font-family: Oxygen;
-
+ margin-top: 4px;
   /* font-family: Futura Hv BT; */
 }
 
@@ -19,6 +19,7 @@
   font-size: 3rem;
   font-weight: 400;
   line-height: 57.54px;
+  margin-top: 22px;
 }
 
 .header {
@@ -29,6 +30,8 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-top: 35px;
+
 }
 .text-block {
   color: #fff;
@@ -38,6 +41,8 @@
   font-weight: 400;
   line-height: 23.97px;
   text-align: center;
+  margin-top: 15px;
+   
 }
 .text-block-link {
   color: #fff;
@@ -403,9 +408,10 @@ html {
   max-height: 121px;
   object-fit: contain;
 }
-.image- {
+.image-ivoyant-logo {
   max-width: 191px;
   max-height: 121px;
+  object-fit: contain;
 }
 .form-section {
   padding-top: 3rem;
@@ -427,21 +433,35 @@ html {
   .message-box {
     display: none;
   }
+  .image-procure {
+    aspect-ratio: 16/16;
+  }
+  .image-ivoyant-logo{
+    aspect-ratio: 16/9;
+  }
   .text-block {
     padding-left: 42px;
     padding-right: 42px;
+    margin-top: 12px;
+    line-height: 22px;
   }
   .subtext {
     display: none;
   }
   .header-text {
+    margin-top: 12px;
     font-size: 1.25rem;
+    line-height: 28px;
   }
   .header-subtext {
     font-size: 1.15rem;
+    margin-top: 12px;
+    line-height: 28px;
   }
   .header {
     font-size: 1.5rem;
+    margin-top: 22px;
+    line-height: 22px;
   }
   .main-container {
     flex-direction: column;
@@ -479,9 +499,7 @@ html {
     padding-left: 1.19rem;
     padding-right: 1.19rem;
   }
-  .form-container {
-    margin-top: -9rem;
-  }
+ 
   .text-block-link {
     display: none;
   }
@@ -495,7 +513,16 @@ html {
   .text-block {
     padding-left: 32px;
     padding-right: 32px;
+    margin-top: 12px;
+    line-height: 22px;
   }
+  .image-procure {
+    aspect-ratio: 16/14;
+  }
+  .image-ivoyant-logo{
+    aspect-ratio: 16/9;
+  }
+
   .subtext {
     display: none;
   }
@@ -510,12 +537,18 @@ html {
   }
   .header-text {
     font-size: 1.8rem;
+    margin-top: 12px;
+    line-height: 28px;
   }
   .header-subtext {
     font-size: 1.6rem;
+    margin-top: 12px;
+    line-height: 28px;
   }
   .header {
     font-size: 1.875rem;
+    margin-top: 22px;
+    line-height: 22px;
   }
   .image-fintech {
     width: 280.696px;
@@ -534,9 +567,7 @@ html {
     width: 100%;
   }
 
-  .form-container {
-    margin-top: -10rem;
-  }
+  
   .form-section {
     padding-top: 1.19rem;
     padding-bottom: 1.19rem;
@@ -562,15 +593,30 @@ html {
   .text-block {
     padding-left: 22px;
     padding-right: 22px;
+    margin-top: 12px;
+    line-height: 22px;
   }
+  .image-procure {
+    aspect-ratio: 16/14;
+  }
+  .image-ivoyant-logo{
+    aspect-ratio: 16/9;
+  }
+
   .header-text {
+    margin-top: 14px;
     font-size: 1.9rem;
+    line-height: 28px;
   }
   .header-subtext {
     font-size: 1.8rem;
+    margin-top: 12px;
+    line-height: 28px;
   }
   .header {
     font-size: 1.9rem;
+    margin-top: 22px;
+    line-height: 22px;
   }
   .image-fintech {
     width: 300.696px;
@@ -585,9 +631,7 @@ html {
   .left-section {
     width: 100%;
   }
-  .form-container {
-    margin-top: -13rem;
-  }
+ 
   .form-section {
     padding-top: 1.19rem;
     padding-bottom: 1.19rem;
