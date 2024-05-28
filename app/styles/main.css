@@ -337,7 +337,7 @@ html {
 .right-container {
   width: 60%;
   background: #343339;
-  overflow-y: scroll; /* Enables vertical scrolling */
+  overflow-y: auto; /* Enables vertical scrolling */
 }
 .area-heading {
   color: rgba(64, 66, 88, 0.68);
@@ -525,7 +525,7 @@ margin-top: 5rem;
   }
   .right-container {
     width: 100%;
-    overflow-y: visible;
+    overflow-y: auto;
   }
 
   .left-section {
@@ -628,7 +628,7 @@ margin-top: 5rem;
   }
   .right-container {
     width: 100%;
-    overflow-y: visible;
+    overflow-y: auto;
   }
   .left-section {
     width: 100%;
@@ -717,7 +717,7 @@ margin-top: 5rem;
   }
   .right-container {
     width: 100%;
-    overflow-y: visible;
+    overflow-y: auto;
   }
   .left-section {
     width: 100%;
