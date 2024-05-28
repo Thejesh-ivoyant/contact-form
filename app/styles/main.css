@@ -654,6 +654,9 @@ margin-top: 5rem;
     padding-left: 4rem;
     padding-right: 4rem;
   }
+  .subtext{
+    font-size: 20px;
+  }
   .text-block {
     font-size: 18px;
     padding-left: 22px;
@@ -679,7 +682,7 @@ margin-top: 5rem;
   }
   .header {
     font-size: 1.9rem;
-    margin-top: 22px;
+    margin-top: 36px;
     line-height: 22px;
   }
   .image-fintech {
@@ -707,6 +710,9 @@ margin-top: 5rem;
     padding-bottom: 0rem;
     padding-left: 1.19rem;
     padding-right: 1.19rem;
+  }
+  .text-block-link{
+    font-size: 1.5rem;
   }
 }
 
