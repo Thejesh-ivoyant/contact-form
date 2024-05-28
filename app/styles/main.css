@@ -405,6 +405,7 @@ html {
 }
 .left-section {
   width: 41.7361%;
+  overflow-y: hidden;
 }
 .image-fintech {
   width: 376px;
@@ -442,10 +443,17 @@ html {
 .link-class{
 margin-top: 5rem;
 }
+
+.area-top-heading {
+ margin-top: 1rem;
+}
 /* Styles for screens smaller than 576px (extra small devices, phones) */
 @media only screen and (max-width: 575.98px) {
   .message-box {
     display: none;
+  }
+  .main-container{
+    overflow-y: auto;
   }
   .subtitle {
     margin-top: 1rem;
@@ -500,7 +508,7 @@ margin-top: 5rem;
   }
   .main-container {
     flex-direction: column;
-    overflow-y: hidden;
+    overflow-y: auto;
   }
   .image-fintech {
     width: 220.696px;
@@ -587,7 +595,9 @@ margin-top: 5rem;
   .text-block-link {
     display: none;
   }
+  
   .main-container {
+    overflow-y: auto;
     flex-direction: column;
   }
   .area-top-heading {
@@ -643,6 +653,7 @@ margin-top: 5rem;
 /* Styles for screens between 768px and 991px (medium devices, tablets) */
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
   .main-container {
+    overflow-y: auto;
     flex-direction: column;
   }
   
