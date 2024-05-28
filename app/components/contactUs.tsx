@@ -395,12 +395,12 @@ const ContactUs = () => {
                 onChange={handlePersonNameChange}
                 placeholder="Full Name*"
               />
-
-
-            </div>
-            {nameerror && (
+{nameerror && (
               <span className="error-msg text-brand-red text-[0.6rem]">{nameerror}</span>
             )}
+
+            </div>
+            
           </div>
 
 
@@ -417,12 +417,13 @@ const ContactUs = () => {
                 className="text-box text-box-container"
                 placeholder="Email*"
               />
+              {emailerror && (
+              <span className="text-brand-red text-[0.6rem] error-msg">{emailerror}</span>
+            )}
 
 
             </div>
-            {emailerror && (
-              <span className="text-brand-red text-[0.6rem] error-msg">{emailerror}</span>
-            )}
+            
           </div>
 
           <div>
@@ -460,12 +461,13 @@ const ContactUs = () => {
                   className="text-box-phone"
                   name="phonenumber"
                 />
+                {phoneerror && (
+              <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
+            )}
               </div>
 
             </div>
-            {phoneerror && (
-              <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
-            )}
+            
           </div>
 
           <div>
@@ -507,12 +509,12 @@ const ContactUs = () => {
                 onChange={handleTitleChange}
 
               />
-
-
-            </div>
-            {titleerror && (
+{titleerror && (
               <span className="text-brand-red text-[0.6rem] error-msg">{titleerror}</span>
             )}
+
+            </div>
+            
           </div>
 
 
