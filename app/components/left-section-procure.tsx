@@ -57,7 +57,7 @@ function TextBlockLink({ text }:{text:any}) {
 
 function SubText({ text }:{text:any}) {
   return (
-    <small className="mt-[79px]  max-md:mt-10 max-md:max-w-full subtext">{text}</small>
+    <small className="  max-md:mt-10 max-md:max-w-full subtext">{text}</small>
   );
 }
 
