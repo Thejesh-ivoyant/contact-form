@@ -43,7 +43,7 @@ function Success() {
           playsInline
           src={videourl}
           autoPlay
-          className="aspect-square w-[9.8125rem] mt-[37px] "
+          className="aspect-square w-[9.8125rem] mt-[30px] "
         />
 
       <article className="flex flex-col px-16 max-w-full w-full">

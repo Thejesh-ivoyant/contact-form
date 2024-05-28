@@ -15,14 +15,14 @@
 .header-text {
   color: #fff;
   text-align: center;
-  font-family: 'Noto sans';
+  font-family: "Noto sans";
   font-size: 3rem;
   font-weight: 400;
   line-height: 57.54px;
 }
 
 .header {
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-family: Oxygen;
   font-size: 3.375rem;
@@ -44,9 +44,9 @@
   font-family: Oxygen;
   /* font-family: Futura Bk BT; */
   font-size: 35px;
-  font-weight: 400;
-  line-height: 41.96px;
-  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .subtext {
@@ -408,7 +408,7 @@ html {
   max-height: 121px;
 }
 .form-section {
-  padding-top: 3.25rem;
+  padding-top: 3rem;
   padding-bottom: 3.25rem;
   padding-left: 0px;
   padding-right: 0px;
