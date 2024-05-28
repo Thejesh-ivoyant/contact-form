@@ -27,7 +27,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="lg:overscroll-y-none overscroll-y-auto">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
