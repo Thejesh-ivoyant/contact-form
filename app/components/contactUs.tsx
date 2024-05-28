@@ -352,14 +352,9 @@ const ContactUs = () => {
   }, [transcribedText]);
 
 
-
-
-
-
-
   return (
     <>
-      <div className="flex flex-col mx-auto w-full max-w-[35.8125rem]  form-section ">
+      <div className="flex flex-col mx-auto w-full  form-section ">
 
         {" "}
 
@@ -395,12 +390,12 @@ const ContactUs = () => {
                 onChange={handlePersonNameChange}
                 placeholder="Full Name*"
               />
-{nameerror && (
-              <span className="error-msg text-brand-red text-[0.6rem]">{nameerror}</span>
-            )}
+              {nameerror && (
+                <span className="error-msg text-brand-red text-[0.6rem]">{nameerror}</span>
+              )}
 
             </div>
-            
+
           </div>
 
 
@@ -418,12 +413,12 @@ const ContactUs = () => {
                 placeholder="Email*"
               />
               {emailerror && (
-              <span className="text-brand-red text-[0.6rem] error-msg">{emailerror}</span>
-            )}
+                <span className="text-brand-red text-[0.6rem] error-msg">{emailerror}</span>
+              )}
 
 
             </div>
-            
+
           </div>
 
           <div>
@@ -462,12 +457,12 @@ const ContactUs = () => {
                   name="phonenumber"
                 />
                 {phoneerror && (
-              <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
-            )}
+                  <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
+                )}
               </div>
 
             </div>
-            
+
           </div>
 
           <div>
@@ -509,12 +504,12 @@ const ContactUs = () => {
                 onChange={handleTitleChange}
 
               />
-{titleerror && (
-              <span className="text-brand-red text-[0.6rem] error-msg">{titleerror}</span>
-            )}
+              {titleerror && (
+                <span className="text-brand-red text-[0.6rem] error-msg">{titleerror}</span>
+              )}
 
             </div>
-            
+
           </div>
 
 

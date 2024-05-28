@@ -114,13 +114,12 @@ export default function Index() {
   return (
     <div className="flex-container main-container">
       <div className="left-container left-section">
-        <Suspense fallback={<LoadingTest/>}>
-          <LeftSectionProcure/>
-       </Suspense>
-          
+        <Suspense fallback={<LoadingTest />}>
+          <LeftSectionProcure />
+        </Suspense>
       </div>
       <div className="right-container">
-        <Suspense fallback={<LoadingTest/>}>
+        <Suspense fallback={<LoadingTest />}>
           <ContactUs />
         </Suspense>
       </div>

@@ -340,9 +340,9 @@ html {
 }
 
 .right-container {
-  width: 60%;
+  width:55%;
   background: #343339;
-  overflow-y: visible; /* Enables vertical scrolling */
+  overflow-y: scroll; /* Enables vertical scrolling */
 }
 .area-heading {
   color: rgba(64, 66, 88, 0.68);
@@ -410,13 +410,14 @@ html {
   box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.12);
 }
 .left-section {
-  width: 41.7361%;
-  overflow-y: hidden;
+  width: 45%;
+ 
 }
 .image-fintech {
   width: 376px;
 }
 .image-procure {
+  margin-top: 2.81rem;
   max-width: 191px;
   max-height: 121px;
   object-fit: contain;
@@ -427,6 +428,7 @@ html {
   object-fit: contain;
 }
 .form-section {
+  max-width: 35.8125rem;
   padding-top: 3rem;
   padding-bottom: 3.25rem;
   padding-left: 0px;
@@ -458,9 +460,7 @@ margin-top: 5rem;
   .message-box {
     display: none;
   }
-  .main-container{
-    overflow-y: auto;
-  }
+  
   .subtitle {
     margin-top: 1rem;
   }
@@ -482,6 +482,7 @@ margin-top: 5rem;
     margin-top: 16px;
   }
   .image-procure {
+    margin-top: 1.5rem;
     aspect-ratio: 16/16;
   }
   .image-ivoyant-logo{
@@ -514,7 +515,7 @@ margin-top: 5rem;
   }
   .main-container {
     flex-direction: column;
-    overflow-y: auto;
+    
   }
   .image-fintech {
     width: 220.696px;
@@ -589,6 +590,7 @@ margin-top: 5rem;
     line-height: 22px;
   }
   .image-procure {
+    margin-top: 1.81rem;
     aspect-ratio: 16/14;
   }
   .image-ivoyant-logo{
@@ -603,7 +605,7 @@ margin-top: 5rem;
   }
   
   .main-container {
-    overflow-y: auto;
+    
     flex-direction: column;
   }
   .area-top-heading {
@@ -659,7 +661,7 @@ margin-top: 5rem;
 /* Styles for screens between 768px and 991px (medium devices, tablets) */
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
   .main-container {
-    overflow-y: auto;
+    
     flex-direction: column;
   }
   
@@ -695,6 +697,7 @@ margin-top: 5rem;
     line-height: 22px;
   }
   .image-procure {
+    margin-top: 2rem;
     aspect-ratio: 16/14;
   }
   .image-ivoyant-logo{
@@ -730,6 +733,7 @@ margin-top: 5rem;
   }
  
   .form-section {
+    max-width: 28rem;
     padding-top: 1.19rem;
     padding-bottom: 1.19rem;
     padding-left: 1.19rem;
@@ -753,6 +757,9 @@ margin-top: 5rem;
     margin-top: 30px;
     line-height: 22px;
   }
+  .form-section {
+    max-width: 28.5rem;}
+
   .subtitle {
     margin-top: 1rem;
   }
@@ -782,6 +789,7 @@ margin-top: 5rem;
     font-size: 28px;
   }
   .image-procure {
+    margin-top: 2.5rem;
     max-width: 161px;
     max-height: 98px;
     object-fit: contain;
@@ -794,6 +802,9 @@ margin-top: 5rem;
     font-size: 2.4rem;
     margin-top: 35px;
     line-height: 22px;
+  }
+  .form-section {
+    max-width: 31.5rem;
   }
   .link-class{
     margin-top: 3.5rem;
@@ -824,6 +835,7 @@ margin-top: 5rem;
     font-size: 30px;
   }
   .image-procure {
+    
     max-width: 181px;
     max-height: 112px;
     object-fit: contain;

@@ -43,7 +43,7 @@ function TextBlock({ text }:{text:any}) {
 }
 function TextBlockLink({ text }:{text:any}) {
   return (
-    <a href="https://ivoyant-website-ui-dev.azurewebsites.net/" className="mt-[0.38rem]  w-[434px] max-md:max-w-full text-block-link">{text}</a>
+    <a href="https://www.ivoyant.com/" className="mt-[0.38rem]  w-[434px] max-md:max-w-full text-block-link">{text}</a>
   );
 }
 
