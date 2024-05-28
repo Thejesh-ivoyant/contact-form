@@ -23,11 +23,11 @@ export default function App() {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="lg:overscroll-y-none overscroll-y-auto">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

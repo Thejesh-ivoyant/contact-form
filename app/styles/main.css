@@ -336,7 +336,7 @@ html {
 .right-container {
   width: 60%;
   background: #343339;
-  overflow-y: hidden; /* Enables vertical scrolling */
+  overflow-y: scroll; /* Enables vertical scrolling */
 }
 .area-heading {
   color: rgba(64, 66, 88, 0.68);
@@ -499,6 +499,7 @@ margin-top: 5rem;
   }
   .main-container {
     flex-direction: column;
+    overflow-y: hidden;
   }
   .image-fintech {
     width: 220.696px;
@@ -718,6 +719,28 @@ margin-top: 5rem;
 
 /* Styles for screens between 992px and 1199px (large devices, desktops) */
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+  .header {
+    font-size: 2.2rem;
+    margin-top: 26px;
+    line-height: 22px;
+  }
+  .header-text{
+    font-size:2.2rem;
+  }
+  .header-subtext{
+    font-size: 1.5rem;
+  }
+  .subtext{
+    margin-top: 46px;
+  }
+  .text-block-link{
+    font-size: 28px;
+  }
+  .image-procure {
+    max-width: 161px;
+    max-height: 98px;
+    object-fit: contain;
+  }
 }
 
 /* Styles for screens larger than 1200px (extra large devices, large desktops) */
