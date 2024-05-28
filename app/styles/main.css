@@ -547,6 +547,9 @@ margin-top: 5rem;
   .message-box {
     display: none;
   } 
+  .subtitle {
+    margin-top: 1rem;
+  }
   .video-class{
     margin-top: 26px;
   }
@@ -554,7 +557,7 @@ margin-top: 5rem;
     width: 8.38888rem;
   }
   .link-class{
-    margin-top: 3.5rem;
+    margin-top: 3rem;
     }
   .main-title {
     font-size: 1.7rem;
@@ -642,11 +645,18 @@ margin-top: 5rem;
   .main-container {
     flex-direction: column;
   }
+  
+  .subtitle {
+    margin-top: 1rem;
+  }
   .area-top-heading {
     justify-content: space-between;
   }
+  .video-class{
+    margin-top: 24px;
+  }
   .link-class{
-    margin-top: 4rem;
+    margin-top: 3.5rem;
     }
   .main-title {
     font-size: 1.8rem;
@@ -726,6 +736,22 @@ margin-top: 5rem;
     margin-top: 26px;
     line-height: 22px;
   }
+  .subtitle {
+    margin-top: 1rem;
+  }
+  .link-class{
+    margin-top: 3.5rem;
+    }
+  .video-class{
+    margin-top: 12px;
+  }
+  .logo-image{
+    width: 8.38888rem;
+  }
+  .main-title {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
   .header-text{
     font-size:2.2rem;
   }
@@ -751,6 +777,22 @@ margin-top: 5rem;
     font-size: 2.4rem;
     margin-top: 28px;
     line-height: 22px;
+  }
+  .link-class{
+    margin-top: 3.5rem;
+    }
+  .subtitle {
+    margin-top: 1rem;
+  }
+  .logo-image{
+    width: 8.38888rem;
+  }
+  .video-class{
+    margin-top: 0px;
+  }
+  .main-title {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
   }
   .header-text{
     font-size:2.4rem;
