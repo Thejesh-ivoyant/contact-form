@@ -485,7 +485,7 @@ const ContactUs = () => {
               />
 
               {companyerror && (
-                <span className="text-brand-red text-[0.6rem] error-msg absolute top-0  left-0">{companyerror}</span>
+                <span className="text-brand-red text-[0.6rem] error-msg  ">{companyerror}</span>
               )}
 
             </div>

@@ -238,6 +238,10 @@
   line-height: 1.25rem; /* 142.857% */
 }
 .error-msg {
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  z-index: 12;
   color: brown;
 }
 .country-drop {
