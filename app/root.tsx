@@ -1,4 +1,4 @@
-import type { ActionFunctionArgs, LinksFunction } from "@remix-run/node";
+import type { LinksFunction } from "@remix-run/node";
 import stylesheet from "~/tailwind.css";
 import globalstyle from "~/styles/main.css";
 

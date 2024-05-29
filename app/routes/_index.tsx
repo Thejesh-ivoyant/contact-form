@@ -1,15 +1,9 @@
-import { Form, MetaFunction, Outlet, useActionData, useFetcher } from "@remix-run/react";
-import React, { useState, Suspense } from "react";
-import { errorMessage, success } from "~/utils/notifications";
+import { MetaFunction } from "@remix-run/react";
+import { Suspense } from "react";
 import { SendGrid } from "~/utils/sendGrid";
 import { SMS } from "~/utils/SMS";
-import countryTelephoneData from 'country-telephone-data';
-import { Select } from "antd";
 import ContactUs from "~/components/contactUs";
 import { ActionFunctionArgs } from "@remix-run/node";
-import Success from "~/components/success";
-import LeftScreen from "~/components/left-section";
-import LeftSection from "~/components/left-section";
 import LeftSectionProcure from "~/components/left-section-procure";
 import LoadingTest from "~/components/loading-test";
 

@@ -1,6 +1,5 @@
 import { MetaFunction } from "@remix-run/react";
 import { Suspense } from "react";
-import LeftSection from "~/components/left-section";
 import LeftSectionProcure from "~/components/left-section-procure";
 import LoadingTest from "~/components/loading-test";
 import Success from "~/components/success";

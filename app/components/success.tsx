@@ -1,4 +1,3 @@
-import React from "react";
 import videourl from "../../public/assets/success.mp4";
 import ivurl from '../../public/assets/logo.svg';
 import { Link } from "@remix-run/react";
