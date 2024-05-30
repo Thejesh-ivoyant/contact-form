@@ -40,7 +40,16 @@ line-height: normal;
   margin-top: 32px;
   max-width: 379px;
 }
-
+.holder-procure{
+  display: flex;
+  flex-direction: column;
+  margin:auto;
+  text-align: center;
+ position: relative;
+ padding-left: 1rem;
+ padding-right: 1rem;
+ align-items: center;
+}
 .text-block {
   color: #FFF;
 text-align: center;
@@ -351,7 +360,7 @@ html {
 
 .right-container {
   width: 55%;
-  background: #343339;
+  
   overflow-y: scroll; /* Enables vertical scrolling */
 }
 .area-heading {
@@ -465,6 +474,9 @@ html {
 }
 .link-class {
   margin-top: 5rem;
+}
+.main-container {
+  background-color: #343339;
 }
 
 .area-top-heading {
