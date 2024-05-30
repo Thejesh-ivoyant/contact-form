@@ -263,6 +263,23 @@ line-height: normal;
   z-index: 12;
   color: brown;
 }
+.error-left-container {
+  align-items: start;
+}
+
+@media (max-width: 576px) {
+ 
+
+  .error-left-container {
+    align-items: center;
+  }
+
+  .error-left-container div {
+    align-items: center;
+    text-align: center;
+  }
+}
+
 .country-drop {
   border-radius: 2px;
 }
@@ -900,10 +917,10 @@ html {
     font-size: 20px;
   }
   .contact-logo{
-    width: 8.38888rem;
+    width: 8rem;
   }
   .container-top{
-    margin-top: 14px;
+    margin-top: 8px;
   }
   .subtext {
     font-size: 20px;
@@ -917,4 +934,86 @@ html {
   max-height: 78.97px;
     object-fit: contain;
   }
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 20rem;
+}
+.image-container img {
+  height: 200px;
+  border:0.5rem solid #090909;
+  border-radius: 0.41938rem;
+  transform: translateY(-2rem);
+  margin : 0 auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.image-container::before {
+  content: '';
+  z-index: 1;
+  position: absolute;
+  background: #F5F2FC;
+  height: 160px;
+  width: 320px;
+  border-radius: 150px 150px 0 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hue-btn-primary {
+  cursor: pointer;
+
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  height: 2.5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.48px;
+  text-transform: capitalize;
+  background: linear-gradient(45deg, #6c39db 0.62%, #1c083e 100%) 0 0 / 200% 100% no-repeat;
+  border: none;
+  background-position: 100% 0%;
+  animation: shade-movement 4s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .hue-btn-primary {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    height: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hue-btn-primary {
+    font-size: 1.25rem;
+    padding: 1.25rem 2.5rem;
+    font-weight: 600;
+    height: 3.75rem;
+  }
+}
+
+.err-bottom-container {
+  background-color: #F9F8FC;
+  font-family: poppins;
+  display: flex;
+  flex-wrap: wrap;
+  gap:2rem;
+  justify-content: space-around;
+}
+
+.err-bottom-container > a{
+font-size: 0.875rem;
 }
