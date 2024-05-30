@@ -50,6 +50,8 @@ font-style: normal;
 font-weight: 400;
 line-height: 22px; /* 137.5% */
 margin-top: 16px;
+letter-spacing: 0.5px;
+max-width: 400px;
 }
 .text-block-link {
   color: #3CBDFF;
@@ -779,7 +781,7 @@ html {
    
   }
   .text-block {
-    max-width: 380px;
+    max-width: 290px;
     font-size: 12px;
     margin-top: 10px;
 
@@ -843,7 +845,7 @@ html {
 /* Styles for screens larger than 1200px (extra large devices, large desktops) */
 @media only screen and (min-width: 1200px) and (max-width: 1439px) {
   .text-block {
-    max-width: 400px;
+    max-width: 340px;
     font-size: 14px;
     margin-top: 12px;
   }
