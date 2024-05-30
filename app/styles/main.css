@@ -376,6 +376,7 @@ html {
 }
 
 .right-container {
+  background-color: #343339;
   width: 55%;
   
   overflow-y: scroll; /* Enables vertical scrolling */
