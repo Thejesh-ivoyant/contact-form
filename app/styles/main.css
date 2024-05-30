@@ -109,6 +109,7 @@ line-height: normal;
   padding-right: 4rem;
 }
 .link {
+  margin-bottom: 20px;
   color: #3cbdff;
   font-family: Montserrat;
   font-size: 1rem;
@@ -433,6 +434,7 @@ html {
   line-height: 34px; /* 170% */
 }
 .form-container {
+  margin: auto;
   background: #fff;
   width: 100%;
   display: flex;
@@ -478,11 +480,13 @@ html {
 }
 
 .form-section-success {
-  padding-top: 3.25rem;
-  padding-bottom: 0rem;
+
   padding-left: 0px;
   padding-right: 0px;
   background: #343339;
+}
+.success-body{
+  margin-top: 2.5rem;
 }
 .logo-image {
   width: 10.38888rem;
@@ -844,6 +848,9 @@ html {
     margin-top: 20px;
     max-width: 344px;
   }
+  .success-body {
+    margin-top: 1.5rem;
+}
   .form-section {
     padding-top: 1.25rem;
     max-width: 28.5rem;
@@ -856,8 +863,8 @@ html {
     margin-top: 1rem;
   }
   .link-class {
-    margin-top: 3.5rem;
-  }
+    margin-top: 2.5rem;
+}
   .video-class {
     margin-top: 12px;
   }
