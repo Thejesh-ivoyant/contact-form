@@ -3,74 +3,73 @@
 }
 .header-subtext {
   color: #FFF;
-text-align: center;
-font-size: 30px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-  font-family: Oxygen;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .border-line {
   width: 100%;
   max-width: 379px;
-  border-top: 2px solid #8c8c8c;
-  margin-top: 57px;
+  border-top: 1px solid #8c8c8c;
+  margin-top: 32px;
 }
 
 .header-text {
-  color: #fff;
-  text-align: center;
-  font-family: "Noto sans";
-  font-size: 3rem;
-  font-weight: 600;
-  line-height: 57.54px;
-  margin-top: 22px;
+  color: #FFF;
+text-align: center;
+font-family: "Noto Sans";
+font-size: 36px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+  margin-top: 16px;
 }
 
 .header {
   color: #FFF;
-text-align: center;
-font-family: Oxygen;
-font-size: 44px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  text-align: center;
+  font-family: Oxygen;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
   margin-top: 32px;
-  max-width: 389px;
+  max-width: 379px;
 }
 
 .text-block {
-  max-width: 431px;
-  color: #fff;
-  
-  text-align: center;
-  font-family: Oxygen;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 28px;
-  margin-top: 16px;
-}
-.text-block-link {
   color: #FFF;
 text-align: center;
 font-family: Oxygen;
-font-size: 35px;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 137.5% */
+margin-top: 16px;
+}
+.text-block-link {
+  color: #3CBDFF;
+text-align: center;
+font-family: Oxygen;
+font-size: 28px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
-letter-spacing: 0.7px;
+letter-spacing: 0.56px;
 }
 
 .subtext {
-  color: #3CBDFF;
-  text-align: center;
-  font-family: Oxygen;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  color: #FFF;
+text-align: center;
+font-family: Oxygen;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
   margin-top: 60px;
 }
 
@@ -254,7 +253,7 @@ letter-spacing: 0.7px;
   color: brown;
 }
 .country-drop {
-  border-radius: 2px; /* Add rounded corners */
+  border-radius: 2px;
 }
 .message-box {
   display: block;
@@ -432,8 +431,8 @@ html {
 }
 .image-procure {
   margin-top: 1.5rem;
-  max-width: 191px;
-  max-height: 121px;
+  max-width: 140.441px;
+  max-height: 88.97px;
   object-fit: contain;
 }
 .image-ivoyant-logo {
@@ -706,7 +705,7 @@ html {
     padding-right: 4rem;
   }
   .subtext {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 49px;
   }
   .text-block {
@@ -775,18 +774,18 @@ html {
 /* Styles for screens between 992px and 1199px (large devices, desktops) */
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
   .header {
-    font-size: 38px;
-    margin-top: 24px;
+    font-size: 28px;
+    margin-top: 28px;
    
   }
   .text-block {
     max-width: 380px;
-    font-size: 16px;
-    margin-top: 2px;
+    font-size: 12px;
+    margin-top: 10px;
 
   }
   .border-line {
-    margin-top: 34px;
+    margin-top: 20px;
     max-width: 344px;
   }
   .form-section {
@@ -813,9 +812,8 @@ html {
     line-height: 2rem;
   }
   .header-text {
-    font-size: 2.3rem;
+    font-size: 30px;
     margin-top: 12px;
-    line-height: 37px;
   }
   .contact-logo{
     width: 8rem;
@@ -824,11 +822,11 @@ html {
     margin-top: 14px;
   }
   .header-subtext {
-    font-size: 1.68rem;
+    font-size: 18px;
   }
   .subtext {
-    margin-top: 48px;
-    font-size: 20px;
+    margin-top: 44px;
+    font-size: 19px;
   }
   .text-block-link {
     font-size: 24px;
@@ -845,15 +843,15 @@ html {
 @media only screen and (min-width: 1200px) and (max-width: 1439px) {
   .text-block {
     max-width: 400px;
-    font-size: 16px;
-    margin-top: 4px;
+    font-size: 14px;
+    margin-top: 12px;
   }
   .header {
-    font-size: 38.5px;
-    margin-top: 24px;
+    font-size: 30px;
+    margin-top: 30px;
   }
   .border-line {
-    margin-top: 35px;
+    margin-top: 30px;
     max-width: 354px;
   }
   .form-section {
@@ -879,12 +877,11 @@ html {
     line-height: 2.2rem;
   }
   .header-text {
-    font-size: 2.65rem;
-    margin-top: 10px;
-    line-height: 47px;
+    font-size: 34px;
+    margin-top: 14px;
   }
   .header-subtext {
-    font-size: 1.8rem;
+    font-size: 20px;
   }
   .contact-logo{
     width: 8.38888rem;
@@ -894,14 +891,14 @@ html {
   }
   .subtext {
     font-size: 20px;
-    margin-top: 44px;
+    margin-top: 48px;
   }
   .text-block-link {
     font-size: 26px;
   }
   .image-procure {
-    max-width: 181px;
-    max-height: 112px;
+    max-width: 130.441px;
+  max-height: 78.97px;
     object-fit: contain;
   }
 }
