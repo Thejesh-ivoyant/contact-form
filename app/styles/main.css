@@ -442,7 +442,7 @@ html {
 }
 .form-section {
   max-width: 35.8125rem;
-  padding-top: 3rem;
+  padding-top: 2.5rem;
   padding-bottom: 3.25rem;
   padding-left: 0px;
   padding-right: 0px;
@@ -789,6 +789,7 @@ html {
     max-width: 344px;
   }
   .form-section {
+    padding-top: 1.25rem;
     max-width: 28.5rem;
   }
   .form-container {
@@ -856,6 +857,7 @@ html {
   }
   .form-section {
     max-width: 31.5rem;
+    padding-top: 1.5rem;
   }
   .form-container {
     max-width: 31.5rem;
