@@ -17,7 +17,7 @@ const ErrorBoundaryPage = ({ error }: { error: any }) => {
                   ? "This Page doesn't exist or was removed!"
                   : error?.statusText}
               </div>{' '}
-              <Link to="https://www.ivoyant.com/">
+              <Link to="/">
                 <div className="justify-centeritems-center flex gap-1 mt-1 py-2 self-start">
                   <img
                     loading="lazy"
