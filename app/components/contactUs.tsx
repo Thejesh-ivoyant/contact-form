@@ -373,14 +373,14 @@ const ContactUs = () => {
             <img
               src={ivurl}
               alt="iVoyant Logo"
-              className="flex w-[10.38888rem] object-contain"
+              className="flex contact-logo object-contain"
             />
 
           </div>
 
           <div>
 
-            <div className="relative mt-[24px]">
+            <div className="relative container-top">
               <input
                 type="text"
                 id="personname"
