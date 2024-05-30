@@ -775,19 +775,19 @@ html {
 /* Styles for screens between 992px and 1199px (large devices, desktops) */
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
   .header {
-    font-size: 40px;
-    margin-top: 28px;
+    font-size: 38px;
+    margin-top: 24px;
    
   }
   .text-block {
-    max-width: 400px;
-    font-size: 17.5px;
-    margin-top: 14px;
+    max-width: 380px;
+    font-size: 16px;
+    margin-top: 2px;
 
   }
   .border-line {
-    margin-top: 37px;
-    max-width: 354px;
+    margin-top: 34px;
+    max-width: 344px;
   }
   .form-section {
     max-width: 28.5rem;
@@ -813,19 +813,25 @@ html {
     line-height: 2rem;
   }
   .header-text {
-    font-size: 2.4rem;
-    margin-top: 20px;
-    line-height: 47px;
+    font-size: 2.3rem;
+    margin-top: 12px;
+    line-height: 37px;
+  }
+  .contact-logo{
+    width: 8rem;
+  }
+  .container-top{
+    margin-top: 14px;
   }
   .header-subtext {
-    font-size: 1.7rem;
+    font-size: 1.68rem;
   }
   .subtext {
-    margin-top: 52px;
-    font-size: 21px;
+    margin-top: 48px;
+    font-size: 20px;
   }
   .text-block-link {
-    font-size: 26px;
+    font-size: 24px;
   }
   .image-procure {
     margin-top: 1.5rem;
