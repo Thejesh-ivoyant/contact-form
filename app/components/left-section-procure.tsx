@@ -1,8 +1,4 @@
-import React from "react";
-import herologourl from '../../public/assets/procurecon-logo.png';
 import tenyears from '../../public/assets/tenyears.png';
-import logo from '../../public/assets/ivoyant_logo.png';
-import procuretext from '../../public/assets/ProcureCon_text.png';
 
 import sectionbg from '../../public/assets/section-bg.png';
 function LeftSectionProcure() {
@@ -16,8 +12,11 @@ function LeftSectionProcure() {
      
       <ImageWithAlt src={tenyears} alt="10years" class_name={"   image-procure"}/>
       <HeaderText title="ProcureCon" classname={" header-text font-notosans font-medium "}  />     
-      <HeaderText title="IT Sourcing" classname={" header-subtext"}  />     
-      <Header title="Get in touch with us" />
+      <HeaderText title="IT Sourcing" classname={"header-subtext"}  />     
+      
+      <div className="border-line"></div>
+
+<Header title="Get in touch with us" />
       <TextBlock text="We are an IT services and solutions provider for all your digital needs" />
       <SubText text="Visit for more" />
       <TextBlockLink text="www.ivoyant.com" />
@@ -45,18 +44,18 @@ function HeaderText({ title, classname }:{title:any,classname:any}) {
 
 function TextBlock({ text }:{text:any}) {
   return (
-    <p className="  max-w-[434px] max-md:max-w-full text-block">{text}</p>
+    <p className="   text-block">{text}</p>
   );
 }
 function TextBlockLink({ text }:{text:any}) {
   return (
-    <a href="https://www.ivoyant.com/" className=" w-[434px] max-md:max-w-full text-block-link">{text}</a>
+    <a href="https://www.ivoyant.com/" className="  text-block-link">{text}</a>
   );
 }
 
 function SubText({ text }:{text:any}) {
   return (
-    <small className="  max-md:mt-10 max-md:max-w-full subtext">{text}</small>
+    <small className=" subtext">{text}</small>
   );
 }
 
