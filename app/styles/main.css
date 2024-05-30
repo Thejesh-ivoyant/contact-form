@@ -537,10 +537,15 @@ html {
   .text-block {
     padding-left: 42px;
     padding-right: 42px;
-    margin-top: 12px;
+    margin-top: 6px;
     line-height: 22px;
-    font-size: 14px;
+    font-size: 12px;
   }
+  .container-top {
+    margin-top: 8px;
+}
+
+
   .subtext {
     display: none;
   }
@@ -556,12 +561,13 @@ html {
     line-height: 29px;
   }
   .header {
-    font-size: 1.5rem;
-    margin-top: 18px;
-    line-height: 22px;
+    font-size: 26px;
+    margin-top: 22px;
+    line-height: 36px;
   }
   .border-line {
-    margin-top: 8px;
+    margin-top: 22px;
+    max-width: 310px;
   }
   .main-container {
     flex-direction: column;
