@@ -535,8 +535,7 @@ html {
     aspect-ratio: 16/9;
   }
   .text-block {
-    padding-left: 42px;
-    padding-right: 42px;
+    max-width: 300px;
     margin-top: 6px;
     line-height: 22px;
     font-size: 12px;
@@ -594,6 +593,7 @@ html {
     width: 100%;
   }
   .form-section {
+    margin-top: 15px;
     padding-top: 1.19rem;
     padding-bottom: 1.19rem;
     padding-left: 1.19rem;
@@ -709,6 +709,7 @@ html {
   }
 
   .form-section {
+    margin-top: 15px;
     padding-top: 1.19rem;
     padding-bottom: 1.19rem;
     padding-left: 1.19rem;
@@ -801,6 +802,7 @@ html {
   }
 
   .form-section {
+    margin-top: 18px;
     padding-top: 1.19rem;
     padding-bottom: 1.19rem;
     padding-left: 1.19rem;
