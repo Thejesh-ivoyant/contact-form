@@ -70,7 +70,7 @@ const ErrorBoundaryPage = ({ error }: { error: any }) => {
         <div className='info lg:my-auto my-10'>
           <h2>Download our latest Website accessibility Guide</h2>
           <p>We have curated a Web accessibility guide for you, prepared by our Accessibility experts. </p>
-          <button className='hue-btn-primary'>
+          <button className='hue-btn-primary mt-4'>
             Download Guide
           </button>
         </div>
