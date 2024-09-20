@@ -21,7 +21,7 @@ export async function SendGrid(email: string, fullName: string) {
     subject: "Great connecting with you at NMSDC Meetup",
     templateId: "d-07435702649e45039b78d80673c0f5ac",
     props: {
-      name: "thejesh"
+      name: fullName
     }
   };
 

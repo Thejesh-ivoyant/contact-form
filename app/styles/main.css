@@ -110,7 +110,7 @@ line-height: normal;
 }
 .link {
   margin-bottom: 20px;
-  color: #3cbdff;
+  color: #3A7CED;
   font-family: Montserrat;
   font-size: 1rem;
   font-style: normal;
@@ -128,7 +128,7 @@ line-height: normal;
   color: white;
   margin-top: 1.75rem;
   align-self: stretch;
-  background: #3cbdff;
+  background: #3A7CED;
 }
 
 .line {
@@ -138,7 +138,7 @@ line-height: normal;
 }
 .submit-btn:disabled {
   cursor: not-allowed;
-  background: #a9d4ea;
+  background: #86abeb;
 }
 .ant-select-dropdown {
   width: 5.5rem !important;
@@ -203,11 +203,11 @@ line-height: normal;
 }
 
 .text-box:focus {
-  border-bottom: 1px solid #3cbdff;
+  border-bottom: 1px solid #3A7CED;
   caret-color: #404258;
 }
 .text-box:hover {
-  border-bottom: 1px solid #3cbdff;
+  border-bottom: 1px solid #3A7CED;
 }
 
 /* Change pointer color */
@@ -250,7 +250,7 @@ line-height: normal;
   max-width: 100% !important;
 }
 .select-all-btn {
-  color: #3cbdff;
+  color: #3A7CED;
   font-family: Montserrat;
   font-size: 0.875rem;
   font-style: normal;
@@ -308,8 +308,8 @@ line-height: normal;
 /* CheckboxStyles.css */
 
 .ant-checkbox + .ant-checkbox-checked .ant-checkbox-inner {
-  background-color: #3cbdff !important;
-  border-color: #3cbdff !important;
+  background-color: #3A7CED !important;
+  border-color: #3A7CED !important;
 }
 
 /* Checked state */
@@ -330,13 +330,13 @@ line-height: normal;
   border-radius: 2px !important;
 }
 .checkbox span {
-  border-color: #3cbdff !important;
+  border-color: #3A7CED !important;
 }
 /* Customize the color of the checkbox */
 
 .ant-checkbox .ant-wave-target {
-  border-color: #3cbdff !important;
-  background-color: #3cbdff !important;
+  border-color: #3A7CED !important;
+  background-color: #3A7CED !important;
 }
 
 .ant-checkbox-checked:hover .ant-checkbox-inner {
@@ -349,7 +349,7 @@ line-height: normal;
 .ant-checkbox-wrapper:not(.ant-checkbox-wrapper-disabled):hover
   .ant-checkbox-checked:not(.ant-checkbox-disabled)
   .ant-checkbox-inner {
-  background-color: #3cbdff !important;
+  background-color: #3A7CED !important;
   border-color: transparent;
 }
 
@@ -404,12 +404,12 @@ html {
   background-color: #129be1 !important;
 }
 .ant-checkbox-inner:hover {
-  border-color: #3cbdff !important;
-  background-color: #3cbdff !important;
+  border-color: #3A7CED !important;
+  background-color: #3A7CED !important;
 }
 .ant-checkbox:hover .ant-wave-target:hover .ant-checkbox-checked:hover {
-  border-color: #3cbdff !important;
-  background-color: #3cbdff !important;
+  border-color: #3A7CED !important;
+  background-color: #3A7CED !important;
 }
 /* Customize the focus color of the checkbox */
 .ant-checkbox-input:focus + .ant-checkbox-inner {
@@ -462,8 +462,7 @@ html {
 }
 .image-procure {
   margin-top: 1.5rem;
-  max-width: 140.441px;
-  max-height: 88.97px;
+
   object-fit: contain;
 }
 .image-ivoyant-logo {
@@ -531,8 +530,8 @@ html {
     margin-top: 16px;
   }
   .image-procure {
-    max-width: 100px;
-    max-height: 60px;
+    max-width: 255px;
+    max-height: 162px;
     margin-top: 1.2rem;
   }
   .image-ivoyant-logo {
@@ -657,8 +656,8 @@ html {
   }
   .image-procure {
     margin-top: 1.5rem;
-    max-width: 104px;
-    max-height: 62px;
+    max-width: 204px;
+    max-height: 122px;
   }
   .image-ivoyant-logo {
     aspect-ratio: 16/9;
@@ -962,8 +961,8 @@ html {
     font-size: 26px;
   }
   .image-procure {
-    max-width: 130.441px;
-  max-height: 78.97px;
+    max-width: 319.622px;
+    max-height: 202.617px;
     object-fit: contain;
   }
 }
