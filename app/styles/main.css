@@ -63,7 +63,7 @@ letter-spacing: 0.5px;
 max-width: 400px;
 }
 .text-block-link {
-  color: #3CBDFF;
+  color: #FFD119;
 text-align: center;
 font-family: Oxygen;
 font-size: 28px;
@@ -372,12 +372,12 @@ html {
 }
 
 .left-container {
-  background: #343339;
+  background: #050266;;
   flex-shrink: 0; /* Ensures this div doesn't shrink */
 }
 
 .right-container {
-  background-color: #343339;
+  background-color: #050266;;
   width: 55%;
   
   overflow-y: scroll; /* Enables vertical scrolling */
@@ -483,7 +483,7 @@ html {
 
   padding-left: 0px;
   padding-right: 0px;
-  background: #343339;
+  background: #050266;;
 }
 .success-body{
   margin-top: 2.5rem;
@@ -498,7 +498,7 @@ html {
   margin-top: 5rem;
 }
 .main-container {
-  background-color: #343339;
+  background-color: #050266;;
 }
 
 .area-top-heading {
