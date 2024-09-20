@@ -1,27 +1,16 @@
-import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
-import { Form, redirect, useActionData, useFetcher, useNavigate } from "@remix-run/react";
+import {  useFetcher, useNavigate } from "@remix-run/react";
 import { Checkbox, Col, Row } from 'antd';
 import type { CheckboxProps, GetProp } from 'antd';
 
 import { useState, useEffect, useRef } from "react";
-import * as sdk from "microsoft-cognitiveservices-speech-sdk";
 
 import ivurl from '../../public/assets/logo.svg';
 
-import React from "react";
-import { errorMessage, success } from "~/utils/notifications";
+import { errorMessage } from "~/utils/notifications";
 
-import countryTelephoneData from 'country-telephone-data';
-import { CompanyIcon } from "public/assets";
-import NameIcon from "public/assets/name";
-import TitleIcon from "public/assets/title";
-import EmailIcon from "public/assets/email";
-import PhoneIcon from "public/assets/phone";
+
 
 import { Select } from "antd";
-import { action } from "~/routes/_index";
-import { NLP } from "~/utils/nlp";
-import { CheckboxChangeEvent } from "antd/es/checkbox";
 interface ErrorData {
   errors: {
     email?: string;
@@ -35,7 +24,7 @@ interface ErrorData {
 
 type CheckboxValueType = GetProp<typeof Checkbox.Group, 'value'>[number];
 
-const CheckboxGroup = Checkbox.Group;
+
 
 const plainOptions = ['API Integration', 'AI & ML', 'Cloud Migration', 'Cybersecurity', 'DevOps', 'Data', 'User Experience(UX)', 'Web And Mobile Development'];
 
@@ -167,8 +156,8 @@ const ContactUs = () => {
 
 
   useEffect(() => {
-    console.log('checked = ', checkedList);
-    console.log("checked hub spot", checkedList.toString());
+    // console.log('checked = ', checkedList);
+    // console.log("checked hub spot", checkedList.toString());
   }, [checkedList]);
 
 
@@ -177,7 +166,7 @@ const ContactUs = () => {
     const selectedCountryCode = value;
     setCountryCode(selectedCountryCode);
 
-    console.warn("comyry cod4", selectedCountryCode);
+    // console.warn("comyry cod4", selectedCountryCode);
   };
 
   const filterOption = (input: string, option?: { label: string; value: string }) =>
@@ -205,7 +194,8 @@ const ContactUs = () => {
       setPhoneNumber("");
       setEmail("");
       setCompanyName("");
-
+      setPersonName("");
+      setTitle("");
       if (fetcher.data == null) {
       }
       else {
@@ -250,7 +240,14 @@ const ContactUs = () => {
           }
           if (isSuccessValue === "Failed") {
             errorMessage("Error occured, Please resubmit", 4);
-
+            $formref.current?.reset();
+            setCountryCode("+1");
+            setPhoneNumber("");
+            setEmail("");
+            setCompanyName("");
+            setPersonName("");
+            setTitle("");
+            setCheckedList([]);
           }
         }
 
@@ -270,86 +267,86 @@ const ContactUs = () => {
 
   //speech
 
-  const [speechRecognitionActive, setSpeechRecognitionActive] = useState(false);
-  const [transcribedText, setTranscribedText] = useState("");
+  // const [speechRecognitionActive, setSpeechRecognitionActive] = useState(false);
+  // const [transcribedText, setTranscribedText] = useState("");
 
-  const startSpeechRecognition = async () => {
-    const speechConfig = sdk.SpeechConfig.fromSubscription("5a33cab29b9d4088a3d1919302706978", "eastus");
-    const audioConfig = sdk.AudioConfig.fromDefaultMicrophoneInput();
+  // const startSpeechRecognition = async () => {
+  //   const speechConfig = sdk.SpeechConfig.fromSubscription("5a33cab29b9d4088a3d1919302706978", "eastus");
+  //   const audioConfig = sdk.AudioConfig.fromDefaultMicrophoneInput();
 
-    const recognizer = new sdk.SpeechRecognizer(speechConfig, audioConfig);
+  //   const recognizer = new sdk.SpeechRecognizer(speechConfig, audioConfig);
 
-    recognizer.recognizing = (_, event) => {
-      if (event.result.text) {
-        setTranscribedText(event.result.text);
-      }
-    };
+  //   recognizer.recognizing = (_, event) => {
+  //     if (event.result.text) {
+  //       setTranscribedText(event.result.text);
+  //     }
+  //   };
 
-    recognizer.startContinuousRecognitionAsync();
-    setSpeechRecognitionActive(true);
-  };
+  //   recognizer.startContinuousRecognitionAsync();
+  //   setSpeechRecognitionActive(true);
+  // };
 
-  const stopSpeechRecognition = async () => {
-    // Stop speech recognition
-    setSpeechRecognitionActive(false);
-  };
+  // const stopSpeechRecognition = async () => {
+  //   // Stop speech recognition
+  //   setSpeechRecognitionActive(false);
+  // };
 
   // Use useEffect to start/stop speech recognition based on speechRecognitionActive state
-  useEffect(() => {
-    if (speechRecognitionActive) {
-      startSpeechRecognition();
-    } else {
-      stopSpeechRecognition();
-    }
+  // useEffect(() => {
+  //   if (speechRecognitionActive) {
+  //     startSpeechRecognition();
+  //   } else {
+  //     stopSpeechRecognition();
+  //   }
 
-    // Clean up the recognizer when component unmounts
-    return () => {
-      stopSpeechRecognition();
-    };
-  }, [speechRecognitionActive]);
+  //   // Clean up the recognizer when component unmounts
+  //   return () => {
+  //     stopSpeechRecognition();
+  //   };
+  // }, [speechRecognitionActive]);
 
   // Use transcribedText state to populate form fields
-  useEffect(() => {
-    console.log("Transcribed text:", transcribedText);
+  // useEffect(() => {
+  //   console.log("Transcribed text:", transcribedText);
 
-    const fetchData = async () => {
-      try {
-        // Perform NLP operation on the email
-        const name = await NLP(transcribedText);
-        console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", name)
+  //   const fetchData = async () => {
+  //     try {
+  //       // Perform NLP operation on the email
+  //       const name = await NLP(transcribedText);
+  //       console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", name)
 
 
-        // Define regular expressions to extract email and phone number
-        const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
-        const phoneRegex = /\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/;
+  //       // Define regular expressions to extract email and phone number
+  //       const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
+  //       const phoneRegex = /\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/;
 
-        // Extract email and phone number from the transcribed text using regular expressions
-        const extractedEmail = transcribedText.match(emailRegex);
-        const extractedPhoneNumber = transcribedText.match(phoneRegex);
+  //       // Extract email and phone number from the transcribed text using regular expressions
+  //       const extractedEmail = transcribedText.match(emailRegex);
+  //       const extractedPhoneNumber = transcribedText.match(phoneRegex);
 
-        // Populate form fields with extracted information
-        if (extractedEmail) {
-          console.warn("Email found:", extractedEmail[0]);
-          setEmail(extractedEmail[0]); // Assuming setEmail is a state setter function for email field
-        }
+  //       // Populate form fields with extracted information
+  //       if (extractedEmail) {
+  //         console.warn("Email found:", extractedEmail[0]);
+  //         setEmail(extractedEmail[0]); // Assuming setEmail is a state setter function for email field
+  //       }
 
-        const regex = /[-. ]/g;
+  //       const regex = /[-. ]/g;
 
-        // Remove hyphens, dots, or extra whitespace from the extracted phone number
-        const cleanPhoneNumber = extractedPhoneNumber ? extractedPhoneNumber[0].replace(regex, '') : '';
+  //       // Remove hyphens, dots, or extra whitespace from the extracted phone number
+  //       const cleanPhoneNumber = extractedPhoneNumber ? extractedPhoneNumber[0].replace(regex, '') : '';
 
-        // Set the cleaned phone number in the state
-        if (cleanPhoneNumber) {
-          setPhoneNumber(cleanPhoneNumber);
-        }
-      } catch (error) {
-        console.error("Error occurred while fetching data:", error);
-      }
-    };
+  //       // Set the cleaned phone number in the state
+  //       if (cleanPhoneNumber) {
+  //         setPhoneNumber(cleanPhoneNumber);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error occurred while fetching data:", error);
+  //     }
+  //   };
 
-    // Call the fetchData function immediately
-    fetchData();
-  }, [transcribedText]);
+  //   // Call the fetchData function immediately
+  //   fetchData();
+  // }, [transcribedText]);
 
 
   return (
