@@ -1,6 +1,6 @@
-import tenyears from '../../public/assets/tenyears.png';
+import tenyears from '../../public/assets/nmsdc-logo.svg';
 
-import sectionbg from '../../public/assets/section-bg.png';
+import sectionbg from '../../public/assets/section-bg-nmsdc.png';
 function LeftSectionProcure() {
   return (
     <section className="flex flex-col items-center  px-4 text-center relative  text-white " style={{
@@ -10,9 +10,9 @@ function LeftSectionProcure() {
         height:'100%'
       }} >
      <div className='holder-procure'> 
-      <ImageWithAlt src={tenyears} alt="10years" class_name={"   image-procure"}/>
-      <HeaderText title="ProcureCon" classname={" header-text font-notosans font-medium "}  />     
-      <HeaderText title="IT Sourcing" classname={"header-subtext"}  />     
+      <ImageWithAlt src={tenyears} alt="nmsdc" class_name={"   image-procure"}/>
+      {/* <HeaderText title="ProcureCon" classname={" header-text font-notosans font-medium "}  />     
+      <HeaderText title="IT Sourcing" classname={"header-subtext"}  />      */}
       
       <div className="border-line"></div>
 
