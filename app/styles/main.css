@@ -374,12 +374,12 @@ html {
 }
 
 .left-container {
-  background: #050266;;
+  /* background: #050266;; */
   flex-shrink: 0; /* Ensures this div doesn't shrink */
 }
 
 .right-container {
-  background-color: #050266;;
+  /* background-color: #050266;; */
   width: 55%;
   
   overflow-y: scroll; /* Enables vertical scrolling */
@@ -447,7 +447,7 @@ html {
   padding-bottom: 24px;
 }
 .contact-logo{
-  width: 10.38888rem;
+  width: 14.38888rem;
 }
 .container-top{
   margin-top: 24px;
@@ -648,7 +648,7 @@ html {
     margin-top: 14px;
 }
 .contact-logo {
-  width: 8rem;
+  width: 10rem;
 }
   .text-block {
     padding-left: 32px;
@@ -822,7 +822,7 @@ margin-bottom: 50px !important;
     margin-top: 14px;
 }
   .contact-logo {
-    width: 8rem;
+    width: 10rem;
 }
 
 
@@ -880,7 +880,7 @@ margin-bottom: 50px !important;
     margin-top: 12px;
   }
   .contact-logo{
-    width: 8rem;
+    width: 11rem;
   }
   .container-top{
     margin-top: 14px;
@@ -948,7 +948,7 @@ margin-bottom: 50px !important;
     font-size: 20px;
   }
   .contact-logo{
-    width: 8rem;
+    width: 11rem;
   }
   .container-top{
     margin-top: 8px;

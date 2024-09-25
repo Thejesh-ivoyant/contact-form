@@ -3,12 +3,13 @@ import tenyears from '../../public/assets/nmsdc-logo.svg';
 import sectionbg from '../../public/assets/section-bg-nmsdc.png';
 function LeftSectionProcure() {
   return (
-    <section className="flex flex-col items-center  px-4 text-center relative  text-white " style={{
-        backgroundImage: `url(${sectionbg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        height:'100%'
-      }} >
+    //  style={{
+    //     backgroundImage: `url(${sectionbg})`,
+    //     backgroundSize: 'cover',
+    //     backgroundPosition: 'center',
+    //     height:'100%'
+    //   }} 
+    <section className="flex flex-col items-center  px-4 text-center relative  text-white h-full " >
      <div className='holder-procure'> 
       <ImageWithAlt src={tenyears} alt="nmsdc" class_name={"   image-procure"}/>
       {/* <HeaderText title="ProcureCon" classname={" header-text font-notosans font-medium "}  />     

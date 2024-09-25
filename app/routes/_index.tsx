@@ -6,7 +6,7 @@ import ContactUs from "~/components/contactUs";
 import { ActionFunctionArgs } from "@remix-run/node";
 import LeftSectionProcure from "~/components/left-section-procure";
 import LoadingTest from "~/components/loading-test";
-
+import sectionbg from '../../public/assets/hero-logo';
 export const meta: MetaFunction = () => {
   return [
     { title: "Ivoyant | Crafting Customer Driven Digital Experiences" },
@@ -74,7 +74,9 @@ export async function action({ request }: ActionFunctionArgs) {
       debugger
       // If submission is successful, send notifications
       await SendGrid(email,name);
-      await SMS(countryCode, phone,name);
+      // await SMS(countryCode, phone,name);
+      await SMS('+1', phone,name);
+
       errors.isSuccess = "Success";
     } else {
       console.error("Error occurred while submitting. Please retry.");
@@ -106,7 +108,12 @@ function isValidPhoneNumber(phone: any) {
 
 export default function Index() {
   return (
-    <div className="flex-container main-container">
+    <div className="flex-container main-container" style={{
+      backgroundImage: `url(/assets/test.png)`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height:'100%'
+    }} >
       <div className="left-container left-section">
         <Suspense fallback={<LoadingTest />}>
           <LeftSectionProcure />
