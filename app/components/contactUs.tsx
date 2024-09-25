@@ -422,8 +422,8 @@ const ContactUs = () => {
 
           <div>
             <div className="relative">
-              <div className="w-full text-box  ">
-                <div className="country-code items-center justify-center my-auto pt-2 cursor-pointer">
+              {/* <div className="w-full text-box  "> */}
+                {/* <div className="country-code items-center justify-center my-auto pt-2 cursor-pointer">
                   <Select
                     className="w-full country-text cursor-pointer"
                     // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
@@ -445,20 +445,20 @@ const ContactUs = () => {
                     name="country_code"
                   />
 
-                </div>
+                </div> */}
                 <input
                   type="text"
                   placeholder="Phone Number*"
                   value={phoneNumber}
                   onChange={handlePhoneNumberChange}
-
-                  className="text-box-phone"
+                  className="text-box text-box-container"
+                  // className="text-box-phone"
                   name="phonenumber"
                 />
                 {phoneerror && (
                   <span className="text-brand-red text-[0.6rem] error-msg">{phoneerror}</span>
                 )}
-              </div>
+              {/* </div> */}
 
             </div>
 
