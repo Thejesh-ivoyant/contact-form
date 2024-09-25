@@ -74,7 +74,9 @@ export async function action({ request }: ActionFunctionArgs) {
       debugger
       // If submission is successful, send notifications
       await SendGrid(email,name);
-      await SMS(countryCode, phone,name);
+      // await SMS(countryCode, phone,name);
+      await SMS('+1', phone,name);
+
       errors.isSuccess = "Success";
     } else {
       console.error("Error occurred while submitting. Please retry.");
@@ -107,7 +109,7 @@ function isValidPhoneNumber(phone: any) {
 export default function Index() {
   return (
     <div className="flex-container main-container" style={{
-      backgroundImage: `url(${sectionbg})`,
+      backgroundImage: `url(/assets/test.png)`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       height:'100%'

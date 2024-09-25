@@ -374,12 +374,12 @@ html {
 }
 
 .left-container {
-  background: #050266;;
+  /* background: #050266;; */
   flex-shrink: 0; /* Ensures this div doesn't shrink */
 }
 
 .right-container {
-  background-color: #050266;;
+  /* background-color: #050266;; */
   width: 55%;
   
   overflow-y: scroll; /* Enables vertical scrolling */
