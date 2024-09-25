@@ -17,7 +17,7 @@ function LeftSectionProcure() {
       <div className="border-line"></div>
 
 <Header title="Get in touch with us" />
-      <TextBlock text="We are an IT services and solutions provider for all your digital needs" />
+      <TextBlock text="We excel in IT Services, Product Development, IT Consulting & Staffing Solutions" />
       <SubText text="Visit for more" />
       <TextBlockLink text="www.ivoyant.com" />
       </div>
