@@ -26,7 +26,9 @@ type CheckboxValueType = GetProp<typeof Checkbox.Group, 'value'>[number];
 
 
 
-const plainOptions = ['API Integration', 'AI & ML', 'Cloud Migration', 'Cybersecurity', 'DevOps', 'Data', 'User Experience(UX)', 'Web And Mobile Development'];
+
+
+const plainOptions = ['Software Development & Engineering', 'Cloud Architecture & DevSecOps', 'Integration & Microservices', 'Artificial Intelligence & Machine Learning', 'User Experience (UX) & Interface Design', 'Product & Project Management', 'Digital Transformation & Consulting'];
 
 const ContactUs = () => {
 
@@ -351,7 +353,7 @@ const ContactUs = () => {
 
   return (
     <>
-      <div className="flex flex-col mx-auto w-full  form-section ">
+      <div className="flex flex-col mx-auto my-auto w-full  form-section ">
 
         {" "}
 
@@ -365,7 +367,7 @@ const ContactUs = () => {
           method="post"
           encType="multipart/form-data"
           autoComplete="off"
-          className="mb-0  form-container form-shadow">
+          className="  form-container form-shadow">
           <div className="flex flex-row justify-center items-center object-contain gap-3 lg:gap-4 min-w-fit">
             <img
               src={ivurl}
@@ -421,7 +423,7 @@ const ContactUs = () => {
           <div>
             <div className="relative">
               <div className="w-full text-box  ">
-                <div className="country-code items-center justify-center my-auto cursor-pointer">
+                <div className="country-code items-center justify-center my-auto pt-2 cursor-pointer">
                   <Select
                     className="w-full country-text cursor-pointer"
                     // suffixIcon={countryCode == null ? <DropDownIcon /> : null}
