@@ -109,7 +109,7 @@ function isValidPhoneNumber(phone: any) {
 export default function Index() {
   return (
     <div className="flex-container main-container" style={{
-      backgroundImage: `url(/assets/bg-image.png)`,
+      backgroundImage: `url(/assets/bgimagenmsdc.png)`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       height:'100%'

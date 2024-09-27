@@ -18,7 +18,12 @@ export default function Index() {
   return (
 
 
-    <div className="flex-container main-container">
+    <div className="flex-container main-container" style={{
+      backgroundImage: `url(/assets/bgimagenmsdc.png)`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height:'100%'
+    }} >
       <div className="left-container left-section">
         <Suspense fallback={<LoadingTest />}>
           <LeftSectionProcure />
