@@ -1,4 +1,4 @@
-import tenyears from '../../public/assets/nmsdc-logo.svg';
+import tenyears from '../../public/assets/head.svg';
 import top from '../../public/assets/top.png';
 import sectionbg from '../../public/assets/bgimagenmsdc.png';
 function LeftSectionProcure() {
@@ -16,7 +16,7 @@ function LeftSectionProcure() {
       <ImageWithAlt src={tenyears} alt="nmsdc" class_name={"   image-procure"}/>
       {/* <HeaderText title="ProcureCon" classname={" header-text font-notosans font-medium "}  />     
       <HeaderText title="IT Sourcing" classname={"header-subtext"}  />      */}
-    <section class="event-banner">
+    <section class="event-banner mt-[28px]">
  <span class="event-location">ATLANTA</span>
 <span class="event-date">OCTOBER 20-23, 2024</span>
 </section>
