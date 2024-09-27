@@ -1,6 +1,30 @@
 .country-code select {
   width: 4.75rem;
 }
+
+.event-banner {
+  display: flex;
+  font: 600 23px Poppins, sans-serif;
+  gap: 10px;
+}
+.top-left {
+display: flex;
+position: absolute;
+top: 20px;
+left: 20px;
+max-width: 191px;
+max-height: 121px;
+object-fit: contain;
+}
+
+.event-location {
+  color: rgba(255, 209, 25, 1);
+}
+
+.event-date {
+  color: rgba(162, 222, 253, 1);
+}
+
 .header-subtext {
   color: #FFF;
   text-align: center;
@@ -30,10 +54,10 @@ line-height: normal;
 }
 
 .header {
-  color: #FFF;
+  color: #00FFA7;
   text-align: center;
   font-family: Oxygen;
-  font-size: 32px;
+  font-size: 23px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -567,7 +591,7 @@ html {
     line-height: 29px;
   }
   .header {
-    font-size: 26px;
+    font-size: 16px;
     margin-top: 22px;
     line-height: 36px;
   }
@@ -689,7 +713,7 @@ html {
     line-height: 30px;
   }
   .header {
-    font-size: 28px;
+    font-size: 18px;
     margin-top: 24px;
     line-height: 38px;
   }
@@ -788,7 +812,7 @@ html {
     max-width: 340px;
   }
   .header {
-    font-size: 28px;
+    font-size: 18px;
     margin-top: 25px;
     line-height: 38px;
   }
@@ -834,7 +858,7 @@ margin-bottom: 50px !important;
 /* Styles for screens between 992px and 1199px (large devices, desktops) */
 @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
   .header {
-    font-size: 28px;
+    font-size: 18px;
     margin-top: 28px;
    
   }
@@ -910,7 +934,7 @@ margin-bottom: 50px !important;
     margin-top: 12px;
   }
   .header {
-    font-size: 30px;
+    font-size: 20px;
     margin-top: 30px;
   }
   .border-line {

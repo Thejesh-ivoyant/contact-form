@@ -1,6 +1,6 @@
 import tenyears from '../../public/assets/nmsdc-logo.svg';
-
-import sectionbg from '../../public/assets/section-bg-nmsdc.png';
+import top from '../../public/assets/top.png';
+import sectionbg from '../../public/assets/bgimagenmsdc.png';
 function LeftSectionProcure() {
   return (
     //  style={{
@@ -10,11 +10,16 @@ function LeftSectionProcure() {
     //     height:'100%'
     //   }} 
     <section className="flex flex-col items-center  px-4 text-center relative  text-white h-full " >
+            <ImageWithAlt src={top} alt="nmsdc" class_name={"top-left"}/>
+
      <div className='holder-procure'> 
       <ImageWithAlt src={tenyears} alt="nmsdc" class_name={"   image-procure"}/>
       {/* <HeaderText title="ProcureCon" classname={" header-text font-notosans font-medium "}  />     
       <HeaderText title="IT Sourcing" classname={"header-subtext"}  />      */}
-      
+    <section class="event-banner">
+ <span class="event-location">ATLANTA</span>
+<span class="event-date">OCTOBER 20-23, 2024</span>
+</section>
       <div className="border-line"></div>
 
 <Header title="Get in touch with us" />
