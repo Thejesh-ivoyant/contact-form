@@ -28,7 +28,7 @@ type CheckboxValueType = GetProp<typeof Checkbox.Group, 'value'>[number];
 
 
 
-const plainOptions = ['Software Development & Engineering', 'Cloud Architecture & DevSecOps', 'Integration & Microservices', 'Artificial Intelligence & Machine Learning', 'User Experience (UX) & Interface Design', 'Product & Project Management', 'Digital Transformation & Consulting'];
+const plainOptions = ['Software Development & Engineering', 'User Experience (UX) & Interface Design', 'Cloud Architecture & DevSecOps', 'Product & Project Management', 'Integration & Microservices', 'Digital Transformation & Consulting', 'Artificial Intelligence & Machine Learning'];
 
 const ContactUs = () => {
 
