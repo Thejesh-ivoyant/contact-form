@@ -596,7 +596,8 @@ html {
 }
 
   .subtext {
-    display: none;
+    font-size: 12px;
+    margin-top: 32px;
   }
   .header-text {
     margin-top: 6px;
@@ -664,7 +665,7 @@ html {
   }
 
   .text-block-link {
-    display: none;
+    font-size: 14px;
   }
 }
 
@@ -730,10 +731,11 @@ html {
   }
 
   .subtext {
-    display: none;
+    font-size: 13px;
+    margin-top: 36px;
   }
   .text-block-link {
-    display: none;
+    font-size: 14px;
   }
 
   .main-container {
@@ -919,7 +921,7 @@ margin-bottom: 50px !important;
 
 
   .text-block-link {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
