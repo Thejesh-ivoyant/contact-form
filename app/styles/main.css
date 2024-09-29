@@ -18,10 +18,12 @@ object-fit: contain;
 }
 
 .event-location {
+  font-size: 23px;
   color: rgba(255, 209, 25, 1);
 }
 
 .event-date {
+  font-size: 23px;
   color: rgba(162, 222, 253, 1);
 }
 
@@ -587,10 +589,10 @@ html {
 }
 .event-location {
   color: rgba(255, 209, 25, 1);
-  font-size: 18px;
+  font-size: 12px;
 }
 .event-date {
-  font-size: 18px;
+  font-size: 12px;
 }
 
   .subtext {
@@ -711,10 +713,12 @@ html {
 }
   .text-block {
     padding-left: 32px;
-    font-size: 13px;
+    font-size: 20px;
     padding-right: 32px;
     margin-top: 8px;
-    line-height: 23px;
+   
+    line-height: 32px;
+    max-width: 480px;
   }
   .image-procure {
     margin-top: 5rem;
@@ -749,19 +753,19 @@ html {
   }
   .event-location {
     color: rgba(255, 209, 25, 1);
-    font-size: 18px;
+    font-size: 14px;
   }
   .event-date {
-    font-size: 18px;
+    font-size: 14px;
   }
   .header {
     font-size: 18px;
-    margin-top: 24px;
+    margin-top: 14px;
     line-height: 38px;
   }
   .border-line {
     max-width: 340px;
-        margin-top: 24px;
+    margin-top: 14px;
   }
   .image-fintech {
     width: 280.696px;
@@ -826,17 +830,18 @@ html {
     margin-top: 49px;
   }
   .text-block {
-    font-size: 14px;
+    font-size: 20px;
     padding-left: 22px;
     padding-right: 22px;
     margin-top: 10px;
-    line-height: 24px;
+    line-height: 32px;
+    max-width: 500px;
   }
   .image-procure {
-    margin-top: 1.5rem;
+    margin-top: 5rem;
     max-width: 260.622px;
     max-height: 120.617px;
-    aspect-ratio: 16/14;
+    aspect-ratio: auto;
   }
   .image-ivoyant-logo {
     aspect-ratio: 16/9;
@@ -852,12 +857,12 @@ html {
     line-height: 30px;
   }
   .border-line {
-    margin-top: 25px;
+    margin-top: 20px;
     max-width: 340px;
   }
   .header {
-    font-size: 18px;
-    margin-top: 25px;
+    font-size: 20px;
+    margin-top: 20px;
     line-height: 38px;
   }
   .image-fintech {
@@ -882,10 +887,10 @@ html {
   }
   .event-location {
     color: rgba(255, 209, 25, 1);
-    font-size: 22px;
+    font-size: 20px;
   }
   .event-date {
-    font-size: 22px;
+    font-size: 20px;
   }
   .form-section {
     margin-top: 18px;
@@ -926,8 +931,8 @@ margin-bottom: 50px !important;
    
   }
   .text-block {
-    max-width: 290px;
-    font-size: 12px;
+    max-width: 420px;
+    font-size: 18px;
     margin-top: 10px;
     line-height: 26px;
 
@@ -941,10 +946,10 @@ margin-bottom: 50px !important;
 }
   .form-section {
    
-    max-width: 34.5rem;
+    max-width: 36rem;
   }
   .form-container {
-    max-width: 32.5rem;
+    max-width: 36rem;
   }
 
   .subtitle {
@@ -969,10 +974,10 @@ margin-bottom: 50px !important;
   }
   .event-location {
     color: rgba(255, 209, 25, 1);
-    font-size: 24px;
+    font-size: 20px;
   }
   .event-date {
-    font-size: 24px;
+    font-size: 20px;
   }
   .contact-logo{
     width: 11rem;
@@ -1001,10 +1006,10 @@ margin-bottom: 50px !important;
 /* Styles for screens larger than 1200px (extra large devices, large desktops) */
 @media only screen and (min-width: 1200px) and (max-width: 1439px) {
   .text-block {
-    max-width: 340px;
-    font-size: 14px;
+    max-width: 500px;
+    font-size: 22px;
     margin-top: 12px;
-    line-height: 26px;
+    line-height: 36px;
   }
   .header {
     font-size: 20px;
@@ -1015,11 +1020,11 @@ margin-bottom: 50px !important;
     max-width: 354px;
   }
   .form-section {
-    max-width: 39rem;
+    max-width: 39.3rem;
    
   }
   .form-container {
-    max-width: 39rem;
+    max-width: 39.3rem;
   }
   .link-class {
     margin-top: 3.5rem;
