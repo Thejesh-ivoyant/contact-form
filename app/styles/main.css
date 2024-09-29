@@ -12,8 +12,8 @@ display: flex;
 position: absolute;
 top: 20px;
 left: 20px;
-max-width: 191px;
-max-height: 121px;
+max-width: 190px;
+max-height: 87px;
 object-fit: contain;
 }
 
@@ -38,8 +38,9 @@ object-fit: contain;
 .border-line {
   width: 100%;
   max-width: 379px;
-  border-top: 1px solid #8c8c8c;
-  margin-top: 32px;
+  border-top: 1px solid rgba(60, 189, 255, 0.50);
+  margin-top: 28px;
+  
 }
 
 .header-text {
@@ -61,7 +62,7 @@ line-height: normal;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 32px;
+  margin-top: 28px;
   max-width: 379px;
 }
 .holder-procure{
@@ -78,19 +79,20 @@ line-height: normal;
   color: #FFF;
 text-align: center;
 font-family: Oxygen;
-font-size: 16px;
+font-size: 25px;
 font-style: normal;
-font-weight: 400;
-line-height: 22px; /* 137.5% */
+font-weight: 700;
+line-height: 36px; /* 144% */
+letter-spacing: 0.25px;
 margin-top: 16px;
-letter-spacing: 0.5px;
-max-width: 400px;
+max-width: 635px;
 }
+
 .text-block-link {
   color: #FFD119;
 text-align: center;
 font-family: Oxygen;
-font-size: 28px;
+font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -101,7 +103,7 @@ letter-spacing: 0.56px;
   color: #FFF;
 text-align: center;
 font-family: Oxygen;
-font-size: 24px;
+font-size: 18px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -256,10 +258,11 @@ line-height: normal;
   font-weight: 500;
   line-height: 1.625rem; /* 162.5% */
 }
+
 .checkbox-text {
   color: #1b0740;
   font-family: Montserrat;
-  font-size: 13px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 16px; /* 123.077% */
@@ -466,7 +469,7 @@ html {
   width: 100%;
   display: flex;
   flex-direction: column;
-  max-width: 34.68875rem;
+  max-width: 39.3rem;
   z-index: 12;
   padding: 20px;
   padding-bottom: 24px;
@@ -489,7 +492,8 @@ html {
 }
 .image-procure {
   margin-top: 1.5rem;
-
+  max-width: 394px;
+  max-height: 172px;
   object-fit: contain;
 }
 .image-ivoyant-logo {
@@ -498,7 +502,7 @@ html {
   object-fit: contain;
 }
 .form-section {
-  max-width: 35.8125rem;
+  max-width: 39.3rem;
  height: 100%;
 
  margin-top: auto;
@@ -536,7 +540,14 @@ html {
   .message-box {
     display: none;
   }
-
+.contact-logo{
+  display: flex;
+  position: absolute;
+  top: 32px;
+  right: 10px;
+  max-width: 87px;
+  max-height: 23px;
+}
   .subtitle {
     margin-top: 1rem;
   }
@@ -559,7 +570,7 @@ html {
   }
   .image-procure {
     max-width: 155px;
-    max-height: 90px;
+    max-height: 80px;
     margin-top: 4rem;
 }
   .image-ivoyant-logo {
@@ -691,7 +702,12 @@ html {
     margin-top: 14px;
 }
 .contact-logo {
-  width: 10rem;
+  display: flex;
+  position: absolute;
+  top: 32px;
+  right: 10px;
+  max-width: 87px;
+  max-height: 23px;
 }
   .text-block {
     padding-left: 32px;
@@ -702,8 +718,8 @@ html {
   }
   .image-procure {
     margin-top: 5rem;
-    max-width: 214px;
-    max-height: 182px;
+    max-width: 210px;
+    max-height: 102px;
   }
   .image-ivoyant-logo {
     aspect-ratio: 16/9;
@@ -806,7 +822,7 @@ html {
     padding-right: 4rem;
   }
   .subtext {
-    font-size: 18px;
+    font-size: 14px;
     margin-top: 49px;
   }
   .text-block {
@@ -818,6 +834,8 @@ html {
   }
   .image-procure {
     margin-top: 1.5rem;
+    max-width: 260.622px;
+    max-height: 120.617px;
     aspect-ratio: 16/14;
   }
   .image-ivoyant-logo {
@@ -885,12 +903,18 @@ margin-bottom: 50px !important;
     margin-top: 14px;
 }
   .contact-logo {
-    width: 10rem;
+
+    display: flex;
+    position: absolute;
+    top: 32px;
+    right: 10px;
+    max-width: 87px;
+    max-height: 23px;
 }
 
 
   .text-block-link {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
@@ -905,6 +929,7 @@ margin-bottom: 50px !important;
     max-width: 290px;
     font-size: 12px;
     margin-top: 10px;
+    line-height: 26px;
 
   }
   .border-line {
@@ -916,10 +941,10 @@ margin-bottom: 50px !important;
 }
   .form-section {
    
-    max-width: 28.5rem;
+    max-width: 34.5rem;
   }
   .form-container {
-    max-width: 28.5rem;
+    max-width: 32.5rem;
   }
 
   .subtitle {
@@ -960,14 +985,15 @@ margin-bottom: 50px !important;
   }
   .subtext {
     margin-top: 44px;
-    font-size: 19px;
+    font-size: 15px;
   }
   .text-block-link {
-    font-size: 24px;
+    font-size: 16px;
   }
   .image-procure {
     margin-top: 1.5rem;
-    
+    max-width: 280.622px;
+    max-height: 140.617px;
     object-fit: contain;
   }
 }
@@ -978,21 +1004,22 @@ margin-bottom: 50px !important;
     max-width: 340px;
     font-size: 14px;
     margin-top: 12px;
+    line-height: 26px;
   }
   .header {
     font-size: 20px;
-    margin-top: 30px;
+    margin-top: 28px;
   }
   .border-line {
-    margin-top: 30px;
+    margin-top: 28px;
     max-width: 354px;
   }
   .form-section {
-    max-width: 31.5rem;
+    max-width: 39rem;
    
   }
   .form-container {
-    max-width: 31.5rem;
+    max-width: 39rem;
   }
   .link-class {
     margin-top: 3.5rem;
@@ -1018,21 +1045,21 @@ margin-bottom: 50px !important;
     font-size: 20px;
   }
   .contact-logo{
-    width: 11rem;
+    width: 12rem;
   }
   .container-top{
     margin-top: 8px;
   }
   .subtext {
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 48px;
   }
   .text-block-link {
-    font-size: 26px;
+    font-size: 18px;
   }
   .image-procure {
-    max-width: 319.622px;
-    max-height: 202.617px;
+    max-width: 300.622px;
+    max-height: 160.617px;
     object-fit: contain;
   }
 }
