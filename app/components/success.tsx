@@ -53,10 +53,10 @@ function Success() {
 
         <article className="flex flex-col main-container-success max-w-full w-full">
           <MainTitle title="Thank you for sharing your details" />
-          <Subtitle>our team will reach out to you soon!</Subtitle>
+          <Subtitle>Our team will reach out to you soon!</Subtitle>
         </article>
         <ActionLink>
-          <span className="redirect-msg">To know how we are revolutionising various industries{" "}</span>
+          <span className="redirect-msg">To know how we are revolutionising various Industries{" "}</span>
           <Link to={'https://www.ivoyant.com/'}><div className="link">Click here</div></Link>
         </ActionLink>
 
