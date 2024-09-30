@@ -123,7 +123,7 @@ line-height: normal;
   margin-top: 2rem;
 }
 .main-title {
-  color: #263371;
+  color: var(--Flowkit-Charcoal, #222);
   text-align: center;
   font-family: Oxygen;
   font-size: 2rem;
