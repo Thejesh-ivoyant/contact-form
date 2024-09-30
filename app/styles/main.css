@@ -473,7 +473,7 @@ html {
   flex-direction: column;
   max-width: 39.3rem;
   z-index: 12;
-  padding-top: 5px !important;
+  padding-top: 24px !important;
   padding: 20px;
   padding-bottom: 24px;
 }
@@ -552,6 +552,11 @@ html {
 @media only screen and (max-width: 575.98px) {
   .message-box {
     display: none;
+  }
+  .form-container{
+
+      padding-top: 5px !important;
+
   }
 .contact-logo{
 
@@ -720,12 +725,17 @@ html {
   position: absolute;
   top: 32px;
   right: 10px;
-  max-width: 87px;
-  max-height: 23px;
+  max-width: 107px;
+  max-height: 43px;
   }
   .link-class {
     margin-top: 3rem;
   }
+  .form-container{
+
+    padding-top: 5px !important;
+
+}
   .top-left {
    
     top: 14px;
@@ -914,6 +924,11 @@ html {
     margin-top: 20px;
     line-height: 38px;
   }
+  .form-container{
+
+    padding-top: 5px !important;
+
+}
   .image-fintech {
     width: 300.696px;
   }
