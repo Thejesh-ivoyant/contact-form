@@ -599,8 +599,8 @@ html {
     margin-top: 16px;
   }
   .image-procure {
-    max-width: 155px;
-    max-height: 80px;
+    max-width: 257px;
+    max-height: 112px;
     margin-top: 4rem;
 }
   .image-ivoyant-logo {
@@ -610,7 +610,7 @@ html {
     max-width: 300px;
     margin-top: 6px;
     line-height: 22px;
-    font-size: 12px;
+    font-size: 13px;
   }
   .container-top {
     margin-top: 8px;
@@ -764,7 +764,7 @@ html {
 }
   .text-block {
     padding-left: 32px;
-    font-size: 20px;
+    font-size: 18px;
     padding-right: 32px;
     margin-top: 8px;
    
@@ -773,8 +773,8 @@ html {
   }
   .image-procure {
     margin-top: 5rem;
-    max-width: 210px;
-    max-height: 102px;
+    max-width: 290px;
+    max-height: 132px;
   }
   .image-ivoyant-logo {
     aspect-ratio: 16/9;
