@@ -599,8 +599,8 @@ html {
     margin-top: 16px;
   }
   .image-procure {
-    max-width: 155px;
-    max-height: 80px;
+    max-width: 257px;
+    max-height: 112px;
     margin-top: 4rem;
 }
   .image-ivoyant-logo {
@@ -773,8 +773,8 @@ html {
   }
   .image-procure {
     margin-top: 5rem;
-    max-width: 210px;
-    max-height: 102px;
+    max-width: 290px;
+    max-height: 132px;
   }
   .image-ivoyant-logo {
     aspect-ratio: 16/9;
