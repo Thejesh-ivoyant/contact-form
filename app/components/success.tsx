@@ -1,5 +1,6 @@
 import videourl from "../../public/assets/success.mp4";
 import ivurl from '../../public/assets/logo.svg';
+import ivurl2 from '../../public/assets/logo-white.svg';
 import { Link } from "@remix-run/react";
 
 const MainTitle = ({ title }: { title: any }) => (
@@ -31,7 +32,12 @@ function Success() {
           <img
             src={ivurl}
             alt="iVoyant Logo"
-            className="flex   logo-image object-contain"
+            className="flex   logo-image object-contain logo-desk"
+          />
+           <img
+            src={ivurl2}
+            alt="iVoyant Logo white"
+            className="flex   logo-image object-contain logo-mob"
           />
 
         </div>

@@ -5,6 +5,7 @@ import type { CheckboxProps, GetProp } from 'antd';
 import { useState, useEffect, useRef } from "react";
 
 import ivurl from '../../public/assets/logo.svg';
+import ivurl2 from '../../public/assets/logo-white.svg';
 
 import { errorMessage } from "~/utils/notifications";
 
@@ -29,7 +30,8 @@ type CheckboxValueType = GetProp<typeof Checkbox.Group, 'value'>[number];
 
 
 const plainOptions = ['Software Development & Engineering', 'User Experience (UX) & Interface Design', 'Cloud Architecture & DevSecOps', 'Product & Project Management', 'Integration & Microservices', 'Digital Transformation & Consulting', 'Artificial Intelligence & Machine Learning'];
-
+const plainOptions2 = ['Software Development & Engineering', 'Cloud Architecture & DevSecOps' , 'Integration & Microservices', 'Artificial Intelligence & Machine Learning', 'User Experience (UX) & Interface Design', 'Product & Project Management', 'Digital Transformation & Consulting'];
+ 
 const ContactUs = () => {
 
   // let Countries = countryTelephoneData.allCountries?.map((item:any) => ({
@@ -372,9 +374,14 @@ const ContactUs = () => {
             <img
               src={ivurl}
               alt="iVoyant Logo"
-              className="flex contact-logo object-contain"
+              className="flex contact-logo object-contain logo-desk"
             />
 
+<img
+            src={ivurl2}
+            alt="iVoyant Logo white"
+            className="flex   logo-image object-contain logo-mob"
+          />
           </div>
 
           <div>
@@ -531,9 +538,18 @@ const ContactUs = () => {
 
             <div className="checkbox mt-[0.75rem]">
 
-              <Checkbox.Group style={{ width: '100%' }} value={checkedList} onChange={onChange}>
+              <Checkbox.Group style={{ width: '100%' }} value={checkedList} onChange={onChange} className="multiple-order">
                 <Row gutter={[16, 16]}>
                   {plainOptions.map((option, index) => (
+                    <Col key={index} span={12}>
+                      <Checkbox value={option} className="checkbox-text">{option}</Checkbox>
+                    </Col>
+                  ))}
+                </Row>
+              </Checkbox.Group>
+              <Checkbox.Group style={{ width: '100%' }} value={checkedList} onChange={onChange} className="single-order">
+                <Row gutter={[16, 16]}>
+                  {plainOptions2.map((option, index) => (
                     <Col key={index} span={12}>
                       <Checkbox value={option} className="checkbox-text">{option}</Checkbox>
                     </Col>
