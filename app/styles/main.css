@@ -473,6 +473,7 @@ html {
   flex-direction: column;
   max-width: 39.3rem;
   z-index: 12;
+  padding-top: 5px !important;
   padding: 20px;
   padding-bottom: 24px;
 }
@@ -513,6 +514,10 @@ html {
   padding-right: 0px;
 }
 
+.single-order{
+  display: none;
+ }
+
 .form-section-success {
 
   padding-left: 0px;
@@ -521,8 +526,14 @@ html {
 .success-body{
   margin-top: 2.5rem;
 }
+.logo-desk{
+  display: flex;
+}
 .logo-image {
-  width: 10.38888rem;
+  width: 14.38888rem;
+}
+.logo-mob{
+  display: none;
 }
 .video-class {
   margin-top: 46px;
@@ -543,7 +554,7 @@ html {
     display: none;
   }
 .contact-logo{
-  display: flex;
+
   position: absolute;
   top: 32px;
   right: 10px;
@@ -556,8 +567,20 @@ html {
   .link-class {
     margin-top: 3rem;
   }
+  .logo-mob{
+    display: flex;
+  }
+  .logo-desk{
+    display: none;
+  }
+
   .logo-image {
-    width: 7.38888rem;
+    
+    position: absolute;
+    top: 32px;
+    right: 10px;
+    max-width: 87px;
+    max-height: 23px;
   }
   .main-title {
     font-size: 1.6rem;
@@ -644,7 +667,7 @@ html {
     width: 100%;
   }
   .form-section {
-    margin-top: 15px;
+    
     margin-bottom: 50px !important;
     padding-left: 1.19rem;
     padding-right: 1.19rem;
@@ -657,12 +680,18 @@ html {
     max-height: 90px;
   }
   .form-section-success {
-    margin-top: 1rem;
+    
     padding-top: 1.19rem;
     padding-bottom: 0rem;
     padding-left: 1.19rem;
     padding-right: 1.19rem;
   }
+  .multiple-order{
+    display: none;
+    }
+   .single-order{
+     display: unset;
+   }
 
   .text-block-link {
     font-size: 14px;
@@ -680,8 +709,19 @@ html {
   .video-class {
     margin-top: 26px;
   }
+  .logo-mob{
+    display: flex;
+  }
+  .logo-desk{
+    display: none;
+  }
   .logo-image {
-    width: 8.38888rem;
+   
+  position: absolute;
+  top: 32px;
+  right: 10px;
+  max-width: 87px;
+  max-height: 23px;
   }
   .link-class {
     margin-top: 3rem;
@@ -705,7 +745,7 @@ html {
     margin-top: 14px;
 }
 .contact-logo {
-  display: flex;
+
   position: absolute;
   top: 32px;
   right: 10px;
@@ -778,6 +818,13 @@ html {
   .line {
     display: none;
   }
+  .multiple-order{
+   display: none;
+   }
+  .single-order{
+    display: unset;
+  }
+
   .right-container {
     width: 100%;
     overflow-y: visible;
@@ -787,13 +834,13 @@ html {
   }
 
   .form-section {
-    margin-top: 15px;
+
     margin-bottom: 50px !important;
     padding-left: 1.19rem;
     padding-right: 1.19rem;
   }
   .form-section-success {
-    margin-top: 1rem;
+
     padding-top: 1.19rem;
     padding-bottom: 0rem;
     padding-left: 1.19rem;
@@ -895,7 +942,7 @@ html {
     font-size: 20px;
   }
   .form-section {
-    margin-top: 18px;
+
 margin-bottom: 50px !important;
     padding-left: 1.19rem;
     padding-right: 1.19rem;
@@ -909,9 +956,26 @@ margin-bottom: 50px !important;
   .container-top {
     margin-top: 14px;
 }
+.logo-mob{
+  display: flex;
+}
+.logo-desk{
+  display: none;
+}
+
+
+.logo-image{
+
+  position: absolute;
+  top: 32px;
+  right: 10px;
+  max-width: 87px;
+  max-height: 23px;
+}
+
   .contact-logo {
 
-    display: flex;
+   
     position: absolute;
     top: 32px;
     right: 10px;
@@ -963,8 +1027,13 @@ margin-bottom: 50px !important;
   .video-class {
     margin-top: 12px;
   }
+  .logo-mob{
+    display: none;
+  }
+  
   .logo-image {
     width: 8.38888rem;
+   
   }
   .main-title {
     font-size: 1.6rem;
@@ -1033,6 +1102,9 @@ margin-bottom: 50px !important;
   }
   .subtitle {
     margin-top: 1rem;
+  }
+  .logo-mob{
+    display: none;
   }
   .logo-image {
     width: 8.38888rem;
