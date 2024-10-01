@@ -572,9 +572,10 @@ html {
 }
   .subtitle {
     margin-top: 1rem;
+font-size: 16px;
   }
   .link-class {
-    margin-top: 3rem;
+    margin-top: 20px;
   }
   .logo-mob{
     display: flex;
@@ -592,16 +593,23 @@ html {
     max-height: 23px;
   }
   .main-title {
-    font-size: 1.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 22px;
     line-height: 1.75rem;
   }
   .main-container-success {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .video-class {
     margin-top: 16px;
   }
+  .redirect-msg{
+    font-size: 12px;
+
+  }
+
   .image-procure {
     max-width: 257px;
     max-height: 112px;
@@ -646,6 +654,9 @@ html {
     font-size: 16px;
     margin-top: 16px;
     line-height: 36px;
+  }
+  .link{
+    font-size: 12px;
   }
   .border-line {
     margin-top: 16px;
@@ -735,8 +746,11 @@ html {
   max-width: 107px;
   max-height: 43px;
   }
+  .link{
+    font-size: 14px;
+  }
   .link-class {
-    margin-top: 3rem;
+    margin-top: 1.8rem;
   }
   .form-container{
 
@@ -789,7 +803,10 @@ html {
   .image-ivoyant-logo {
     aspect-ratio: 16/9;
   }
+  .redirect-msg{
+    font-size: 14px;
 
+  }
   .subtext {
     font-size: 13px;
     margin-top: 36px;
@@ -889,7 +906,7 @@ html {
     margin-top: 24px;
   }
   .link-class {
-    margin-top: 3.5rem;
+    margin-top: 3rem;
   }
   .main-title {
     font-size: 1.8rem;
@@ -942,10 +959,9 @@ html {
     margin-top: 20px;
     line-height: 38px;
   }
+   
   .form-container{
-
     padding-top: 5px !important;
-
 }
   .image-fintech {
     width: 300.696px;
