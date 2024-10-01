@@ -9,18 +9,13 @@ function LeftSectionProcure() {
   return (
     <section className="flex flex-col items-center px-4 text-center relative text-white h-full">
       <ImageWithAlt src={top} alt="nmsdc" class_name={"top-left"} />
-
       <div className='holder-procure'>
         <ImageWithAlt src={tenyears} alt="nmsdc" class_name={"image-procure"} />
-
         <section className="event-banner mt-[14px]">
           <span className="event-location">ATLANTA</span>
           <span className="event-date">OCTOBER 20-23, 2024</span>
         </section>
-
         <div className={`border-line ${isSuccess ? 'success-non-display' : ''}`}></div>
-
-        {/* Pass isSuccess as a prop to child components */}
         <Header title="Get in Touch with us" isSuccess={isSuccess} />
         <TextBlock text="We excel in IT Services, Product Development, IT Consulting & Staffing Solutions" isSuccess={isSuccess} />
         <SubText text="Visit for more" isSuccess={isSuccess} />
