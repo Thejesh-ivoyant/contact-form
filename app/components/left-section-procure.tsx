@@ -1,70 +1,64 @@
 import tenyears from '../../public/assets/head.svg';
 import top from '../../public/assets/top.png';
-import sectionbg from '../../public/assets/bgimagenmsdc.png';
+import { useMatch } from '@remix-run/react';
+
 function LeftSectionProcure() {
+  const Success = useMatch("/success");
+  const isSuccess = Success !== null;
+
   return (
-    //  style={{
-    //     backgroundImage: `url(${sectionbg})`,
-    //     backgroundSize: 'cover',
-    //     backgroundPosition: 'center',
-    //     height:'100%'
-    //   }} 
-    <section className="flex flex-col items-center  px-4 text-center relative  text-white h-full " >
-            <ImageWithAlt src={top} alt="nmsdc" class_name={"top-left"}/>
+    <section className="flex flex-col items-center px-4 text-center relative text-white h-full">
+      <ImageWithAlt src={top} alt="nmsdc" class_name={"top-left"} />
 
-     <div className='holder-procure'> 
-      <ImageWithAlt src={tenyears} alt="nmsdc" class_name={"   image-procure"}/>
-      {/* <HeaderText title="ProcureCon" classname={" header-text font-notosans font-medium "}  />     
-      <HeaderText title="IT Sourcing" classname={"header-subtext"}  />      */}
-    <section class="event-banner mt-[14px]">
- <span class="event-location">ATLANTA</span>
-<span class="event-date">OCTOBER 20-23, 2024</span>
-</section>
-      <div className="border-line"></div>
+      <div className='holder-procure'>
+        <ImageWithAlt src={tenyears} alt="nmsdc" class_name={"image-procure"} />
 
-<Header title="Get in Touch with us" />
-      <TextBlock text="We excel in IT Services, Product Development, IT Consulting & Staffing Solutions" />
-      <SubText text="Visit for more" />
-      <TextBlockLink text="www.ivoyant.com" />
+        <section className="event-banner mt-[14px]">
+          <span className="event-location">ATLANTA</span>
+          <span className="event-date">OCTOBER 20-23, 2024</span>
+        </section>
+
+        <div className={`border-line ${isSuccess ? 'success-non-display' : ''}`}></div>
+
+        {/* Pass isSuccess as a prop to child components */}
+        <Header title="Get in Touch with us" isSuccess={isSuccess} />
+        <TextBlock text="We excel in IT Services, Product Development, IT Consulting & Staffing Solutions" isSuccess={isSuccess} />
+        <SubText text="Visit for more" isSuccess={isSuccess} />
+        <TextBlockLink text="www.ivoyant.com" isSuccess={isSuccess} />
       </div>
     </section>
   );
 }
 
-function ImageWithAlt({ src, alt, class_name }:{src:any,alt:any,class_name:any}) {
-    return (
-      <img loading="eager" src={src} alt={alt} className={class_name} />
-
-    );
-  }
-
-function Header({ title }:{title:any}) {
+function ImageWithAlt({ src, alt, class_name }:{src:any, alt:any, class_name:any}) {
   return (
-    <h2 className=" header">{title}</h2>
-  );
-}
-function HeaderText({ title, classname }:{title:any,classname:any}) {
-  return (
-    <h2 className={classname}>{title}</h2>
+    <img loading="eager" src={src} alt={alt} className={class_name} />
   );
 }
 
-function TextBlock({ text }:{text:any}) {
+// Update child components to accept isSuccess prop
+function Header({ title, isSuccess }:{title:any, isSuccess:boolean}) {
   return (
-    <p className="   text-block">{text}</p>
-  );
-}
-function TextBlockLink({ text }:{text:any}) {
-  return (
-    <a href="https://www.ivoyant.com/" className="  text-block-link">{text}</a>
+    <h2 className={`header ${isSuccess ? 'success-non-display' : ''}`}>{title}</h2>
   );
 }
 
-function SubText({ text }:{text:any}) {
+function TextBlock({ text, isSuccess }:{text:any, isSuccess:boolean}) {
   return (
-    <small className=" subtext">{text}</small>
+    <p className={`text-block ${isSuccess ? 'success-non-display' : ''}`}>{text}</p>
+  );
+}
+
+function TextBlockLink({ text, isSuccess }:{text:any, isSuccess:boolean}) {
+  return (
+    <a href="https://www.ivoyant.com/" className={`text-block-link ${isSuccess ? 'success-non-display' : ''}`}>{text}</a>
+  );
+}
+
+function SubText({ text, isSuccess }:{text:any, isSuccess:boolean}) {
+  return (
+    <small className={`subtext ${isSuccess ? 'success-non-display' : ''}`}>{text}</small>
   );
 }
 
 export default LeftSectionProcure;
-

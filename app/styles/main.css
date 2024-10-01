@@ -559,6 +559,9 @@ html {
       padding-top: 5px !important;
 
   }
+  .success-non-display{
+    display: none;
+  }
 .contact-logo{
 
   position: absolute;
@@ -678,6 +681,9 @@ html {
     padding-left: 1.19rem;
     padding-right: 1.19rem;
   }
+  .success-body{
+    margin-top: 0rem;
+  }
   .top-left {
    
     top: 10px;
@@ -687,7 +693,7 @@ html {
   }
   .form-section-success {
     
-    padding-top: 1.19rem;
+    padding-top: 1.45rem;
     padding-bottom: 0rem;
     padding-left: 1.19rem;
     padding-right: 1.19rem;
@@ -763,6 +769,9 @@ html {
   max-width: 87px;
   max-height: 23px;
 }
+.success-non-display{
+  display: none;
+}
   .text-block {
     padding-left: 32px;
     font-size: 18px;
@@ -810,6 +819,9 @@ html {
   }
   .event-date {
     font-size: 14px;
+  }
+  .success-body{
+    margin-top: 0rem;
   }
   .header {
     font-size: 18px;
@@ -864,7 +876,9 @@ html {
   .main-container {
     flex-direction: column;
   }
-
+.success-body{
+  margin-top: 0rem;
+}
   .subtitle {
     margin-top: 1rem;
   }
@@ -888,6 +902,9 @@ html {
   .subtext {
     font-size: 14px;
     margin-top: 49px;
+  }
+  .success-non-display{
+    display: none;
   }
   .text-block {
     font-size: 20px;
