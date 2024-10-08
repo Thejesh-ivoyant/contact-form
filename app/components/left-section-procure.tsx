@@ -1,4 +1,4 @@
-import tenyears from '../../public/assets/head.svg';
+import tenyears from '../../public/assets/imagetop.svg';
 import top from '../../public/assets/top.png';
 import { useMatch } from '@remix-run/react';
 
